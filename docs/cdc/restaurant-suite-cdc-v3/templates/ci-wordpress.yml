@@ -1,0 +1,88 @@
+name: Restaurant Suite CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  php-quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugin/restaurant-suite-core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, curl, zip, mysqli
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: composer validate --strict
+      - run: composer lint
+      - run: composer cs
+      - run: composer stan
+      - run: composer test:unit
+      - run: composer audit
+
+  javascript-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm run test:js
+      - run: npm audit --audit-level=high
+
+  playwright:
+    runs-on: ubuntu-latest
+    needs: [php-quality, javascript-quality]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Install DDEV
+        uses: ddev/github-action@v1
+      - name: Verify Docker and DDEV
+        run: |
+          docker version
+          ddev version
+      - name: Bootstrap WordPress and WooCommerce
+        run: ./scripts/bootstrap-local.sh
+      - name: Prepare WordPress fixtures
+        run: ./scripts/reset-fixtures.sh
+      - name: Run Playwright
+        run: BASE_URL=https://restaurant-suite.ddev.site npx playwright test --project=chromium --project=mobile-chrome
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+
+  package:
+    runs-on: ubuntu-latest
+    needs: [php-quality, javascript-quality, playwright]
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/package-release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: restaurant-suite-package
+          path: dist/

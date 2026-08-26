@@ -1,0 +1,666 @@
+=== QUICKVIEW ARCHIVE ===
+Archive:  /home/ubuntu/upload/woo-quickview.2.3.0.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-08-20 09:22   woo-quickview/
+        0  2026-08-20 09:22   woo-quickview/admin/
+        0  2026-08-20 09:22   woo-quickview/admin/help-page/
+        0  2026-08-20 09:22   woo-quickview/admin/help-page/css/
+    36756  2024-02-28 05:09   woo-quickview/admin/help-page/css/config.json
+     2751  2024-02-28 05:09   woo-quickview/admin/help-page/css/fontello.css
+     1475  2024-02-28 05:09   woo-quickview/admin/help-page/css/fontello.min.css
+    17712  2026-07-30 13:54   woo-quickview/admin/help-page/css/help-page.css
+    14456  2026-07-30 13:54   woo-quickview/admin/help-page/css/help-page.min.css
+        0  2026-08-20 09:22   woo-quickview/admin/help-page/font/
+    12632  2024-02-28 05:09   woo-quickview/admin/help-page/font/fontello.eot
+    12143  2024-02-28 05:09   woo-quickview/admin/help-page/font/fontello.svg
+    12464  2024-02-28 05:09   woo-quickview/admin/help-page/font/fontello.ttf
+     7892  2024-02-28 05:09   woo-quickview/admin/help-page/font/fontello.woff
+     6688  2024-02-28 05:09   woo-quickview/admin/help-page/font/fontello.woff2
+    35303  2026-07-30 13:54   woo-quickview/admin/help-page/help.php
+        0  2026-08-20 09:22   woo-quickview/admin/help-page/img/
+      568  2024-02-28 05:09   woo-quickview/admin/help-page/img/check-icon.svg
+      947  2024-02-28 05:09   woo-quickview/admin/help-page/img/checkmark.svg
+      892  2024-02-28 05:09   woo-quickview/admin/help-page/img/close-icon.svg
+    19219  2024-02-28 05:09   woo-quickview/admin/help-page/img/johntosh.png
+    25855  2024-02-28 05:09   woo-quickview/admin/help-page/img/martin.png
+    14331  2024-02-28 05:09   woo-quickview/admin/help-page/img/michaelh.png
+    92991  2025-09-29 06:50   woo-quickview/admin/help-page/img/shapedplugin-team.jpg
+        0  2026-08-20 09:22   woo-quickview/admin/help-page/js/
+     1982  2024-02-28 05:09   woo-quickview/admin/help-page/js/help-page.js
+     1697  2024-02-28 05:09   woo-quickview/admin/help-page/js/help-page.min.js
+        0  2026-08-20 09:22   woo-quickview/admin/views/
+        0  2026-08-20 09:22   woo-quickview/admin/views/img/
+     1376  2021-10-12 06:56   woo-quickview/admin/views/img/bottom-image.svg
+     3925  2023-04-14 06:25   woo-quickview/admin/views/img/Cascading.svg
+     1490  2021-10-12 06:56   woo-quickview/admin/views/img/left-image.svg
+     6015  2023-04-14 06:25   woo-quickview/admin/views/img/Modal-Window.svg
+        0  2026-08-20 09:22   woo-quickview/admin/views/img/offer-banner/
+    37398  2025-11-25 05:27   woo-quickview/admin/views/img/offer-banner/bfcm-offer-banner.svg
+   177497  2025-11-25 05:27   woo-quickview/admin/views/img/offer-banner/new-year-offer-banner.svg
+    43774  2026-07-30 13:54   woo-quickview/admin/views/img/rebrand-notice-icon.gif
+     1486  2021-10-12 06:56   woo-quickview/admin/views/img/right-image.svg
+     5723  2023-04-14 06:25   woo-quickview/admin/views/img/Slide-Ins-Center.svg
+     5681  2023-04-14 06:25   woo-quickview/admin/views/img/Slide-Ins-Left.svg
+     5692  2023-04-14 06:25   woo-quickview/admin/views/img/Slide-Ins-Right.svg
+     1385  2021-10-12 06:56   woo-quickview/admin/views/img/top-image.svg
+     2127  2022-11-29 12:04   woo-quickview/admin/views/img/woo-quick-view-notice.svg
+        0  2026-08-20 09:22   woo-quickview/admin/views/notices/
+     4351  2026-07-30 13:54   woo-quickview/admin/views/notices/notices.css
+     3268  2026-07-30 13:54   woo-quickview/admin/views/notices/notices.min.css
+     4296  2026-07-30 13:54   woo-quickview/admin/views/notices/offer-banner.php
+     6131  2026-07-30 13:54   woo-quickview/admin/views/notices/rebrand-notice.php
+     4505  2026-07-30 13:54   woo-quickview/admin/views/notices/review.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/css/
+    79641  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/css/font-awesome.css
+    58892  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/css/font-awesome.min.css
+     2892  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/css/fontello.css
+     1493  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/css/fontello.min.css
+     3879  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/css/icons.css
+     3083  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/css/icons.min.css
+    74340  2026-07-30 13:54   woo-quickview/admin/views/sp-framework/assets/css/style.css
+    59800  2026-07-30 13:54   woo-quickview/admin/views/sp-framework/assets/css/style.min.css
+    10809  2023-09-24 14:27   woo-quickview/admin/views/sp-framework/assets/css/style-rtl.css
+     6971  2023-09-24 14:27   woo-quickview/admin/views/sp-framework/assets/css/style-rtl.min.css
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/font/
+    13216  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/font/fontello.eot
+    13164  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/font/fontello.svg
+    13048  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/font/fontello.ttf
+     7996  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/font/fontello.woff
+     6924  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/font/fontello.woff2
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/fonts/
+    13448  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/fonts/woosq.eot
+    38172  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/fonts/woosq.svg
+    13292  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/fonts/woosq.ttf
+    13368  2023-04-14 06:25   woo-quickview/admin/views/sp-framework/assets/fonts/woosq.woff
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/img/
+     5509  2026-07-30 13:54   woo-quickview/admin/views/sp-framework/assets/img/reno-quickview.svg
+     1972  2024-02-28 05:09   woo-quickview/admin/views/sp-framework/assets/img/reset-icon.svg
+     2138  2024-02-28 05:09   woo-quickview/admin/views/sp-framework/assets/img/save-icon.svg
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/js/
+    30082  2026-06-23 10:09   woo-quickview/admin/views/sp-framework/assets/js/main.js
+    22375  2026-06-23 10:09   woo-quickview/admin/views/sp-framework/assets/js/main.min.js
+    67049  2021-09-02 14:22   woo-quickview/admin/views/sp-framework/assets/js/plugins.js
+    47003  2021-09-02 14:22   woo-quickview/admin/views/sp-framework/assets/js/plugins.min.js
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/assets/webfonts/
+   134294  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.eot
+   747927  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.svg
+   133988  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.ttf
+    89988  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.woff
+    76736  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.woff2
+    34034  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.eot
+   144714  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.svg
+    33736  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.ttf
+    16276  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.woff
+    13224  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.woff2
+   203030  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.eot
+   918991  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.svg
+   202744  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.ttf
+   101648  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.woff
+    78268  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.woff2
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/classes/
+     3575  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/classes/abstract.class.php
+    26315  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/classes/admin-options.class.php
+    11501  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/classes/fields.class.php
+    15992  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/classes/setup.class.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/config/
+    36133  2026-07-30 13:54   woo-quickview/admin/views/sp-framework/config/framework.config.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/border/
+     6497  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/border/border.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/button_set/
+     3007  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/button_set/button_set.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/checkbox/
+     3955  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/checkbox/checkbox.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/code_editor/
+     1782  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/code_editor/code_editor.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/color/
+     1436  2023-02-07 11:45   woo-quickview/admin/views/sp-framework/fields/color/color.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/color_group/
+     1986  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/color_group/color_group.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/dimensions_advanced/
+     6123  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/icon/
+     2115  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/icon/default-icons.php
+     2048  2026-06-23 10:09   woo-quickview/admin/views/sp-framework/fields/icon/icon.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/image_select/
+     2887  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/image_select/image_select.php
+       28  2021-09-02 14:22   woo-quickview/admin/views/sp-framework/fields/index.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/select/
+     5393  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/select/select.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/slider/
+     2228  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/slider/slider.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/sortable/
+     2709  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/sortable/sortable.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/spacing/
+     5512  2026-06-23 10:09   woo-quickview/admin/views/sp-framework/fields/spacing/spacing.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/spinner/
+     1951  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/spinner/spinner.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/subheading/
+     1120  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/subheading/subheading.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/switcher/
+     2293  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/switcher/switcher.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/text/
+     1461  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/text/text.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/typography/
+    81833  2021-10-12 06:56   woo-quickview/admin/views/sp-framework/fields/typography/google-fonts.php
+    19777  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/typography/typography.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/fields/wqv_help/
+      892  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/fields/wqv_help/wqv_help.php
+        0  2026-08-20 09:22   woo-quickview/admin/views/sp-framework/functions/
+     4288  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/functions/actions.php
+     1434  2025-09-29 06:50   woo-quickview/admin/views/sp-framework/functions/helpers.php
+      771  2022-11-07 10:41   woo-quickview/admin/views/sp-framework/functions/sanitize.php
+     1566  2023-02-07 11:45   woo-quickview/admin/views/sp-framework/functions/validate.php
+       28  2021-09-02 14:22   woo-quickview/admin/views/sp-framework/index.php
+        0  2026-08-20 09:22   woo-quickview/class/
+     8578  2025-11-25 05:27   woo-quickview/class/popup.php
+     1268  2024-11-15 12:54   woo-quickview/class/router.php
+        0  2026-08-20 09:22   woo-quickview/includes/
+=== SIDECART ARCHIVE ===
+Archive:  /home/ubuntu/upload/side-cart-woocommerce.2.8.0.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-08-24 12:28   side-cart-woocommerce/
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/assets/
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/assets/images/
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/assets/images/info/
+     1055  2026-08-24 06:38   side-cart-woocommerce/admin/assets/images/info/check.png
+     1992  2026-08-24 06:38   side-cart-woocommerce/admin/assets/images/info/man.png
+     1281  2026-06-16 11:53   side-cart-woocommerce/admin/assets/images/info/returns.png
+      840  2026-06-16 11:53   side-cart-woocommerce/admin/assets/images/info/secure.png
+     1209  2026-06-16 11:53   side-cart-woocommerce/admin/assets/images/info/shipping.png
+     2969  2025-08-19 12:03   side-cart-woocommerce/admin/assets/images/one-liner.jpg
+     9240  2025-08-19 12:03   side-cart-woocommerce/admin/assets/images/pattern-card.jpg
+     5901  2025-08-19 12:03   side-cart-woocommerce/admin/assets/images/pattern-row.jpg
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/assets/images/pro/
+      931  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/box.png
+     1076  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/calculator.png
+      730  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/checkmark.png
+      977  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/coupons.png
+     1136  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/credit.png
+     1262  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/crown.png
+     1251  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/paint-palette.png
+      957  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/rewards.png
+     1064  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/sales.png
+     1783  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/settings.png
+      906  2025-06-18 14:00   side-cart-woocommerce/admin/assets/images/pro/wishlist.png
+     3828  2025-08-19 12:03   side-cart-woocommerce/admin/assets/images/separate.jpg
+    37948  2026-08-24 06:38   side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js
+    32383  2026-08-24 06:38   side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css
+    15950  2025-08-31 09:59   side-cart-woocommerce/admin/assets/xoo-wsc-serializejson.js
+    17821  2026-08-24 06:38   side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/templates/
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/templates/preview/
+      854  2026-06-21 12:33   side-cart-woocommerce/admin/templates/preview/xoo-wsc-footer-preview.php
+      742  2025-08-31 09:59   side-cart-woocommerce/admin/templates/preview/xoo-wsc-footer-totals.php
+      444  2025-08-31 09:59   side-cart-woocommerce/admin/templates/preview/xoo-wsc-header-old-preview.php
+     1357  2025-08-31 09:59   side-cart-woocommerce/admin/templates/preview/xoo-wsc-header-preview.php
+     4449  2026-08-24 06:38   side-cart-woocommerce/admin/templates/preview/xoo-wsc-preview.php
+     5784  2026-08-24 06:38   side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-card-preview.php
+      340  2025-02-24 11:06   side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-preview.php
+     4210  2026-08-24 06:38   side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-row-preview.php
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/templates/rewards/
+     4711  2026-06-16 11:53   side-cart-woocommerce/admin/templates/rewards/checkpoint.php
+    12077  2026-06-21 12:33   side-cart-woocommerce/admin/templates/rewards/progressbar.php
+      985  2026-06-21 12:33   side-cart-woocommerce/admin/templates/xoo-wsc-rewards.php
+      637  2025-06-18 14:00   side-cart-woocommerce/admin/templates/xoo-wsc-tab-info.php
+     2725  2026-08-24 06:38   side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/views/
+     1233  2023-04-18 20:46   side-cart-woocommerce/admin/views/oldtonew.php
+     3842  2026-08-24 06:38   side-cart-woocommerce/admin/views/sections.php
+        0  2026-08-24 12:28   side-cart-woocommerce/admin/views/settings/
+     1499  2026-06-16 11:53   side-cart-woocommerce/admin/views/settings/advanced.php
+    18021  2026-08-24 06:38   side-cart-woocommerce/admin/views/settings/general.php
+     3363  2026-08-24 06:38   side-cart-woocommerce/admin/views/settings/rewards.php
+    38166  2026-08-24 06:38   side-cart-woocommerce/admin/views/settings/style.php
+      910  2026-06-21 12:33   side-cart-woocommerce/admin/views/tabs.php
+        0  2026-08-24 12:28   side-cart-woocommerce/assets/
+        0  2026-08-24 12:28   side-cart-woocommerce/assets/css/
+        0  2026-08-24 12:28   side-cart-woocommerce/assets/css/fonts/
+    16492  2025-06-10 14:53   side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.eot
+    57171  2025-08-19 12:03   side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.svg
+    16304  2025-06-10 14:53   side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.ttf
+    16380  2025-06-10 14:53   side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.woff
+     4220  2025-06-10 14:53   side-cart-woocommerce/assets/css/xoo-wsc-fonts.css
+    16808  2026-08-24 06:38   side-cart-woocommerce/assets/css/xoo-wsc-style.css
+        0  2026-08-24 12:28   side-cart-woocommerce/assets/images/
+      465  2020-08-09 21:06   side-cart-woocommerce/assets/images/arrow-left.png
+      464  2020-08-09 21:06   side-cart-woocommerce/assets/images/arrow-right.png
+    16612  2026-06-16 11:53   side-cart-woocommerce/assets/images/empty-cart.png
+        0  2026-08-24 12:28   side-cart-woocommerce/assets/js/
+    18188  2026-08-24 12:04   side-cart-woocommerce/assets/js/xoo-wsc-main.js
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/
+    11437  2026-08-24 06:38   side-cart-woocommerce/includes/class-xoo-wsc-cart.php
+     7103  2026-08-24 06:38   side-cart-woocommerce/includes/class-xoo-wsc-frontend.php
+     1415  2026-08-24 06:38   side-cart-woocommerce/includes/class-xoo-wsc-helper.php
+     9377  2026-08-24 06:38   side-cart-woocommerce/includes/class-xoo-wsc-loader.php
+    10463  2026-08-24 06:38   side-cart-woocommerce/includes/class-xoo-wsc-template-args.php
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/assets/
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/
+    10400  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.eot
+    31742  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.svg
+    10228  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.ttf
+    10304  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.woff
+     3403  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/xoo-admin-fonts.css
+    28808  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/css/xoo-admin-style.css
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/assets/js/
+    24143  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/assets/js/xoo-admin-js.js
+    15950  2026-06-21 12:33   side-cart-woocommerce/includes/xoo-framework/admin/assets/js/xoo-admin-serializejson.js
+    48296  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/class-xoo-admin-settings.php
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/templates/
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/admin/templates/global/
+    10381  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/templates/global/button-theme.php
+     1107  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/templates/global/info-shortcode.php
+      497  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/templates/global/setting-upload.php
+        0  2021-05-26 18:33   side-cart-woocommerce/includes/xoo-framework/admin/templates/global/tab-info.php
+     5776  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/admin/templates/xoo-admin-settings-output-new.php
+     4040  2026-04-13 01:16   side-cart-woocommerce/includes/xoo-framework/admin/templates/xoo-admin-settings-output.php
+     1158  2026-05-01 17:50   side-cart-woocommerce/includes/xoo-framework/admin/templates/xoo-license-form.php
+      630  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/changelog.txt
+     1079  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/class-xoo-exception.php
+     8569  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/class-xoo-geolocation.php
+    18946  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/class-xoo-helper.php
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/countries/
+     4534  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/countries/phone.php
+        0  2026-08-24 12:28   side-cart-woocommerce/includes/xoo-framework/license/
+      317  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/xoo-framework-init.php
+     2590  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-framework/xoo-framework.php
+     5468  2026-08-24 06:38   side-cart-woocommerce/includes/xoo-wsc-functions.php
+        0  2026-08-24 12:28   side-cart-woocommerce/languages/
+     2144  2026-08-24 06:38   side-cart-woocommerce/languages/side-cart-woocommerce.pot
+        0  2026-08-24 12:28   side-cart-woocommerce/library/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome5/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome5/css/
+    59309  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/css/all.min.css
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome5/webfonts/
+   134294  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.eot
+   751644  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.svg
+   133988  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.ttf
+    89988  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.woff
+    76736  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.woff2
+    34034  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.eot
+   145515  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.svg
+    33736  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.ttf
+    16276  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.woff
+    13224  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.woff2
+   203030  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.eot
+   924025  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.svg
+   202744  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.ttf
+   101648  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.woff
+    78268  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.woff2
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome-iconpicker/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome-iconpicker/dist/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome-iconpicker/dist/css/
+     7677  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css
+     6210  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css
+        0  2026-08-24 12:28   side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/
+   136384  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js
+    74704  2025-08-19 12:03   side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.min.js
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/bling/
+      565  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/bling/_puffIn.scss
+      569  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/bling/_puffOut.scss
+      575  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/bling/_vanishIn.scss
+      579  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/bling/_vanishOut.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/boing/
+     1417  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/boing/_boingInUp.scss
+     2608  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/boing/_boingOutDown.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/bomb/
+     1571  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/bomb/_bombLeftOut.scss
+     1560  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/bomb/_bombRightOut.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/magic_effects/
+      935  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/magic_effects/_magic.scss
+      978  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/magic_effects/_swap.scss
+     1531  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/magic_effects/_twisterInDown.scss
+     1485  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/magic_effects/_twisterInUp.scss
+     2672  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/magic.scss
+       76  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/_magictime.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/math/
+     2559  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/math/_foolishIn.scss
+     2556  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/math/_foolishOut.scss
+      937  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/math/_holeOut.scss
+     1175  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/math/_swashIn.scss
+     1180  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/math/_swashOut.scss
+      136  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/_media.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/on_the_space/
+      981  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInDown.scss
+      969  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInLeft.scss
+      986  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInRight.scss
+      959  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInUp.scss
+      986  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutDown.scss
+      974  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutLeft.scss
+      991  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutRight.scss
+      964  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutUp.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/perspective/
+      991  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveDownReturn.scss
+      961  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveDown.scss
+      967  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveLeftReturn.scss
+      937  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveLeft.scss
+      992  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveRightReturn.scss
+      962  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveRight.scss
+      953  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveUpReturn.scss
+      923  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveUp.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/rotate/
+     1136  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateDown.scss
+     1124  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateLeft.scss
+     1129  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateRight.scss
+     1110  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateUp.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/slide/
+      789  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideDownReturn.scss
+      759  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideDown.scss
+      793  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideLeftReturn.scss
+      763  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideLeft.scss
+      794  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideRightReturn.scss
+      764  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideRight.scss
+      783  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideUpReturn.scss
+      753  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/slide/_slideUp.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/static_effects/
+     1236  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownLeftReturn.scss
+     1206  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownLeft.scss
+     1245  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownRightReturn.scss
+     1215  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownRight.scss
+     1198  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpLeftReturn.scss
+     1168  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpLeft.scss
+     1215  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpRightReturn.scss
+     1185  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpRight.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/static_effects_out/
+     1289  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects_out/_openDownLeftOut.scss
+     1298  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects_out/_openDownRightOut.scss
+     1251  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects_out/_openUpLeftOut.scss
+     1268  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/static_effects_out/_openUpRightOut.scss
+        0  2026-08-24 12:28   side-cart-woocommerce/library/magic/assets/scss/tin/
+      997  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/tin/_tinDownIn.scss
+     1002  2025-02-24 11:06   side-cart-woocommerce/library/magic/assets/scss/tin/_tinDownOut.scss
+=== QUICKVIEW FILE COUNTS ===
+165
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/config.json
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/fontello.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/fontello.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/font/fontello.eot
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/font/fontello.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/font/fontello.ttf
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/font/fontello.woff
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/font/fontello.woff2
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/check-icon.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/checkmark.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/close-icon.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/johntosh.png
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/martin.png
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/michaelh.png
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/shapedplugin-team.jpg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.js
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.min.js
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/bottom-image.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/Cascading.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/left-image.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/Modal-Window.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/offer-banner/bfcm-offer-banner.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/offer-banner/new-year-offer-banner.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/rebrand-notice-icon.gif
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/right-image.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/Slide-Ins-Center.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/Slide-Ins-Left.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/Slide-Ins-Right.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/top-image.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/woo-quick-view-notice.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/font-awesome.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/font-awesome.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/fontello.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/fontello.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/icons.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/icons.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style-rtl.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style-rtl.min.css
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/font/fontello.eot
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/font/fontello.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/font/fontello.ttf
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/font/fontello.woff
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/font/fontello.woff2
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/fonts/woosq.eot
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/fonts/woosq.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/fonts/woosq.ttf
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/fonts/woosq.woff
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/img/reno-quickview.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/img/reset-icon.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/img/save-icon.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.min.js
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.min.js
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.eot
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.ttf
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.woff
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.woff2
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.eot
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.ttf
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.woff
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.woff2
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.eot
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.svg
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.ttf
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.woff
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.woff2
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/classes/abstract.class.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/classes/admin-options.class.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/classes/fields.class.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/classes/setup.class.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/config/framework.config.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/border/border.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/button_set/button_set.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/checkbox/checkbox.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/code_editor/code_editor.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/color/color.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/color_group/color_group.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/icon/default-icons.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/icon/icon.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/image_select/image_select.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/index.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/select/select.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/slider/slider.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/sortable/sortable.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/spacing/spacing.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/spinner/spinner.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/subheading/subheading.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/switcher/switcher.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/text/text.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/typography/google-fonts.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/typography/typography.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/wqv_help/wqv_help.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/functions/actions.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/functions/helpers.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/functions/sanitize.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/functions/validate.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/index.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/class/popup.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/class/router.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/class-woo-quick-view-activator.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/class-woo-quick-view-updates.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/custom-css.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/functions.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/loader.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/updates/update-1.0.11.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/updates/update-1.0.7.php
+=== SIDECART FILE COUNTS ===
+194
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/info/check.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/info/man.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/info/returns.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/info/secure.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/info/shipping.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/one-liner.jpg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pattern-card.jpg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pattern-row.jpg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/box.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/calculator.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/checkmark.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/coupons.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/credit.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/crown.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/paint-palette.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/rewards.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/sales.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/settings.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/pro/wishlist.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/images/separate.jpg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-serializejson.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-footer-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-footer-totals.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-header-old-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-header-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-card-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-row-preview.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/checkpoint.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/progressbar.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-rewards.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-info.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/rewards.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/tabs.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.eot
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.svg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.ttf
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.woff
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/images/arrow-left.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/images/arrow-right.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/images/empty-cart.png
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-frontend.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-helper.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-loader.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-template-args.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.eot
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.svg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.ttf
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.woff
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/xoo-admin-fonts.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/xoo-admin-style.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/js/xoo-admin-js.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/js/xoo-admin-serializejson.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/class-xoo-admin-settings.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/global/button-theme.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/global/info-shortcode.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/global/setting-upload.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/global/tab-info.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/xoo-admin-settings-output-new.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/xoo-admin-settings-output.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/templates/xoo-license-form.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/changelog.txt
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/class-xoo-exception.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/class-xoo-geolocation.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/class-xoo-helper.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/countries/phone.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/xoo-framework-init.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/xoo-framework.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-wsc-functions.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/languages/side-cart-woocommerce.pot
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/css/all.min.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.eot
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.svg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.ttf
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.woff
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.woff2
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.eot
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.svg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.ttf
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.woff
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.woff2
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.eot
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.svg
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.ttf
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.woff
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.woff2
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.min.js
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/bling/_puffIn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/bling/_puffOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/bling/_vanishIn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/bling/_vanishOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/boing/_boingInUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/boing/_boingOutDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/bomb/_bombLeftOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/bomb/_bombRightOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/magic_effects/_magic.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/magic_effects/_swap.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/magic_effects/_twisterInDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/magic_effects/_twisterInUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/magic.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/_magictime.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/math/_foolishIn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/math/_foolishOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/math/_holeOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/math/_swashIn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/math/_swashOut.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/_media.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInRight.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceInUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutRight.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/on_the_space/_spaceOutUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveDownReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveLeftReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveRightReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveRight.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveUpReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/perspective/_perspectiveUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateRight.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/rotate/_rotateUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideDownReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideDown.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideLeftReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideRightReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideRight.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideUpReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/slide/_slideUp.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownLeftReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownRightReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openDownRight.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpLeftReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpLeft.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpRightReturn.scss
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/assets/scss/static_effects/_openUpRight.scss

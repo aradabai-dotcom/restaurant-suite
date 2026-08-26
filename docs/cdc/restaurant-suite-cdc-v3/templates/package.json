@@ -1,0 +1,32 @@
+{
+  "name": "restaurant-suite-tooling",
+  "private": true,
+  "engines": {
+    "node": ">=22 <27"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.0.0",
+    "@lhci/cli": "^0.0.0",
+    "@playwright/test": "^1.0.0",
+    "@wp-playground/cli": "^1.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "eslint . && stylelint '**/*.{css,scss}'",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "test:js": "vitest run",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:debug": "playwright test --headed --debug",
+    "a11y": "playwright test tests/e2e/accessibility.spec.ts",
+    "perf": "lhci autorun",
+    "validate": "npm run build && npm run lint && npm run format:check && npm run test:js && npm run e2e"
+  }
+}

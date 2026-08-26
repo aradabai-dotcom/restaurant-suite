@@ -1,0 +1,9 @@
+{
+  "name": "restaurant-suite",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test:js": "vitest run",
+    "e2e": "playwright test"
+  }
+}

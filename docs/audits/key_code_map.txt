@@ -1,0 +1,1570 @@
+=== QUICKVIEW MAIN ===
+<?php
+/**
+ * Plugin Name:   Reno Quick View (formerly Quick View for WooCommerce)
+ * Plugin URI:    https://shapedplugin.com/reno-quick-view?ref=1
+ * Description:   <strong>Reno Quick View</strong> allows you to add a quick view button in product loop so that visitors to quickly view product information (using AJAX) in a nice modal without opening the product page.
+ * Version:       2.3.0
+ * Author:        ShapedPlugin LLC
+ * Author URI:    https://shapedplugin.com/
+ * Text Domain:   woo-quickview
+ * Domain Path:   /languages
+ * Requires Plugins: woocommerce
+ * WC requires at least: 4.0
+ * WC tested up to: 10.9.4
+ * License:           GPL v2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * @package Woo_Quick_View
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+if ( ! function_exists( 'activate_woo_quick_view' ) ) {
+	/**
+	 * The code that runs during plugin activation.
+	 * This action is documented in includes/class-woo-quick-view-activator.php
+	 */
+	function activate_woo_quick_view() {
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-woo-quick-view-activator.php';
+		Woo_Quick_View_Activator::activate();
+	}
+}
+
+register_activation_hook( __FILE__, 'activate_woo_quick_view' );
+
+/**
+ * Handles core plugin hooks and action setup.
+ *
+ * @package Woo_Quick_View
+ *
+ * @since 1.0
+ */
+if ( ! class_exists( 'SP_Woo_Quick_View' ) && ! class_exists( 'SP_Woo_Quick_View_Pro' ) ) {
+	/**
+	 * SP_Woo_Quick_View class
+	 */
+	class SP_Woo_Quick_View {
+		/**
+		 * Plugin version
+		 *
+		 * @var string
+		 */
+		public $version = '2.3.0';
+
+		/**
+		 * Router
+		 *
+		 * @var SP_WQV_Router $router
+		 */
+		public $router;
+
+		/**
+		 * Shortcode
+		 *
+		 * @var SP_WQV_Shortcode $shortcode
+		 */
+		public $shortcode;
+
+		/**
+		 * Popup
+		 *
+		 * @var SP_WQV_Popup $popup
+		 */
+		public $popup;
+
+		/**
+		 * Instance
+		 *
+		 * @var null
+		 * @since 1.0
+		 */
+		protected static $instance = null;
+
+		/**
+		 * Instance
+		 *
+		 * @return SP_Woo_Quick_View
+		 * @since 1.0
+		 */
+		public static function instance() {
+			if ( is_null( self::$instance ) ) {
+				self::$instance = new self();
+			}
+
+			return self::$instance;
+		}
+
+		/**
+		 * Constructor.
+		 */
+		public function __construct() {
+			// Define constants.
+			$this->define_constants();
+
+			// Initialize the action hooks.
+			$this->init_actions();
+
+			// Initialize the filter hooks.
+			$this->init_filters();
+
+			// Required class file include.
+			spl_autoload_register( array( $this, 'autoload' ) );
+
+			// Include required files.
+			$this->includes();
+
+			// instantiate classes.
+			$this->instantiate();
+		}
+
+		/**
+		 * Define constants
+		 *
+		 * @since 1.0
+		 */
+		public function define_constants() {
+			define( 'SP_WQV_VERSION', $this->version );
+			define( 'SP_WQV_PATH', plugin_dir_path( __FILE__ ) );
+			define( 'SP_WQV_URL', plugin_dir_url( __FILE__ ) );
+			define( 'SP_WQV_BASENAME', plugin_basename( __FILE__ ) );
+		}
+
+		/**
+		 * Initialize WordPress action hooks
+		 *
+		 * @return void
+		 */
+		public function init_actions() {
+			add_action( 'init', array( $this, 'init_button_position' ) );
+			add_action( 'before_woocommerce_init', array( $this, 'declare_compatibility_with_woo_hpos_feature' ) );
+		}
+
+		/**
+		 * Quick view button position
+		 */
+		public function init_button_position() {
+			$wqv_button_position = sp_wqv_get_option( 'wqvpro_quick_view_button_position' );
+			switch ( $wqv_button_position ) {
+				case 'before_add_to_cart':
+				case 'after_add_to_cart':
+					add_filter( 'woocommerce_loop_add_to_cart_link', array( $this, 'sp_wqv_quick_view_button' ), 15 );
+					break;
+				case 'below_product':
+					// For shop or product archive page.
+					add_action( 'woocommerce_after_shop_loop_item', array( $this, 'wqvpro_quick_view_button_after_product_price' ), 99 );
+					// For product slider pro / free.
+					add_action( 'sp_wps_after_product_details_inner', array( $this, 'wqvpro_quick_view_button_after_product_price' ), 99 );
+					break;
+			}
+		}
+
+		/**
+		 * Declare the compatibility of WooCommerce High-Performance Order Storage (HPOS) feature.
+		 *
+		 * @since 1.4.15
+		 *
+		 * @return void
+		 */
+		public function declare_compatibility_with_woo_hpos_feature() {
+			if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+			}
+		}
+
+		/**
+		 * Initialize WordPress filter hooks
+		 *
+		 * @return void
+		 */
+		public function init_filters() {
+			add_filter( 'plugin_action_links', array( $this, 'add_plugin_action_links' ), 10, 2 );
+			if ( ( class_exists( 'WEPOF_Extra_Product_Options' ) ) ) {
+				add_filter( 'thwepof_hook_names_before_single_product', array( $this, 'woo_extra_product_addons' ), 80, 2 );
+			}
+		}
+
+		/**
+		 * Support fields of WooCommerce Custom Product Addons.
+		 *
+		 * @param  array $value quick view button action hook.
+		 * @return array
+		 */
+		public function woo_extra_product_addons( $value ) {
+			$value = array( 'wqv_product_content' );
+			return $value;
+		}
+
+		/**
+		 * Add plugin action menu
+		 *
+		 * @param array  $links action link.
+		 * @param string $file plugin file.
+		 *
+		 * @return array
+		 */
+		public function add_plugin_action_links( $links, $file ) {
+			if ( SP_WQV_BASENAME === $file ) {
+				$new_links = sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=wqv_settings' ), __( 'Settings', 'woo-quickview' ) );
+				$links     = is_array( $links ) ? $links : array();
+				array_unshift( $links, $new_links );
+
+				$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Pro!</a>', 'https://shapedplugin.com/reno-quick-view?ref=1' );
+			}
+
+			return $links;
+		}
+
+		/**
+		 * Autoload class files on demand
+		 *
+		 * @param string $class requested class name.
+		 */
+		public function autoload( $class ) {
+			$name = explode( '_', $class );
+			if ( isset( $name[2] ) ) {
+				$class_name = strtolower( $name[2] );
+				$filename   = SP_WQV_PATH . '/class/' . $class_name . '.php';
+
+				if ( file_exists( $filename ) ) {
+					require_once $filename;
+				}
+			}
+		}
+
+		/**
+		 * Instantiate all the required classes
+		 *
+		 * @since 2.4
+		 */
+		public function instantiate() {
+			$this->popup = SP_WQV_Popup::getInstance();
+
+			do_action( 'sp_wqv_instantiate', $this );
+		}
+
+		/**
+		 * Page router instantiate
+		 *
+		 * @since 1.0
+		 */
+		public function page() {
+			$this->router = SP_WQV_Router::instance();
+
+			return $this->router;
+		}
+
+		/**
+		 * Include the required files
+		 *
+=== QUICKVIEW POPUP ===
+<?php
+/**
+ * This class defines all code necessary to run during the popup open.
+ *
+ * @since      1.0.7
+ * @package    Woo_Quick_View
+ * @subpackage Woo_Quick_View/includes
+ * @author     ShapedPlugin <support@shapedplugin.com>
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Woo Quick View- popup class
+ *
+ * @since 1.0
+ */
+class SP_WQV_Popup {
+
+	/**
+	 * GetInstance
+	 *
+	 * @var SP_WQV_Popup single instance of the class
+	 *
+	 * @since 1.0
+	 */
+	protected static $_instance = null;
+
+	/**
+	 * The popup self instance.
+	 *
+	 * @since 1.0
+	 *
+	 * @static
+	 *
+	 * @return SP_WQV_Popup
+	 */
+	public static function getInstance() {
+		if ( ! self::$_instance ) {
+			self::$_instance = new self();
+		}
+
+		return self::$_instance;
+	}
+
+	/**
+	 * Initialize the class
+	 */
+	public function __construct() {
+		add_action( 'wp_ajax_wqv_popup_content', array( $this, 'wqv_popup_content' ) );
+		add_action( 'wp_ajax_nopriv_wqv_popup_content', array( $this, 'wqv_popup_content' ) );
+
+		add_action( 'wc_ajax_sp_ajax_add_cart', array( $this, 'ql_woocommerce_ajax_add_to_cart' ) );
+
+		$plugin_setting       = get_option( '_sp_wqvpro_options' );
+		$show_product_content = isset( $plugin_setting['wqvpro_show_product_content'] ) ? $plugin_setting['wqvpro_show_product_content'] : '';
+		$show_title           = isset( $show_product_content['title'] ) ? $show_product_content['title'] : true;
+		$show_price           = isset( $show_product_content['price'] ) ? $show_product_content['price'] : true;
+		$show_excerpt         = isset( $show_product_content['excerpt'] ) ? $show_product_content['excerpt'] : true;
+		$show_add_to_cart     = isset( $show_product_content['add_to_cart'] ) ? $show_product_content['add_to_cart'] : true;
+		$show_rating          = isset( $show_product_content['rating'] ) ? $show_product_content['rating'] : true;
+		$show_meta            = isset( $show_product_content['meta'] ) ? $show_product_content['meta'] : true;
+		if ( $show_title ) {
+			add_action( 'wqv_product_content', 'woocommerce_template_single_title', 5 );
+		}
+		if ( $show_rating ) {
+			add_action( 'wqv_product_content', 'woocommerce_template_single_rating', 10 );
+		}
+		if ( $show_price ) {
+			add_action( 'wqv_product_content', 'woocommerce_template_single_price', 15 );
+		}
+		if ( $show_excerpt ) {
+			add_action( 'wqv_product_content', 'woocommerce_template_single_excerpt', 20 );
+		}
+		if ( $show_add_to_cart ) {
+			add_action( 'wqv_product_content', 'woocommerce_template_single_add_to_cart', 25 );
+		}
+		if ( $show_meta ) {
+			add_action( 'wqv_product_content', 'woocommerce_template_single_meta', 30 );
+		}
+		$redirect_after_cart = isset( $plugin_setting['wqvpro_redirect_after_cart'] ) ? $plugin_setting['wqvpro_redirect_after_cart'] : '';
+		if ( 'same_page' === $redirect_after_cart ) {
+			add_filter( 'woocommerce_add_to_cart_form_action', array( $this, 'avoid_redirect_to_single_page' ), 10, 1 );
+		}
+	}
+
+	/**
+	 * Check if is quick view
+	 *
+	 * @access public
+	 * @since  1.3.1
+	 * @return bool
+	 */
+	public function wqv_is_quick_view() {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		return ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_REQUEST['action'] ) && 'wqv_popup_content' === $_REQUEST['action'] );
+	}
+
+	/**
+	 * Avoid redirect to single product page on add to cart action in quick view
+	 *
+	 * @since  1.3.1
+	 * @param string $value The redirect url value.
+	 * @return string
+	 */
+	public function avoid_redirect_to_single_page( $value ) {
+		if ( $this->wqv_is_quick_view() ) {
+			return '';
+		}
+		return $value;
+	}
+
+	/**
+	 * Handles AJAX request for adding a product to the cart in WooCommerce.
+	 *
+	 * This function processes an AJAX request to add a product to the cart. It retrieves
+	 * the product ID from the request parameters and triggers an action related to the
+	 * added product. It also refreshes the cart fragments to update the cart display.
+	 */
+	public function ql_woocommerce_ajax_add_to_cart() {
+		// Disable nonce check for read-only data.
+		// No need to use nonce for read-only data.
+
+		// Initialize the product ID variable.
+		$product_id = 0;
+
+		// Retrieve the product ID from the 'product_id' parameter.
+		if ( ! empty( $_POST['product_id'] ) ) { // phpcs:ignore -- WordPress.Security.NonceVerification.Recommended
+			$product_id = apply_filters( 'ql_woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) ); // phpcs:ignore -- WordPress.Security.NonceVerification.Recommended
+		}
+
+		// If product ID is still not set, retrieve it from the 'add-to-cart' parameter.
+		if ( empty( $product_id ) && ! empty( $_POST['add-to-cart'] ) ) {  // phpcs:ignore
+			$product_id = apply_filters( 'ql_woocommerce_add_to_cart_product_id', absint( $_POST['add-to-cart'] ) ); // phpcs:ignore -- WordPress.Security.NonceVerification.Recommended
+		}
+
+		// Trigger the 'ql_woocommerce_ajax_added_to_cart' action if product ID is set.
+		if ( ! empty( $product_id ) ) {
+			do_action( 'ql_woocommerce_ajax_added_to_cart', $product_id );
+		}
+
+		// Refresh the cart fragments to update the cart display.
+		WC_Ajax::get_refreshed_fragments();
+	}
+
+	/**
+	 * Popup Content
+	 *
+	 * @return void
+	 */
+	public function wqv_popup_content() {
+		global $post, $product;
+
+		// Validate product_id.
+		$product_id = isset( $_GET['product_id'] ) ? absint( $_GET['product_id'] ) : 0; // phpcs:ignore -- Security check: input var ok.
+
+		if ( ! $product_id ) {
+			wp_die( 'Not Found', 'Not Found', array( 'response' => 404 ) );
+		}
+
+		$post = get_post( $product_id );
+
+		// Validate post and post type and password protection.
+		if ( ! $post || 'publish' !== $post->post_status || 'product' !== $post->post_type || post_password_required( $post ) ) {
+			wp_die( 'Not Found', 'Not Found', array( 'response' => 404 ) );
+		}
+
+		setup_postdata( $post );
+
+		$post_id = $post->ID;
+		$product = wc_get_product( $post_id );
+
+		// Validate product visibility.
+		if ( 'hidden' === $product->get_catalog_visibility() ) {
+			wp_die( 'Not Found', 'Not Found', array( 'response' => 404 ) );
+		}
+
+		$thumb_ids = array();
+		$image_ids = $product->get_gallery_image_ids();
+
+		$thumb_ids      = array_merge( $thumb_ids, $image_ids );
+		$plugin_setting = get_option( '_sp_wqvpro_options' );
+		$image_lightbox = isset( $plugin_setting['wqvpro_product_image_lightbox'] ) ? $plugin_setting['wqvpro_product_image_lightbox'] : false;
+
+		?>
+
+		<div id="wqv-quick-view-content" class="mfp-with-anim sp-wqv-content sp-wqv-content-<?php echo esc_attr( get_the_id() ); ?>" data-id="<?php echo esc_attr( get_the_id() ); ?>">
+
+			<div class="wqv-product-images" data-attachments="<?php echo count( $thumb_ids ); ?>">
+				<div class="wqv-product-images-slider">
+					<?php
+					if ( has_post_thumbnail( $post->ID ) ) {
+						$attachment_id = get_post_thumbnail_id();
+						$image_title   = get_the_title( $attachment_id );
+						$props         = wc_get_product_attachment_props( $attachment_id, $post );
+						if ( $image_lightbox ) {
+							$lightbox_start = '<a data-fancybox="wqvpro-gallery" title="' . esc_attr( $image_title ) . '" " href="' . esc_url( $props['url'] ) . '">';
+							$lightbox_end   = '</a>';
+						} else {
+							$lightbox_start = '';
+							$lightbox_end   = '';
+						}
+						$image       = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), 0, $props );
+						$thumb_image = wp_get_attachment_image_src( $attachment_id, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ), 0 );
+						$thumb_image = is_array( $thumb_image ) ? $thumb_image : array( '' );
+						echo apply_filters( // phpcs:ignore
+							'woocommerce_single_product_image_html',
+							sprintf(
+								'<span data-thumb="%s" class="selected" itemprop="image" title="%s">%s%s%s</span>',
+								$thumb_image[0],
+								esc_attr( $props['caption'] ),
+								$lightbox_start,
+								$image,
+								$lightbox_end
+							),
+							$post->ID
+						);
+
+					} else {
+						echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<span data-thumb="%s" class="selected" itemprop="image"><img src="%s" alt="%s" /></span>', wc_placeholder_img_src(), wc_placeholder_img_src(), __( 'Placeholder', 'woo-quickview' ) ), $post->ID ); // phpcs:ignore
+					}
+					?>
+				</div> <!-- wqv-product-images-slider -->
+
+			</div>
+
+			<div class="wqv-product-info">
+				<div class="wqv-product-content">
+
+				<?php do_action( 'wqv_product_content', $post_id ); ?>
+
+				</div>
+			</div>
+
+		</div>
+		<?php
+		wp_reset_postdata();
+
+		// End the request properly.
+		wp_die();
+	}
+}
+
+new SP_WQV_Popup();
+=== QUICKVIEW ROUTER ===
+<?php
+/**
+ * This class defines all code necessary to include framework .
+ *
+ * @since      1.0.7
+ * @package    Woo_Quick_View
+ * @subpackage Woo_Quick_View/includes
+ * @author     ShapedPlugin <support@shapedplugin.com>
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Woo Quick View- route class
+ *
+ * @since 1.0
+ */
+class SP_WQV_Router {
+
+	/**
+	 * Instance
+	 *
+	 * @var SP_WQV_Router single instance of the class
+	 *
+	 * @since 1.0
+	 */
+	protected static $_instance = null;
+
+
+	/**
+	 * Class Instance
+	 *
+	 * @since 1.0
+	 *
+	 * @static
+	 *
+	 * @return SP_WQV_Router
+	 */
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+
+		return self::$_instance;
+	}
+
+	/**
+	 * Include the required files
+	 *
+	 * @since 1.0
+	 *
+	 * @return void
+	 */
+	public function includes() {
+		include_once SP_WQV_PATH . 'includes/loader.php';
+	}
+
+	/**
+	 * Function
+	 *
+	 * @since 1.0
+	 *
+	 * @return void
+	 */
+	public function sp_wqv_function() {
+		include_once SP_WQV_PATH . 'includes/functions.php';
+	}
+
+	/**
+	 * Function
+	 *
+	 * @since 1.0
+	 *
+	 * @return void
+	 */
+	public function sp_wqv_framework() {
+		include_once SP_WQV_PATH . 'admin/views/sp-framework/classes/setup.class.php';
+	}
+}
+=== SIDECART MAIN ===
+<?php
+/**
+* Plugin Name: Side Cart WooCommerce
+* Plugin URI: http://xootix.com/side-cart-woocommerce
+* Author: XootiX
+* Version: 2.8.0
+* Text Domain: side-cart-woocommerce
+* Domain Path: /languages
+* Author URI: http://xootix.com
+* Description: Manage your cart from just a click away
+* Tags: cart drawer,floating cart,cart slider,shopping cart
+* Requires Plugins: woocommerce
+*/
+
+
+//Exit if accessed directly
+if( !defined('ABSPATH') ){
+	return;
+}
+
+if ( ! defined( 'XOO_WSC_PLUGIN_FILE' ) ) {
+	define( 'XOO_WSC_PLUGIN_FILE', __FILE__ );
+}
+
+/**
+ * Initialize
+ *
+ * @since    1.0.0
+ */
+function xoo_wsc_init(){
+
+	if( !class_exists( 'woocommerce' ) ) return;
+
+	do_action( 'xoo_wsc_before_plugin_activation' );
+
+	if ( ! class_exists( 'Xoo_Wsc_Loader' ) ) {
+		require_once 'includes/class-xoo-wsc-loader.php';
+	}
+
+	xoo_wsc();
+
+	
+}
+add_action( 'plugins_loaded','xoo_wsc_init', 15 );
+
+function xoo_wsc(){
+	return Xoo_Wsc_Loader::get_instance();
+}
+
+=== SIDECART CART ===
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+
+class Xoo_Wsc_Cart{
+
+	protected static $_instance = null;
+
+	public $notices = array();
+	public $glSettings;
+	public $coupons = array();
+	public $addedToCart = false;
+	public $bundleItems = array();
+
+	public $noticeHTML;
+
+	public $action;
+
+
+	public static function get_instance(){
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
+
+	
+	public function __construct(){
+		$this->glSettings = xoo_wsc_helper()->get_general_option();
+		$this->hooks();
+	}
+
+	public function hooks(){
+		add_action( 'wc_ajax_xoo_wsc_update_item_quantity', array( $this, 'update_item_quantity' ) );
+
+		add_action( 'wc_ajax_xoo_wsc_refresh_fragments', array( $this, 'get_refreshed_fragments' ) );
+
+		add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'set_ajax_fragments' ) );
+		
+		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'set_ajax_fragments' ) );
+
+
+		add_action( 'wc_ajax_xoo_wsc_add_to_cart', array( $this, 'add_to_cart' ) );
+
+		add_action( 'woocommerce_add_to_cart', array( $this, 'added_to_cart' ), 10, 6 );
+
+		add_filter( 'pre_option_woocommerce_cart_redirect_after_add', array( $this, 'prevent_cart_redirect' ), 20 );
+
+	}
+
+	public function prevent_cart_redirect( $value ){
+
+		$ajaxAtc = $this->glSettings['m-ajax-atc'];
+
+		if( $ajaxAtc !== 'no' ){
+			$value = 'no';
+		}
+
+		return $value;		
+	}
+
+	/* Add to cart is performed by woocommerce as 'add-to-cart' is passed */
+	public function add_to_cart(){
+
+		$this->action = 'addtocart';
+
+		if( !isset( $_POST['add-to-cart'] ) ) return;
+
+		if( $this->addedToCart ){
+			// trigger action for added to cart in ajax
+			do_action( 'woocommerce_ajax_added_to_cart', intval( $_POST['add-to-cart'] ) );
+			$this->get_refreshed_fragments();
+		}
+		else{
+			ob_start();
+			xoo_wsc_helper()->get_template('global/markup-notice.php');
+			$notice = ob_get_clean();
+
+			wp_send_json(array(
+				'error' 	=> 1,
+				'notice' 	=> $notice
+			));
+		}
+
+	}
+
+
+	public function added_to_cart( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ){
+
+		if( in_array( 'notifications', $this->glSettings['sch-show'] ) ){
+			$this->set_notice( __( 'Item added to cart', 'side-cart-woocommerce' ), 'success', 'addtocart' );
+		}
+
+		$this->addedToCart = 'yes';
+
+	}
+
+
+	public function set_notice( $notice, $type = 'success' ){
+		$this->notices[] = xoo_wsc_notice_html( $notice, $type );
+	}
+
+
+	public function print_notices_html( $wc_cart_notices = true, $clean = true ) {
+
+		if ( !( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+			return;
+		}
+
+		if ( ! isset( $this->noticeHTML ) ) {
+
+			if ( $wc_cart_notices ) {
+
+				do_action( 'woocommerce_check_cart_items' );
+
+				$wc_notices = wc_get_notices( 'error' );
+
+				foreach ( $wc_notices as $wc_notice ) {
+					$this->set_notice( $wc_notice['notice'], 'error' );
+				}
+
+				wc_clear_notices();
+			}
+
+			$notices = apply_filters( 'xoo_wsc_notices_before_print', $this->notices );
+
+			$notice_html = sprintf(
+				'<div class="xoo-wsc-notice-container"><ul class="xoo-wsc-notices">%1$s</ul></div>',
+				implode( '', $notices )
+			);
+
+			$this->noticeHTML = apply_filters(
+				'xoo_wsc_print_notices_html',
+				$notice_html,
+				$this->notices
+			);
+
+			if ( $clean ) {
+				$this->notices = array();
+			}
+		}
+
+		echo $this->noticeHTML;
+	}
+
+
+
+
+	public function update_item_quantity(){
+
+		$this->action = 'update';
+
+
+		$cart_key 	= sanitize_text_field( $_POST['cart_key'] );
+		$new_qty 	= (float) $_POST['qty'];
+
+		if( !is_numeric( $new_qty ) || $new_qty < 0 || !$cart_key ){
+			$this->set_notice( __( 'Something went wrong', 'side-cart-woocommerce' ) );
+		}
+		
+		$validated = apply_filters( 'xoo_wsc_update_quantity', true, $cart_key, $new_qty );
+
+		if( $validated && !empty( WC()->cart->get_cart_item( $cart_key ) ) ){
+
+			$updated = $new_qty == 0 ? WC()->cart->remove_cart_item( $cart_key ) : WC()->cart->set_quantity( $cart_key, $new_qty );
+
+			if( $updated && in_array( 'notifications', $this->glSettings['sch-show'] ) ){
+
+				if( $new_qty == 0 ){
+					$notice = __( 'Item removed', 'side-cart-woocommerce' );
+				}
+				else{
+					$notice = __( 'Item updated', 'side-cart-woocommerce' );
+				}
+
+				$this->set_notice( $notice, 'success' );
+				
+			}
+		}
+
+
+		$this->get_refreshed_fragments();
+
+		die();
+	}
+
+
+	public function set_ajax_fragments($fragments){
+
+		WC()->cart->calculate_totals();
+
+		ob_start();
+		xoo_wsc_helper()->get_template( 'global/markup-notice.php' );
+		$notice = ob_get_clean();
+		
+		
+		ob_start();
+		xoo_wsc_helper()->get_template( 'xoo-wsc-container.php' );
+		$container = ob_get_clean();
+
+		ob_start();
+		xoo_wsc_helper()->get_template( 'xoo-wsc-slider.php' );
+		$slider = ob_get_clean();
+
+		ob_start();
+		xoo_wsc_helper()->get_template( 'xoo-wsc-shortcode.php' );
+		$shortcode = ob_get_clean();
+
+		$fragments['div.xoo-wsc-container'] 		= $container; //Cart content
+		$fragments['div.xoo-wsc-slider'] 			= $slider;// Slider
+		$fragments['div.xoo-wsc-sc-cont'] 			= $shortcode;
+		$fragments['div.xoo-wsc-markup-notices'] 	= $notice;
+		
+		return $fragments;
+
+	}
+
+	public function get_refreshed_fragments(){
+		WC_AJAX::get_refreshed_fragments();
+	}
+
+
+	public function get_cart_count(){
+		if( $this->glSettings['m-bk-count'] === 'items' ){
+			return count( WC()->cart->get_cart() );
+		}
+		else{
+			return WC()->cart->get_cart_contents_count();
+		}
+	}
+
+
+	public function get_totals(){
+
+		$totals = array();
+
+		if( WC()->cart->is_empty() ) return $totals;
+
+		$show = $this->glSettings['scf-show'];
+
+		$showSubtotal 	= in_array( 'subtotal', $show );
+		$showSavings 	= in_array( 'savings', $show );
+
+		if( $showSavings ){
+
+			$savings = $this->get_cart_total_savings();
+
+			if( $savings ){
+				$totals['savings'] = array(
+					'label' 	=> $this->glSettings['sct-savings'],
+					'value' 	=> wc_price( $savings ),
+					'action' 	=> 'less'
+				);
+			}
+
+		}
+
+		if( $showSubtotal ){
+			$totals['subtotal'] = array(
+				'label' 	=> xoo_wsc_helper()->get_general_option('sct-subtotal'),
+				'value' 	=> WC()->cart->get_cart_subtotal(),
+			);
+		}
+
+		return apply_filters( 'xoo_wsc_cart_totals', $totals );
+
+	}
+
+
+	public function get_bundle_items(){
+
+		if( !empty( $this->bundleItems ) ){
+			return $this->bundleItems;
+		}
+
+		$data = array(
+
+			'bundled_items' => array(
+				'key' 		=> 'bundled_items',
+				'type' 		=> 'parent',
+				'delete' 	=> true,
+				'qtyUpdate' => true,
+				'image' 	=> true,
+				'link' 		=> true	
+			),
+
+			'bundled_by' => array(
+				'key' 		=> 'bundled_by',
+				'type' 		=> 'child',
+				'delete' 	=> false,
+				'qtyUpdate' => false,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+
+
+			'mnm_contents' => array(
+				'key' 		=> 'mnm_contents',
+				'type' 		=> 'parent',
+				'delete' 	=> true,
+				'qtyUpdate' => true,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+
+
+			'mnm_container' => array(
+				'key' 		=> 'mnm_container',
+				'type' 		=> 'child',
+				'delete' 	=> false,
+				'qtyUpdate' => false,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+
+			'composite_children' => array(
+				'key' 		=> 'composite_children',
+				'type' 		=> 'parent',
+				'delete' 	=> true,
+				'qtyUpdate' => true,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+
+
+			'composite_parent' => array(
+				'key' 		=> 'composite_parent',
+				'type' 		=> 'child',
+				'delete' 	=> false,
+				'qtyUpdate' => false,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+
+			'woosb_ids' => array(
+				'key' 		=> 'woosb_ids',
+				'type' 		=> 'parent',
+				'delete' 	=> true,
+				'qtyUpdate' => true,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+
+			'woosb_parent_id' => array(
+				'key' 		=> 'woosb_parent_id',
+				'type' 		=> 'child',
+				'delete' 	=> false,
+				'qtyUpdate' => false,
+				'image' 	=> true,
+				'link' 		=> true
+			),
+			
+		);
+
+		$this->bundleItems = apply_filters( 'xoo_wsc_product_bundle_items', $data );
+
+		return $this->bundleItems;
+=== SIDECART FRONTEND ===
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+
+class Xoo_Wsc_Frontend{
+
+	protected static $_instance = null;
+	public $glSettings;
+	public $sySettings;
+	public $template_args = array();
+	public $shortcodeEls = array(
+		'subtotal' 	=> '.xoo-wsc-sc-subt',
+		'count' 	=> '.xoo-wsc-sc-count',
+		'icon' 		=> '.xoo-wsc-sc-bki'
+	);
+
+
+	public static function get_instance(){
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
+
+	public function __construct(){
+		$this->glSettings = xoo_wsc_helper()->get_general_option();
+		$this->sySettings = xoo_wsc_helper()->get_style_option();
+		$this->hooks();
+	}
+
+	public function hooks(){
+
+		add_action( 'wp_enqueue_scripts' ,array( $this,'enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts' , array( $this,'enqueue_scripts' ), 15 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_cart_fragment' ), 999 );
+
+		add_action( 'wp_footer', array( $this, 'cart_markup' ) );
+
+		add_action( 'wp', array( $this, 'basket_menu_filter' ) );
+
+		add_shortcode( 'xoo_wsc_cart', array( $this, 'basket_shortcode' ) );
+	}
+
+
+	public function basket_menu_filter(){
+		$menus = isset( $this->glSettings['shbk-menu'] ) ? $this->glSettings['shbk-menu'] : null;
+		if( !$menus || $menus === 'none' || empty( $menus ) ) return;
+		if( !is_array( $menus ) ){
+			$menus = array( $menus );
+		}
+		foreach ( $menus as $menu ) {
+			add_filter( 'wp_nav_menu_'.$menu.'_items', array( $this, 'basket_menu_html' ), 9999, 2 );
+		}
+		
+	}
+
+	public function basket_menu_html( $items, $args ){
+
+		$items .=  '<li class="menu-item xoo-wsc-menu-item">'.do_shortcode('[xoo_wsc_cart]').'</li>';
+
+  		return $items;
+
+	}
+
+
+	//Enqueue stylesheets
+	public function enqueue_styles(){
+
+		if( !xoo_wsc()->isSideCartPage() ) return;
+
+		if( $this->sySettings['scb-playout'] === "cards" ){
+			wp_enqueue_style( 'xoo-wsc-magic', XOO_WSC_URL.'/library/magic/dist/magic.min.css', array(), '1.0' );
+			wp_enqueue_script( 'xoo-wsc-masonry', XOO_WSC_URL.'/library/masonry/masonry.js', array(), '1.0', array( 'strategy' => 'defer', 'in_footer' => true ) );
+		}
+
+		//Fonts
+		wp_enqueue_style( 'xoo-wsc-fonts', XOO_WSC_URL.'/assets/css/xoo-wsc-fonts.css', array(), XOO_WSC_VERSION );
+
+		wp_enqueue_style( 'xoo-wsc-style', XOO_WSC_URL.'/assets/css/xoo-wsc-style.css', array(), XOO_WSC_VERSION );
+
+
+		$inline_style =  xoo_wsc_helper()->get_template(
+			'global/inline-style.php',
+			array(
+				'gl' => xoo_wsc_helper()->get_general_option(),
+				'sy' => xoo_wsc_helper()->get_style_option(),
+			),
+			'',
+			true
+		);
+
+		$customCSS = xoo_wsc_helper()->get_advanced_option('m-custom-css');
+
+		wp_add_inline_style( 'xoo-wsc-style', strip_tags( $inline_style . $customCSS ) );
+
+	}
+
+	public function enqueue_cart_fragment(){
+		if( get_option( 'xoo-wsc-enqueue-cartfragment' ) !== 'no' ){
+			wp_enqueue_script( 'wc-cart-fragments' );
+		}
+	}
+
+	//Enqueue javascript
+	public function enqueue_scripts(){
+
+		if( !xoo_wsc()->isSideCartPage() ) return;
+
+		$glSettings = $this->glSettings;
+		$sySettings = $this->sySettings;
+
+		if( is_product() ){
+			$ajaxAtc = xoo_wsc_enable_ajax_atc_for_product( get_the_id() );
+		}
+		else{
+			$ajaxAtc = $glSettings['m-ajax-atc'] !== 'no';
+		}
+
+		wp_enqueue_script( 'xoo-wsc-main-js', XOO_WSC_URL.'/assets/js/xoo-wsc-main.js', array('jquery'), XOO_WSC_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) ); // Main JS
+
+		$skipAjaxForData = array();
+
+		if( function_exists('WCS_ATT') ){
+			$skipAjaxForData['add-to-subscription'] = '';
+		}
+
+		$noticeMarkup = '<ul class="xoo-wsc-notices">%s</ul>';
+
+		wp_localize_script( 'xoo-wsc-main-js', 'xoo_wsc_params', array(
+			'adminurl'  			=> admin_url().'admin-ajax.php',
+			'wc_ajax_url' 		  	=> WC_AJAX::get_endpoint( "%%endpoint%%" ),
+			'qtyUpdateDelay' 		=> (int) $glSettings['scb-update-delay'],
+			'notificationTime' 		=> (int) $glSettings['sch-notify-time'],
+			'html' 					=> array(
+				'successNotice' =>	sprintf( $noticeMarkup, xoo_wsc_notice_html( '%s%', 'success' ) ),
+				'errorNotice'	=> 	sprintf( $noticeMarkup, xoo_wsc_notice_html( '%s%', 'error' ) ),
+			),
+			'strings'				=> array(
+				'maxQtyError' 			=> __( 'Only %s% in stock', 'side-cart-woocommerce' ),
+				'stepQtyError' 			=> __( 'Quantity can only be purchased in multiple of %s%', 'side-cart-woocommerce' ),
+				'calculateCheckout' 	=> __( 'Please use checkout form to calculate shipping', 'side-cart-woocommerce' ),
+				'couponEmpty' 			=> __( 'Please enter promo code', 'side-cart-woocommerce' )
+			),
+			'isCheckout' 			=> is_checkout(),
+			'isCart' 				=> is_cart(),
+			'sliderAutoClose' 		=> true,
+			'shippingEnabled' 		=> in_array( 'shipping' , $glSettings['scf-show'] ),
+			'couponsEnabled' 		=> in_array( 'coupon' , $glSettings['scf-show'] ),
+			'autoOpenCart' 			=> $glSettings['m-auto-open'],
+			'addedToCart' 			=> xoo_wsc_cart()->addedToCart,
+			'ajaxAddToCart' 		=> $ajaxAtc ? 'yes' : 'no',
+			'skipAjaxForData' 		=> $skipAjaxForData,
+			'showBasket' 			=> xoo_wsc_helper()->get_style_option('sck-enable'),
+			'flyToCart' 			=> 'no',
+			'productFlyClass' 		=> apply_filters( 'xoo_wsc_product_fly_class', '' ),
+			'refreshCart' 			=> xoo_wsc_helper()->get_advanced_option('m-refresh-cart'),
+			'fetchDelay' 			=> apply_filters( 'xoo_wsc_cart_fetch_delay', 200 ),
+			'fetchCart' 			=> xoo_wsc_helper()->get_advanced_option('m-fetch-cart'),
+			'triggerClass' 			=> xoo_wsc_helper()->get_advanced_option('m-trigger-class'),
+			'productLayout' 		=> $this->sySettings['scb-playout'],
+			'cardAnimate' 			=> array(
+				'enable' 	=> $sySettings['scbp-card-visible'] !== 'all_on_front' && !empty( $sySettings['scbp-card-back'] ) ? 'yes' : 'no',
+				'type' 		=> $sySettings['scbp-card-anim-type'],
+				'event' 	=> $sySettings['scbp-card-visible'],
+				'duration' 	=> $sySettings['scbp-card-anim-time'],
+			),
+			'menuCartHideOnEmpty' 	=> $glSettings['shbk-hide'],
+			'shortcodeEls' 			=> $this->shortcodeEls
+		) );
+	}
+
+
+	//Cart markup
+	public function cart_markup(){
+
+		if( !xoo_wsc()->isSideCartPage() ) return;
+
+		xoo_wsc_helper()->get_template( '/global/markup-notice.php' );
+		
+		xoo_wsc_helper()->get_template( 'xoo-wsc-markup.php' );
+
+
+	}
+
+	public function get_button_classes( $view = 'array', $custom = array() ){
+
+		$class = array_merge( $custom, array( 'xoo-wsc-btn' ) );
+
+		if( xoo_wsc_helper()->get_style_option('scf-btns-theme') === 'theme' ){
+			$class[] = 'button';
+			$class[] = 'btn';
+		}
+
+		return $view === 'array' ? $class : implode( ' ' , $class);
+	}
+
+
+	public function basket_shortcode($atts){
+
+		if( is_admin() || !xoo_wsc()->isSideCartPage() || defined('REST_REQUEST') && REST_REQUEST ) return;
+
+		$atts = shortcode_atts( array(), $atts, 'xoo_wsc_cart');
+
+		return xoo_wsc_helper()->get_template( 'xoo-wsc-shortcode.php', $atts, '', true );
+	}
+
+
+}
+
+function xoo_wsc_frontend(){
+	return Xoo_Wsc_Frontend::get_instance();
+}
+xoo_wsc_frontend();=== SIDECART JS SYMBOLS ===
+1:jQuery(document).ready(function($){
+6:	var get_wcurl = function( endpoint ) {
+7:		return xoo_wsc_params.wc_ajax_url.toString().replace(
+22:		$cartNoticeCont: function(){
+26:		$markupNoticeCont: function(){
+30:		add: function( notice, type = 'success', clearPrevious = true ){
+43:		setHTML: function(noticeHTML){
+44:			Notice.$cartNoticeCont().add( Notice.$markupNoticeCont() ).html(noticeHTML);
+47:		showNotification: function(){
+58:			Notice.timeout = setTimeout(function(){
+65:		hideNotification: function(){
+69:		hideMarkupNotice: function(){
+70:			Notice.$markupNoticeCont().removeClass('xoo-wsc-active');
+74:		showMarkupNotice: function(){
+82:			setTimeout(function(){$markupNotice.addClass('xoo-wsc-active')},10);
+86:			Notice.markupTimeout = setTimeout(function(){
+87:				$markupNotice.removeClass('xoo-wsc-active');
+104:			$(document.body).on( 'wc_fragments_loaded updated_checkout', this.onCartUpdate.bind(this) );
+114:			var ajaxData = {
+124:				$.extend( ajaxData, data );
+131:				$.each( ajaxData, function( key, value ){
+135:				ajaxData = serializedData;
+139:			return ajaxData;
+145:			var $activeEls 	= this.$modal.add( 'body' ).add('html'),
+149:				$activeEls.addClass(activeClass);
+152:				$activeEls.removeClass(activeClass);
+166:			this.$modal.addClass('xoo-wsc-loading');
+170:			this.$modal.removeClass('xoo-wsc-loading');
+176:			if( xoo_wsc_params.refreshCart === "yes" && typeof wc_cart_fragments_params !== 'undefined' ){
+177:				$( document.body ).trigger( 'wc_fragment_refresh' );
+183:			$.ajax({
+184:				url: get_wcurl( 'xoo_wsc_refresh_fragments' ),
+188:				success: function( response ){
+189:					this.updateFragments(response);
+191:				complete: function(){
+199:		updateCartCheckoutPage(){
+201:			//Refresh checkout page
+203:				if( $( 'form.checkout' ).length === 0 ){
+207:				$(document.body).trigger("update_checkout");
+212:				$(document.body).trigger("wc_update_cart");
+217:		updateFragments( response ){
+219:			if( response.fragments ){
+221:				$( document.body ).trigger( 'xoo_wsc_before_loading_fragments', [ response ] );
+225:				//Set fragments
+226:		   		$.each( response.fragments, function( key, value ) {
+230:		   		if( typeof wc_cart_fragments_params !== 'undefined' && ( 'sessionStorage' in window && window.sessionStorage !== null ) ){
+232:		   			sessionStorage.setItem( wc_cart_fragments_params.fragment_name, JSON.stringify( response.fragments ) );
+233:					localStorage.setItem( wc_cart_fragments_params.cart_hash_key, response.cart_hash );
+234:					sessionStorage.setItem( wc_cart_fragments_params.cart_hash_key, response.cart_hash );
+237:						sessionStorage.setItem( 'wc_cart_created', ( new Date() ).getTime() );
+242:				$( document.body ).trigger( 'wc_fragments_loaded' );
+248:			if( xoo_wsc_params.refreshCart === "yes" && typeof wc_cart_fragments_params !== 'undefined' ){
+250:				$( document.body ).trigger( 'wc_fragment_refresh' );
+280:				setTimeout(function(){
+293:			this.$modal.on( 'click', '.xoo-wsch-close, .xoo-wsc-opac, .xoo-wsc-cart-close', this.closeCartOnClick.bind(this) );
+296:			$(document.body).on( 'xoo_wsc_cart_updated', this.updateCartCheckoutPage.bind(this) );
+297:			$(document.body).on( 'click', 'a.added_to_cart, .xoo-wsc-cart-trigger', this.openCart.bind(this) );
+298:			$(document.body).on( 'added_to_cart', this.addedToCart.bind(this) );
+300:			$(document.body).on( 'wc-blocks_added_to_cart', this.blockAddedToCart.bind(this) );
+302:			$(document.body).on( 'adding_to_cart', this.checkIfWCAjaxAddToCart.bind(this) );
+304:			if( xoo_wsc_params.autoOpenCart === 'yes' && xoo_wsc_params.addedToCart === 'yes'){
+305:				this.openCart();
+308:			if( xoo_wsc_params.ajaxAddToCart === 'yes' ){
+309:				$(document.body).on( 'submit', 'form.cart', this.addToCartFormSubmit.bind(this) );
+312:			if( typeof wc_cart_fragments_params === 'undefined' ){
+317:				$(document.body).on( 'click', '.'+xoo_wsc_params.triggerClass, this.openCart.bind(this) );
+322:				$(document.body).on( 'updated_shipping_method', this.refreshMyFragments.bind(this) );
+338:				action 	= $toggler.hasClass( 'xoo-wsc-plus' ) ? 'add' : 'less',
+339:				newQty 	= action === 'add' ? baseQty + step : baseQty - step;
+377:					Notice.add( message, 'error' );
+388:			this.qtyUpdateDelay = setTimeout(function(){
+389:				$_this.updateItemQty( $input.parents('.xoo-wsc-product').data('key'), newQty )
+395:		updateItemQty( cart_key, qty ){
+408:			$.ajax({
+409:				url: get_wcurl( 'xoo_wsc_update_item_quantity' ),
+413:				success: function(response){
+414:					this.updateFragments( response );
+415:					$(document.body).trigger( 'xoo_wsc_quantity_updated', [response] );
+416:					$(document.body).trigger( 'xoo_wsc_cart_updated', [response] );
+428:			if( ( !(data instanceof FormData) || !data.has('action') || !data.get('action') === 'xoo_wsc_add_to_cart' ) && $button.hasClass('ajax_add_to_cart') ){
+435:				this.closeCartOnClick(e);
+438:				this.openCart(e);
+443:		openCart(e){
+449:			if( !this.cartLoaded && xoo_wsc_params.fetchCart === 'cart_open' ){
+458:		addToCartFormSubmit(e){
+462:			if( $form.closest('.product').hasClass('product-type-external') || $form.siblings('.xoo-wsc-disable-atc').length ) return;
+470:			//https://docs.woocommerce.com/document/override-loop-template-and-show-quantities-next-to-add-to-cart-buttons/
+471:			$.each( productData, function( key, form_item ){
+472:				if( form_item.name === 'productID' || form_item.name === 'add-to-cart' ){
+482:				var is_url = $form.attr('action').match(/add-to-cart=([0-9]+)/),
+492:	        	formData.append( 'add-to-cart', productID );
+495:	        formData.append( 'action', 'xoo_wsc_add_to_cart' );
+500:        	$.each( xoo_wsc_params.skipAjaxForData, function( key, value ){
+510:	        	this.addToCartAjax( $button, formData );//Ajax add to cart
+516:		addToCartAjax( $button, formData ){
+520:			$button.addClass('loading');
+523:			$( document.body ).trigger( 'adding_to_cart', [ $button, formData ] );
+525:			$.ajax({
+526:				url: get_wcurl( 'xoo_wsc_add_to_cart' ),
+533:			    success: function(response){
+535:					if(response.fragments){
+537:						$( document.body ).trigger( 'added_to_cart', [ response.fragments, response.cart_hash, $button ] );
+547:			    complete: function(){
+550:			    		.removeClass('loading')
+551:			    		.addClass('added');
+556:		addedToCart( e, response, hash, $button ){
+560:			this.updateFragments( { fragments: response } );
+563:				_this.openCart();
+579:					setTimeout(function(){
+580:						_this.openCart();	
+586:				setTimeout( function(){
+599:		closeCartOnClick(e){
+608:				$( document.body ).trigger( 'wc_fragment_refresh' );
+613:			this.updateItemQty( $( e.currentTarget ).parents('.xoo-wsc-product').data('key'), 0 );
+616:		updateItemQty( cart_key, qty ){
+627:			$.ajax({
+628:				url: get_wcurl( 'xoo_wsc_update_item_quantity' ),
+632:				success: function(response){
+633:					this.updateFragments( response );
+634:					$(document.body).trigger( 'xoo_wsc_quantity_updated', [response] );
+635:					$(document.body).trigger( 'xoo_wsc_cart_updated', [response] );
+688:				$.each( xoo_wsc_params.menuCartHideOnEmpty, function( index, val ){
+719:		init: function(){
+727:		animate: function(e){
+742:			$img.removeClass()
+743:			$img.addClass($img.attr('data-exclasses'));
+745:			$img.addClass( 'xoo-wsc-caniming' + ' ' + AnimateCard.type );
+748:		reverseAnimate: function(){
+754:			$img.addClass(AnimateCard.type+'Return');
+756:			AnimateCard.clear = setTimeout(function(){
+757:				$img.removeClass().addClass( $img.attr('data-exclasses') );
+=== QUICKVIEW JS SYMBOLS ===
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:2:; (function ($, window, document, undefined) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:32:		uid: function (prefix) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:38:		preg_quote: function (str) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:45:		name_nested_replace: function ($selector, field_id) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:50:			$selector.find(':radio').each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:56:			$selector.each(function (index) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:57:				$(this).find(':input').each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:70:		debounce: function (callback, threshold, immediate) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:72:			return function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:74:				var later = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:94:	$.fn.sp_wqv_clone = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:110:		this.find(':radio').each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:121:	$.fn.sp_wqv_expand_all = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:122:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:123:			$(this).on('click', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:137:	$.fn.sp_wqv_nav_options = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:138:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:146:			$window.on('hashchange sp_wqv.hashchange', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:199:	$.fn.sp_wqv_sticky = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:200:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:210:				stickyUpdate = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:225:				requestTick = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:228:						requestAnimationFrame(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:237:				onSticky = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:254:	$.fn.sp_wqv_dependency = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:255:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:267:				$fields.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:276:					$.each(controllers, function (index, depend_id) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:310:	$.fn.sp_wqv_field_sortable = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:311:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:320:				update: function (event, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:331:	$.fn.sp_wqv_field_code_editor = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:332:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:352:			editor.codemirror.on('change', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:361:	$.fn.sp_wqv_field_slider = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:362:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:380:				slide: function (e, o) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:385:			$input.on('keyup', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:395:	$.fn.sp_wqv_field_spinner = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:396:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:411:				create: function (event, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:416:				spin: function (event, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:427:	$.fn.sp_wqv_field_switcher = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:428:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:432:			$switcher.on('click', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:454:	$.fn.sp_wqv_confirm = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:455:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:456:			$(this).on('click', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:473:	$.fn.serializeObject = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:477:		$.each(this.serializeArray(), function (i, o) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:493:	$.fn.sp_wqv_save = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:494:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:502:			$this.on('click', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:511:					if ($this.hasClass('sp_wqv-save-ajax')) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:517:						window.wp.ajax.post('sp_wqv_' + $panel.data('unique') + '_ajax_save', {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:521:							.done(function (response) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:530:									$.each(response.errors, function (key, error_message) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:560:								$result_success.empty().append(response.notice).fadeIn('fast', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:561:									timeout = setTimeout(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:567:							.fail(function (response) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:589:	$.fn.sp_wqv_options = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:590:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:603:				window.onbeforeunload = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:607:				$content.on('change keypress', ':input', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:618:				setTimeout(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:623:			$(document).on('keydown', function (event) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:638:	if (typeof Color === 'function') {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:640:		Color.prototype.toString = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:662:	SP_WQV_Framework.funcs.parse_color = function (color) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:672:	$.fn.sp_wqv_color = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:673:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:687:				change: function (event, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:696:				create: function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:716:					$transparent_button.on('click', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:731:						slide: function (event, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:739:						create: function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:747:							$container.on('click', '.wp-picker-clear', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:757:							$container.on('click', '.wp-picker-default', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:785:	$.fn.sp_wqv_field_icon = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:787:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:790:			$this.on('click', '.sp_wqvp-icon-add', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:795:				var $modal = $('#sp_wqvp-modal-icon');
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:796:				$modal.show();
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:800:				if (!SP_WQV_Framework.vars.icon_modal_loaded) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:801:					$modal.find('.sp_wqvp-modal-loading').show();
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:803:					window.wp.ajax.post('spqvp-get-icons', {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:805:					}).done(function (response) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:806:						$modal.find('.sp_wqvp-modal-loading').hide();
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:807:						SP_WQV_Framework.vars.icon_modal_loaded = true;
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:809:						var $load = $modal.find('.sp_wqvp-modal-load').html(response.content);
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:810:						$load.on('click', 'a', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:819:							$modal.hide();
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:822:						$modal.on('change keyup', '.sp_wqvp-icon-search', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:826:							$icons.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:838:						$modal.on('click', '.sp_wqvp-modal-close, .sp_wqvp-modal-overlay', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:839:							$modal.hide();
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:846:			$this.on('click', '.sp_wqvp-warning-primary.fa.fa-trash-alt', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:861:	$.fn.sp_wqv_chosen = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:862:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:867:				is_ajax = $this.hasClass('sp_wqv-chosen-ajax') || false,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:881:			// Chosen ajax
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:882:			if (is_ajax) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:884:				var set_ajax_options = $.extend({
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:899:				$this.SP_WQV_FrameworkAjaxChosen(set_ajax_options);
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:913:				$this.on('change', function (obj, result) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:941:				$chosen_choices.bind('mousedown', function (event) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:952:					start: function (e, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:956:					update: function (e, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:962:						$chosen_choices.find('.search-choice-close').each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:964:							$.each(chosen_object.results_data, function (index, data) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:986:	$.fn.sp_wqv_checkbox = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:987:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:993:			$checkbox.on('click', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1003:	$.fn.sp_wqv_siblings = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1004:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1010:			$siblings.on('click', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1040:	$.fn.sp_wqv_help = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1041:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1048:				mouseenter: function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1059:				mouseleave: function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1080:	SP_WQV_Framework.vars.$window.on('resize sp_wqv.resize', SP_WQV_Framework.helper.debounce(function (event) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1096:	$.fn.sp_wqv_nav_menu = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1097:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1101:			$navmenu.on('click', 'a.item-edit', function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1105:			$navmenu.on('sortstop', function (event, ui) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1115:	$.fn.sp_wqv_reload_script_retry = function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1116:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1130:	$.fn.sp_wqv_reload_script = function (options) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1136:		return this.each(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1188:	$(document).ready(function () {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1201:	$(document).on('keyup change', '#sp_wqv-form', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js:1206:	$(".sp_wqv-save").on('click', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:5:* https://github.com/meltingice/ajax-chosen
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:6:* https://github.com/michaelperrin/ajax-chosen
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:11:(function($) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:13:  function SP_WQV_FrameworkAjaxChosen(element, options) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:19:  SP_WQV_FrameworkAjaxChosen.prototype.init = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:29:  SP_WQV_FrameworkAjaxChosen.prototype.events = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:33:    this.search_field.on('compositionstart', function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:37:    this.search_field.on('compositionend', function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:42:    this.search_field.on('keyup', function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:46:    this.search_field.on('focus', function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:52:  SP_WQV_FrameworkAjaxChosen.prototype.search_field_focused = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:59:  SP_WQV_FrameworkAjaxChosen.prototype.search_welcome_message = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:70:  SP_WQV_FrameworkAjaxChosen.prototype.update_list = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:93:    this.timer = setTimeout( function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:101:      _this.chosenXhr = window.wp.ajax.post('sp_wqv-chosen', _this.options.data).done( function( response ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:103:      }).fail( function( response ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:111:  SP_WQV_FrameworkAjaxChosen.prototype.show_results = function( items ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:125:    this.element.find('option').each(function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:135:    $.each(items, function(i, item) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:164:  $.fn.SP_WQV_FrameworkAjaxChosen = function(chosenOptions) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:165:    return this.each(function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:175:(function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:177:    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:179:    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:181:  SP_WQV_FrameworkAbstractChosenOrder = (function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:183:    function SP_WQV_FrameworkAbstractChosenOrder() {}
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:185:    SP_WQV_FrameworkAbstractChosenOrder.insertAt = function(node, index, parentNode) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:189:    SP_WQV_FrameworkAbstractChosenOrder.getFlattenedOptionsAndGroups = function(select) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:191:      options = Array.prototype.filter.call(select.childNodes, function(o) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:200:          sub_options = Array.prototype.filter.call(opt.childNodes, function(o) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:212:    SP_WQV_FrameworkAbstractChosenOrder.isValidMultipleSelectElement = function(element) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:216:    SP_WQV_FrameworkAbstractChosenOrder.getChosenUIContainer = function(select) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:224:    SP_WQV_FrameworkAbstractChosenOrder.isChosenified = function(select) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:228:    SP_WQV_FrameworkAbstractChosenOrder.forceSelection = function(select, selection) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:246:    SP_WQV_FrameworkAbstractChosenOrder.SP_WQV_FrameworkChosenOrder = function(select, order, force) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:276:          option = Array.prototype.filter.call(chosen_options, function(o) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:298:    SP_WQV_FrameworkChosenOrder: function(order, force) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:303:  this._SP_WQV_FrameworkChosenOrder = (function(_super) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:306:    function _SP_WQV_FrameworkChosenOrder() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:313:    _SP_WQV_FrameworkChosenOrder.isjQueryObject = function(obj) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:317:    _SP_WQV_FrameworkChosenOrder.getDOMElement = function(element) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:325:    _SP_WQV_FrameworkChosenOrder.searchChosenUIContainer = function(element) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:333:    _SP_WQV_FrameworkChosenOrder.triggerEvent = function(target, event_name) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:342:;(function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:344:    bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:345:    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:348:  SelectParser = (function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:349:    function SelectParser() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:354:    SelectParser.prototype.add_node = function(child) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:362:    SelectParser.prototype.add_group = function(group) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:383:    SelectParser.prototype.add_option = function(option, group_position, group_disabled) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:418:  SelectParser.select_to_array = function(select) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:429:  AbstractChosen = (function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:430:    function AbstractChosen(form_field, options1) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:446:    AbstractChosen.prototype.set_default_values = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:447:      this.click_test_action = (function(_this) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:448:        return function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:452:      this.activate_action = (function(_this) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:453:        return function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:479:    AbstractChosen.prototype.set_default_text = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:491:    AbstractChosen.prototype.choice_label = function(item) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:499:    AbstractChosen.prototype.mouse_enter = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:503:    AbstractChosen.prototype.mouse_leave = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:507:    AbstractChosen.prototype.input_focus = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:510:          return setTimeout(((function(_this) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:511:            return function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:523:    AbstractChosen.prototype.input_blur = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:526:        return setTimeout(((function(_this) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:527:          return function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:534:    AbstractChosen.prototype.label_click_handler = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:542:    AbstractChosen.prototype.results_option_build = function(options) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:573:    AbstractChosen.prototype.result_add_option = function(option) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:610:    AbstractChosen.prototype.result_add_group = function(group) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:632:    AbstractChosen.prototype.results_update_field = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:644:    AbstractChosen.prototype.reset_single_select_options = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:659:    AbstractChosen.prototype.results_toggle = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:667:    AbstractChosen.prototype.results_search = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:675:    AbstractChosen.prototype.winnow_results = function(options) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:737:    AbstractChosen.prototype.get_search_regex = function(escaped_search_string) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:747:    AbstractChosen.prototype.search_string_match = function(search_string, regex) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:756:    AbstractChosen.prototype.choices_count = function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:772:    AbstractChosen.prototype.choices_click = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:780:    AbstractChosen.prototype.keydown_checker = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:823:    AbstractChosen.prototype.keyup_checker = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:861:    AbstractChosen.prototype.clipboard_event_checker = function(evt) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:865:      return setTimeout(((function(_this) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:866:        return function() {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js:872:    AbstractChosen.prototype.container_width = function() {

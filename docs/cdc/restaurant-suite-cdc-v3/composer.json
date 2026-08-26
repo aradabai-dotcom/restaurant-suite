@@ -1,0 +1,9 @@
+{
+  "name": "restaurant-suite/project",
+  "description": "Restaurant Suite development tooling",
+  "require": {},
+  "require-dev": {},
+  "scripts": {
+    "validate": "@php -r \"echo \\"Initialize project dependencies before validation\\\n\";\""
+  }
+}

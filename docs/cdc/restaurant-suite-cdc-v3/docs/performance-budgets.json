@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "notes": "Seuils initiaux \u00e0 mesurer puis ajuster avec preuves r\u00e9elles.",
+  "pages": {
+    "menu": {
+      "js_transfer_kb": 140,
+      "css_transfer_kb": 90,
+      "requests": 45
+    },
+    "product": {
+      "js_transfer_kb": 170,
+      "css_transfer_kb": 100,
+      "requests": 55
+    },
+    "cart": {
+      "js_transfer_kb": 220,
+      "css_transfer_kb": 120,
+      "requests": 70
+    },
+    "dashboard": {
+      "js_transfer_kb": 320,
+      "css_transfer_kb": 160,
+      "requests": 100
+    }
+  },
+  "web_vitals": {
+    "lcp_ms": 2500,
+    "inp_ms": 200,
+    "cls": 0.1
+  }
+}

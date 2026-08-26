@@ -1,0 +1,710 @@
+=== QUICKVIEW MAIN PHP FILES ===
+/home/ubuntu/plugin_audit/quickview/woo-quickview/class/popup.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/class/router.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/class-woo-quick-view-activator.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/class-woo-quick-view-updates.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/custom-css.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/functions.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/includes/loader.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/index.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/uninstall.php
+/home/ubuntu/plugin_audit/quickview/woo-quickview/woo-quick-view.php
+=== SIDECART MAIN PHP/JS/CSS FILES ===
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-frontend.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-helper.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-loader.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-template-args.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-wsc-functions.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-body.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-container.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-footer.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-header-old.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-header.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-markup.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/templates/xoo-wsc-shortcode.php
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/xoo-wsc-main.php
+=== QUICKVIEW HOOKS/AJAX/ASSETS/SETTINGS ===
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:12:.sp-woo-quick-view-help a {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:15:.sp-woo-quick-view-help a:focus {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:19:.sp-woo-quick-view-help {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:23:.sp-woo-quick-view-help .wooqv-container {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:30:.sp-woo-quick-view-help .wooqv-section-title-help{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:36:.sp-woo-quick-view-help .wooqv-small-paragraph,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:37:.sp-woo-quick-view-help .wooqv-normal-paragraph{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:44:.sp-woo-quick-view-help .wooqv-small-paragraph {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:47:.sp-woo-quick-view-help .wooqv-section-subtitle {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:52:.sp-woo-quick-view-help .wooqv-big-btn-border,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:53:.sp-woo-quick-view-help .wooqv-small-btn,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:54:.sp-woo-quick-view-help .wooqv-big-btn,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:55:.sp-woo-quick-view-help .wooqv-medium-btn{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:66:.sp-woo-quick-view-help .wooqv-small-btn {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:70:.sp-woo-quick-view-help .wooqv-arrow-btn {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:73:.sp-woo-quick-view-help .wooqv-big-btn:hover {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:76:.sp-woo-quick-view-help .wooqv-big-btn{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:82:.sp-woo-quick-view-help .wooqv-pro-live-demo-btn {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:86:.sp-woo-quick-view-help .wooqv-big-btn-border {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:89:.sp-woo-quick-view-help .wooqv-info-box-title{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:94:.sp-woo-quick-view-help .wooqv-checkmark-icon,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:95:.sp-woo-quick-view-help .wooqv-close-icon,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:96:.sp-woo-quick-view-help .wooqv-check-icon{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:100:.sp-woo-quick-view-help .wooqv-close-icon {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:103:.sp-woo-quick-view-help .wooqv-check-icon {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:106:.sp-woo-quick-view-help .wooqv-checkmark-icon {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:109:.sp-woo-quick-view-help i.wooqv-hot,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:110:.sp-woo-quick-view-help i.wooqv-new {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:123:.sp-woo-quick-view-help i.wooqv-hot {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:129:.sp-woo-quick-view-help .wooqv-header-area-top {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:134:.sp-woo-quick-view-help .wooqv-header-area-top a,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:135:.sp-woo-quick-view-help .wooqv-header-area-top p {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:141:.sp-woo-quick-view-help .wooqv-header-area-top a{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:144:.sp-woo-quick-view-help .wooqv-header-area {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:149:.sp-woo-quick-view-help .wooqv-header-logo {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:153:.sp-woo-quick-view-help .wooqv-header-logo span{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:166:.sp-woo-quick-view-help .wooqv-header-logo-shape {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:171:.sp-woo-quick-view-help .wooqv-header-nav {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:174:.sp-woo-quick-view-help .wooqv-header-nav-menu ul{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:178:.sp-woo-quick-view-help .wooqv-header-nav-menu ul::after{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:187:.sp-woo-quick-view-help .wooqv-header-nav-menu ul li{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:190:.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:199:.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a.active {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:204:.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a:focus{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:208:.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a.active::before{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:221:.sp-woo-quick-view-help .wooqv-start-page-wrap {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:226:.sp-woo-quick-view-help .wooqv-video-area {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:234:.sp-woo-quick-view-help #about-us-tab,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:235:.sp-woo-quick-view-help #recommended-tab,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:236:.sp-woo-quick-view-help #lite-to-pro-tab {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:240:.sp-woo-quick-view-help .wooqv-video-area h2{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:243:.sp-woo-quick-view-help .wooqv-video-area iframe {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:247:.sp-woo-quick-view-help .wooqv-video-area ul {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:252:.sp-woo-quick-view-help .wooqv-video-area ul li {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:255:.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(1) a {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:260:.sp-woo-quick-view-help .wooqv-about-btn a:hover:nth-child(1),
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:261:.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(1) a:hover {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:264:.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(2) a {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:268:.sp-woo-quick-view-help .wooqv-big-btn-border:hover,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:269:.sp-woo-quick-view-help .wooqv-medium-btn:hover,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:270:.sp-woo-quick-view-help .wooqv-small-btn:hover,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:271:.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(2) a:hover,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:272:.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(3) a:hover {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:277:.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:284:.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box:not(:last-child){
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:287:.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box .wooqv-info-box-title {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:290:.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:293:.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box .wooqv-info-box-title i{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:300:.sp-woo-quick-view-help .wooqv-call-to-action-top {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:306:.sp-woo-quick-view-help .wooqv-lite-to-pro-wrap {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:311:.sp-woo-quick-view-help .wooqv-features{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:316:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:317:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:325:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:331:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body:nth-child(odd) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:334:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body .wooqv-title,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:335:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header .wooqv-title {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:340:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body span,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:341:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:346:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span.wooqv-pro {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:349:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span.wooqv-pro i {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:355:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span.wooqv-pro i::before{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:358:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:361:.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body span:not(:last-of-type){
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:364:.sp-woo-quick-view-help .wooqv-upgrade-to-pro {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:370:.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-section-subtitle {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:374:.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:380:.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn .wooqv-action-btn span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:384:.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn .wooqv-action-btn span a{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:389:.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn .wooqv-action-btn span a:hover{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:395:.sp-woo-quick-view-help .wooqv-testimonial .wooqv-testimonial-title-section {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:399:.sp-woo-quick-view-help .wooqv-testimonial .wooqv-testimonial-title-section span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:406:.sp-woo-quick-view-help .wooqv-testimonial-wrap {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:410:.sp-woo-quick-view-help .wooqv-testimonial-wrap .wooqv-testimonial-area {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:414:.sp-woo-quick-view-help .wooqv-testimonial-content {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:423:.sp-woo-quick-view-help .wooqv-testimonial-content p {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:428:.sp-woo-quick-view-help .wooqv-testimonial-content::after {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:438:.sp-woo-quick-view-help .wooqv-testimonial-content::before {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:448:.sp-woo-quick-view-help .wooqv-testimonial-info {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:453:.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:459:.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-img img {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:463:.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info h3 {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:467:.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info p {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:472:.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info .wooqv-star {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:477:  .sp-woo-quick-view-help .plugin-card {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:482:  .sp-woo-quick-view-help .plugin-card:nth-child(odd) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:487:  .sp-woo-quick-view-help .plugin-card:nth-child(2n) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:491:  .sp-woo-quick-view-help .plugin-card:nth-child(3n+1) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:496:  .sp-woo-quick-view-help .plugin-card:nth-child(3n) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:503:.sp-woo-quick-view-help .wooqv-recommended-page h2{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:509:.sp-woo-quick-view-help .wooqv-about-box {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:518:.sp-woo-quick-view-help .wooqv-about-img {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:525:.sp-woo-quick-view-help .wooqv-about-img span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:534:.sp-woo-quick-view-help .wooqv-about-img img {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:539:.sp-woo-quick-view-help .wooqv-about-info h3 {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:545:.sp-woo-quick-view-help .wooqv-about-info {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:548:.sp-woo-quick-view-help .wooqv-about-info p{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:555:.sp-woo-quick-view-help .wooqv-about-btn{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:560:.sp-woo-quick-view-help .wooqv-about-btn a:nth-child(1){
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:565:.sp-woo-quick-view-help .wooqv-our-plugin-list .wooqv-section-title-help{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:568:.sp-woo-quick-view-help .wooqv-our-plugin-list-wrap {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:574:.sp-woo-quick-view-help .wooqv-our-plugin-list-box img{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:577:.sp-woo-quick-view-help .wooqv-our-plugin-list-box {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:588:.sp-woo-quick-view-help .wooqv-our-plugin-list-box i {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:601:.sp-woo-quick-view-help .wooqv-our-plugin-list-box:hover {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:604:.sp-woo-quick-view-help .wooqv-our-plugin-list-box:hover i {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:607:.sp-woo-quick-view-help .wooqv-our-plugin-list-box h4{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:613:.sp-woo-quick-view-help .wooqv-our-plugin-list-box p{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:623:.sp-woo-quick-view-help .wooqv-footer-help-top {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:627:.sp-woo-quick-view-help .wooqv-footer-help-top span i {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:630:.sp-woo-quick-view-help .wooqv-footer-help-top ul{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:634:.sp-woo-quick-view-help .wooqv-footer-help-top p,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:635:.sp-woo-quick-view-help .wooqv-footer-help-top a {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:639:.sp-woo-quick-view-help .wooqv-footer-help-top ul li a{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:644:.sp-woo-quick-view-help .wooqv-footer-help-top a:hover,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:645:.sp-woo-quick-view-help .wooqv-footer-help-top ul li a:hover{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:651:  .sp-woo-quick-view-help .wooqv-video-area iframe{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:656:  .sp-woo-quick-view-help .wooqv-about-box,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:657:  .sp-woo-quick-view-help .wooqv-start-page-wrap {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:660:  .sp-woo-quick-view-help .wooqv-start-page-sidebar {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:664:  .sp-woo-quick-view-help .wooqv-about-img {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:668:  .sp-woo-quick-view-help {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:674:  .sp-woo-quick-view-help .wooqv-header-nav-menu ul li a{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:678:  .sp-woo-quick-view-help .wooqv-header-nav-menu ul li a i {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:681:  .sp-woo-quick-view-help .wooqv-header-logo-shape{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:684:  .sp-woo-quick-view-help .wooqv-our-plugin-list-wrap,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:685:  .sp-woo-quick-view-help .wooqv-testimonial-wrap{
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:688:  .sp-woo-quick-view-help .wooqv-about-btn {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.css:691:  .sp-woo-quick-view-help .wooqv-our-plugin-list-box {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/help-page.min.css:1:.wooqv__help.about-page *,.wooqv__help.header *,.wooqv__help.lite-to-pro-page *,.wooqv__help.start-page *{margin:0;padding:0;box-sizing:border-box}.sp-woo-quick-view-help a{text-decoration:none}.sp-woo-quick-view-help a:focus{box-shadow:none;outline:0}.sp-woo-quick-view-help{margin-left:-20px;padding:0 15px}.sp-woo-quick-view-help .wooqv-container{max-width:1240px;margin:auto}.sp-woo-quick-view-help .wooqv-section-title-help{font-size:28px;font-weight:600;line-height:28px;color:#1d2327}.sp-woo-quick-view-help .wooqv-normal-paragraph,.sp-woo-quick-view-help .wooqv-small-paragraph{font-size:14px;font-weight:400;line-height:22px;color:#3c434a;display:inline-block}.sp-woo-quick-view-help .wooqv-small-paragraph{font-size:12px}.sp-woo-quick-view-help .wooqv-section-subtitle{font-size:18px;line-height:28px;font-weight:400}.sp-woo-quick-view-help .wooqv-big-btn,.sp-woo-quick-view-help .wooqv-big-btn-border,.sp-woo-quick-view-help .wooqv-medium-btn,.sp-woo-quick-view-help .wooqv-small-btn{font-size:16px;font-weight:500;line-height:20px;color:#6d6b6a;border:1px solid #6d6b6a;display:inline-block;padding:14px 24px;border-radius:4px;transition:.3s}.sp-woo-quick-view-help .wooqv-small-btn{padding:8px 16px;font-size:14px}.sp-woo-quick-view-help .wooqv-arrow-btn{padding:14px 18px 14px 24px}.sp-woo-quick-view-help .wooqv-big-btn:hover{background-color:#009758}.sp-woo-quick-view-help .wooqv-big-btn{padding:16px 30px;background-color:#05aa64;color:#fff;border-color:transparent}.sp-woo-quick-view-help .wooqv-pro-live-demo-btn{border-color:#1a79bf;color:#1a79bf}.sp-woo-quick-view-help .wooqv-big-btn-border{padding:16px 30px}.sp-woo-quick-view-help .wooqv-info-box-title{font-size:18px;font-weight:600;color:#1d2327}.sp-woo-quick-view-help .wooqv-check-icon,.sp-woo-quick-view-help .wooqv-checkmark-icon,.sp-woo-quick-view-help .wooqv-close-icon{background-position:center;background-repeat:no-repeat}.sp-woo-quick-view-help .wooqv-close-icon{background-image:url(../img/close-icon.svg)}.sp-woo-quick-view-help .wooqv-check-icon{background-image:url(../img/check-icon.svg)}.sp-woo-quick-view-help .wooqv-checkmark-icon{background-image:url(../img/checkmark.svg)}.sp-woo-quick-view-help i.wooqv-hot,.sp-woo-quick-view-help i.wooqv-new{display:inline-block;background:#14ae5c;color:#fff;font-size:10px;text-align:center;border-radius:40px;font-style:normal;font-weight:600;text-transform:uppercase;padding:0 8px;margin-left:5px}.sp-woo-quick-view-help i.wooqv-hot{background-color:#ec2121}.sp-woo-quick-view-help .wooqv-header-area-top{text-align:center;background-color:#05aa64;padding:16px 0}.sp-woo-quick-view-help .wooqv-header-area-top a,.sp-woo-quick-view-help .wooqv-header-area-top p{color:#fff;font-size:16px;font-weight:400;line-height:20px}.sp-woo-quick-view-help .wooqv-header-area-top a{text-decoration:underline}.sp-woo-quick-view-help .wooqv-header-area{position:relative;background-color:#fff;padding:45px 0 25px}.sp-woo-quick-view-help .wooqv-header-logo{position:relative;display:inline-block}.sp-woo-quick-view-help .wooqv-header-logo span{position:absolute;top:-15px;right:-55px;display:inline-block;color:#4b4744;background:#ddf1fa;padding:3px 10px;font-size:13px;font-weight:700;border-radius:4px;border:1px solid #a9dbf2}.sp-woo-quick-view-help .wooqv-header-logo-shape{position:absolute;right:20px;top:40px}.sp-woo-quick-view-help .wooqv-header-nav{background-color:#fff}.sp-woo-quick-view-help .wooqv-header-nav-menu ul{display:flex;position:relative}.sp-woo-quick-view-help .wooqv-header-nav-menu ul::after{position:absolute;content:"";width:100%;height:2px;bottom:6px;left:0;background-color:#1a7abf4b}.sp-woo-quick-view-help .wooqv-header-nav-menu ul li{list-style:none}.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a{padding:14px 18px;display:inline-block;color:#1a79bf;font-size:14px;text-transform:uppercase;font-weight:500;letter-spacing:.3px}.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a.active{position:relative;z-index:2}.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a:focus{box-shadow:none;outline:0}.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a.active::before{position:absolute;content:"";width:100%;height:2px;background-color:#1a79bf;bottom:0;left:0;z-index:-1}.sp-woo-quick-view-help .wooqv-start-page-wrap{display:flex;gap:40px;margin-top:40px}.sp-woo-quick-view-help .wooqv-video-area{background:#fff;padding:40px;border-radius:8px;box-shadow:0 0 6px 0 rgb(0 0 0 / 6%);border:1px solid #e8e8eb}.sp-woo-quick-view-help #about-us-tab,.sp-woo-quick-view-help #lite-to-pro-tab,.sp-woo-quick-view-help #recommended-tab{display:none}.sp-woo-quick-view-help .wooqv-video-area h2{margin-bottom:20px}.sp-woo-quick-view-help .wooqv-video-area iframe{border-radius:6px}.sp-woo-quick-view-help .wooqv-video-area ul{margin-top:30px;margin-bottom:30px;display:flex}.sp-woo-quick-view-help .wooqv-video-area ul li{margin-right:20px}.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(1) a{color:#fff;background-color:#1a79bf;border-color:#1a79bf}.sp-woo-quick-view-help .wooqv-about-btn a:hover:nth-child(1),.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(1) a:hover{background-color:#155a9d}.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(2) a{color:#1a79bf;border-color:#1a79bf}.sp-woo-quick-view-help .wooqv-big-btn-border:hover,.sp-woo-quick-view-help .wooqv-medium-btn:hover,.sp-woo-quick-view-help .wooqv-small-btn:hover,.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(2) a:hover,.sp-woo-quick-view-help .wooqv-video-area ul li:nth-child(3) a:hover{color:#fff;background-color:#1a79bf;border-color:transparent}.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box{background:#fff;padding:30px;border-radius:6px;box-shadow:0 0 6px 0 rgba(0,0,0,.06);border:1px solid #e8e8eb}.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box:not(:last-child){margin-bottom:40px}.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box .wooqv-info-box-title{margin-bottom:12px}.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box span{margin-bottom:20px}.sp-woo-quick-view-help .wooqv-start-page-sidebar-info-box .wooqv-info-box-title i{color:#1a79bf;font-size:24px}.sp-woo-quick-view-help .wooqv-call-to-action-top{display:flex;justify-content:space-between;align-items:center;margin-top:35px}.sp-woo-quick-view-help .wooqv-lite-to-pro-wrap{padding:40px 0;background:#fff;border-radius:8px}.sp-woo-quick-view-help .wooqv-features{border-radius:6px;border:1px solid #ccc;overflow:hidden}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body,.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header{display:flex;justify-content:space-between;background:#1a79bf;font-size:20px;color:#fff;font-weight:600}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body{background-color:#fff;color:#3c434a;font-size:16px;font-weight:400}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body:nth-child(odd){background-color:#f0f5f9}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body .wooqv-title,.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header .wooqv-title{flex-basis:70%;width:70%;text-align:left}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body span,.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span{padding:28px;width:15%;text-align:center}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span.wooqv-pro{margin-right:-10px}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span.wooqv-pro i{position:relative;font-size:18px;left:-30px;top:-2px}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-header span.wooqv-pro i::before{position:absolute}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body span{padding:20px 30px}.sp-woo-quick-view-help .wooqv-features ul li.wooqv-body span:not(:last-of-type){border-right:1px solid #ccc}.sp-woo-quick-view-help .wooqv-upgrade-to-pro{text-align:center;margin:auto;max-width:750px;margin-top:60px}.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-section-subtitle{margin:20px 0 30px;display:inline-block}.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn{display:flex;justify-content:center;align-items:flex-start;gap:15px}.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn .wooqv-action-btn span{display:block;font-size:11px}.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn .wooqv-action-btn span a{color:inherit;text-decoration:underline dotted;transition:.2s linear}.sp-woo-quick-view-help .wooqv-upgrade-to-pro .wooqv-upgrade-to-pro-btn .wooqv-action-btn span a:hover{color:#1a79bf}.sp-woo-quick-view-help .wooqv-testimonial .wooqv-testimonial-title-section{text-align:center;margin:80px 0 40px}.sp-woo-quick-view-help .wooqv-testimonial .wooqv-testimonial-title-section span{font-size:14px;font-weight:600;color:#1a79bf;margin-bottom:12px;display:inline-block}.sp-woo-quick-view-help .wooqv-testimonial-wrap{display:flex;gap:30px}.sp-woo-quick-view-help .wooqv-testimonial-wrap .wooqv-testimonial-area{width:33%;flex-basis:33.33%}.sp-woo-quick-view-help .wooqv-testimonial-content{background-color:#fff;padding:20px 25px;position:relative;border-radius:8px;margin-bottom:20px;box-shadow:0 0 6px 0 rgba(0,0,0,.06);border:1px solid #e8e8eb}.sp-woo-quick-view-help .wooqv-testimonial-content p{font-size:16px;line-height:28px;color:#3c434a}.sp-woo-quick-view-help .wooqv-testimonial-content::after{content:"";position:absolute;bottom:-13px;left:40px;width:25px;height:15px;background-color:#fff;clip-path:polygon(0 0,50% 100%,100% 0)}.sp-woo-quick-view-help .wooqv-testimonial-content::before{content:"";position:absolute;bottom:-15px;left:40px;width:25px;height:15px;background-color:#e8e8eb;clip-path:polygon(0 0,50% 100%,100% 0)}.sp-woo-quick-view-help .wooqv-testimonial-info{display:flex;gap:20px;margin-left:20px}.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info{display:flex;flex-direction:column;justify-content:center;gap:6px}.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-img img{border-radius:50%;width:60px}.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info h3{font-size:16px;color:#1d2327}.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info p{margin:4px 0;font-size:12px;color:#3c434a}.sp-woo-quick-view-help .wooqv-testimonial-info .wooqv-info .wooqv-star{color:#ffc329;font-size:17px}@media screen and (min-width:1600px){.sp-woo-quick-view-help .plugin-card{width:48%;width:calc(49% - 8px)}.sp-woo-quick-view-help .plugin-card:nth-child(odd){clear:none;margin-left:8px}.sp-woo-quick-view-help .plugin-card:nth-child(2n){margin-right:0}.sp-woo-quick-view-help .plugin-card:nth-child(3n+1){clear:both;margin-left:8px}.sp-woo-quick-view-help .plugin-card:nth-child(3n){margin-right:8px}}.sp-woo-quick-view-help .wooqv-recommended-page h2{margin:30px 0 40px 8px}.sp-woo-quick-view-help .wooqv-about-box{display:flex;background:#fff;margin-top:40px;padding:40px;border-radius:8px;box-shadow:0 0 6px 0 rgba(0,0,0,.06);border:1px solid #e8e8eb}.sp-woo-quick-view-help .wooqv-about-img{width:50%;flex-basis:50%;flex-shrink:0;overflow:hidden;align-self:center}.sp-woo-quick-view-help .wooqv-about-img span{text-align:center;display:block;margin-top:12px;font-weight:400;font-size:13px;font-style:italic;color:#3c434a}.sp-woo-quick-view-help .wooqv-about-img img{width:100%;display:block;border-radius:8px}.sp-woo-quick-view-help .wooqv-about-info h3{font-size:26px;line-height:32px;margin-bottom:25px;color:#1d2327}.sp-woo-quick-view-help .wooqv-about-info{margin-right:40px}.sp-woo-quick-view-help .wooqv-about-info p{line-height:28px;margin-bottom:15px;font-size:16px;font-weight:400;color:#3c434a}.sp-woo-quick-view-help .wooqv-about-btn{margin-top:40px;display:flex;gap:20px}.sp-woo-quick-view-help .wooqv-about-btn a:nth-child(1){background-color:#1a79bf;border-color:transparent;color:#fff}.sp-woo-quick-view-help .wooqv-our-plugin-list .wooqv-section-title-help{margin-top:80px}.sp-woo-quick-view-help .wooqv-our-plugin-list-wrap{display:flex;gap:40px;flex-wrap:wrap;margin-top:40px}.sp-woo-quick-view-help .wooqv-our-plugin-list-box img{width:64px}.sp-woo-quick-view-help .wooqv-our-plugin-list-box{background-color:#fff;padding:26px;border-radius:8px;box-shadow:0 0 6px 0 rgba(0,0,0,.06);width:33%;flex-basis:calc(33% - 40px);transition:.3s;position:relative;border:1px solid #e8e8eb}.sp-woo-quick-view-help .wooqv-our-plugin-list-box i{position:absolute;top:50px;right:50px;font-size:20px;border:1px solid #00a1ff;border-radius:50%;padding:5px 1px;color:#00a1ff;transform:rotate(45deg);opacity:0;transition:.3s}.sp-woo-quick-view-help .wooqv-our-plugin-list-box:hover{border-color:#00a1ff}.sp-woo-quick-view-help .wooqv-our-plugin-list-box:hover i{opacity:1}.sp-woo-quick-view-help .wooqv-our-plugin-list-box h4{font-size:18px;font-weight:600;margin:15px 0;color:#1d2327}.sp-woo-quick-view-help .wooqv-our-plugin-list-box p{font-size:14px;font-weight:400;line-height:22px;color:#3c434a}.sp-woo-quick-view-help .wooqv-footer-help-top{text-align:center;margin-top:80px}.sp-woo-quick-view-help .wooqv-footer-help-top span i{color:#e57373}.sp-woo-quick-view-help .wooqv-footer-help-top ul{display:flex;justify-content:center}.sp-woo-quick-view-help .wooqv-footer-help-top a,.sp-woo-quick-view-help .wooqv-footer-help-top p{color:#6d6b6a;margin:5px 0}.sp-woo-quick-view-help .wooqv-footer-help-top ul li a{color:#969392;font-size:18px;margin-right:3px}.sp-woo-quick-view-help .wooqv-footer-help-top a:hover,.sp-woo-quick-view-help .wooqv-footer-help-top ul li a:hover{color:#1a79bf}@media only screen and (max-width:1240px){.sp-woo-quick-view-help .wooqv-video-area iframe{width:100%}}@media only screen and (max-width:960px){.sp-woo-quick-view-help .wooqv-about-box,.sp-woo-quick-view-help .wooqv-start-page-wrap{flex-direction:column}.sp-woo-quick-view-help .wooqv-start-page-sidebar{max-width:500px;margin:auto}.sp-woo-quick-view-help .wooqv-about-img{width:100%;margin-top:30px}.sp-woo-quick-view-help{margin-left:-10px}}@media only screen and (max-width:640px){.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a{padding:8px 8px;font-size:12px}.sp-woo-quick-view-help .wooqv-header-nav-menu ul li a i{display:none}.sp-woo-quick-view-help .wooqv-header-logo-shape{display:none}.sp-woo-quick-view-help .wooqv-our-plugin-list-wrap,.sp-woo-quick-view-help .wooqv-testimonial-wrap{flex-direction:column}.sp-woo-quick-view-help .wooqv-about-btn{display:inline-grid}.sp-woo-quick-view-help .wooqv-our-plugin-list-box{width:100%}}
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:6: * @subpackage woo-quick-view/admin
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:32:		'gallery-slider-for-woocommerce' => 'woo-gallery-slider.php',
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:37:		'woo-quickview'                  => 'woo-quick-view.php',
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:57:	protected static $not_show_plugin_list = array( 'aitasi-coming-soon', 'latest-posts', 'widget-post-slider', 'easy-lightbox-wp', 'woo-quickview' );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:81:	 * Wooqv_ajax_help_page function.
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:141:			$woocommerce_plugin = array( 'gallery-slider-for-woocommerce', 'woo-category-slider-grid', 'woo-product-slider', 'smart-brands-for-woocommerce' );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:146:				if ( in_array( $plugin['slug'], $woocommerce_plugin, true ) ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:188:									<?php esc_html_e( 'Activate', 'woo-quickview' ); ?>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:195:								<?php esc_html_e( 'Install Now', 'woo-quickview' ); ?>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:200:									<a href="<?php echo esc_url( $details_link ); ?>" class="thickbox open-plugin-details-modal" aria-label="<?php echo esc_attr( 'More information about ' . $plugin['name'] ); ?>" title="<?php echo esc_attr( $plugin['name'] ); ?>">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:201:								<?php esc_html_e( 'More Details', 'woo-quickview' ); ?>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:233:							<strong><?php esc_html_e( 'Version:', 'woo-quickview' ); ?></strong>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:242:						<?php echo esc_html( number_format_i18n( $plugin['active_installs'] ) ) . esc_html__( '+ Active Installations', 'woo-quickview' ); ?>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:250:							<strong><?php esc_html_e( 'Last Updated:', 'woo-quickview' ); ?></strong>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:251:							<span><?php echo esc_html( human_time_diff( $plugin['last_updated'] ) ) . ' ' . esc_html__( 'ago', 'woo-quickview' ); ?></span>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:328:		<div class="sp-woo-quick-view-help">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:353:								<li><a target="_blank" class='wooqv-medium-btn' href="https://demo.shapedplugin.com/woocommerce-quick-view/">Live Demo</a></li>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:354:								<li><a target="_blank" class='wooqv-medium-btn arrow-btn' href="https://shapedplugin.com/reno-quick-view?ref=1">Explore Reno Quick View <i class="wooqv-icon-button-arrow-icon"></i></a></li>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:364:								<a target="_blank" class='wooqv-small-btn' href="https://docs.shapedplugin.com/docs/woocommerce-quick-view/overview/">Browse Now</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:390:						<a target="_blank" href="https://shapedplugin.com/reno-quick-view?ref=1" class='wooqv-big-btn'>Upgrade to Pro Now!</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:583:									<a target="_blank" href="https://shapedplugin.com/reno-quick-view?ref=1" class='wooqv-big-btn'>Upgrade to Pro Now!</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:586:								<a target="_blank" href="https://shapedplugin.com/reno-quick-view?ref=1" class='wooqv-big-btn-border'>See All Features</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:587:								<a target="_blank" href="https://demo.shapedplugin.com/woocommerce-quick-view-pro/" class="wooqv-big-btn-border wooqv-pro-live-demo-btn">Pro Live Demo</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:631:									<p>This “quick view” plugin is a must-have, very useful and beautiful. I bought 3 plugins from this company already, and I never get disappointed so far. The team is very professional.</p>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:673:								<a target="_blank" href="https://shapedplugin.com/reno-quick-view?ref=1" class='wooqv-medium-btn'>Explore Reno Quick View</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:720:								<img src="<?php echo esc_url( $plugin_icon['gallery-slider-for-woocommerce'] ); ?>" alt="Reno Product Gallery">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:752:								<p>Display tabbed content smartly & quickly on your WooCommerce & WordPress site without coding skills.</p>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:754:							<a target="_blank" class="wooqv-our-plugin-list-box" href="https://shapedplugin.com/smart-swatches-for-woocommerce/?ref=1">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:760:							<a target="_blank" class="wooqv-our-plugin-list-box" href="https://shapedplugin.com/plugin/smart-brands-for-woocommerce/?ref=1">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php:762:								<img src="<?php echo esc_url( $plugin_icon['smart-brands-for-woocommerce'] ); ?>" alt="Smart Brands for WooCommerce">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.js:14:	$('.sp-woo-quick-view-help').on('click', '.wooqv-header-nav-menu a', function (e) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.js:34:		$('.sp-woo-quick-view-help .wooqv-header-nav-menu a[data-id="recommended-tab"]').trigger('click');
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.js:37:		$('.sp-woo-quick-view-help .wooqv-header-nav-menu a[data-id="lite-to-pro-tab"]').trigger('click');
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.js:40:		$('.sp-woo-quick-view-help .wooqv-header-nav-menu a[data-id="about-us-tab"]').trigger('click');
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/js/help-page.min.js:1:!function($){const hash=window.location.hash.replace("#","").split("#")[1];$(window).on("hashchange",(function(){let hash=window.location.hash.replace("#","").split("#")[1];"get-started"!==hash&&"recommended"!==hash&&"lite-to-pro"!==hash&&"about-us"!==hash&&"#tab=get-help"!==window.location.hash||($(".sp_wqv-nav.sp_wqv-nav-options ul li:last-child a").addClass("sp_wqv-active"),$('.sp_wqv-section[data-section-id="get-help"]').show()),hash||"#tab=get-help"===window.location.hash||$('.sp_wqv-section[data-section-id="get-help"]').hide()})),$(".sp-woo-quick-view-help").on("click",".wooqv-header-nav-menu a",(function(e){if($(this).hasClass("active"))return;let tabId=$(this).attr("data-id");$(".wooqv-header-nav-menu a").each((i,item)=>{$(item).removeClass("active"),$("#"+$(item).attr("data-id")).css("display","none")}),$(this).addClass("active"),$("#"+tabId).css("display","block")})),"get-started"!==hash&&"recommended"!==hash&&"lite-to-pro"!==hash&&"about-us"!==hash||($(".sp_wqv-nav.sp_wqv-nav-options ul li:last-child a").addClass("sp_wqv-active"),$('.sp_wqv-section[data-section-id="get-help"]').show()),"recommended"===hash&&$('.sp-woo-quick-view-help .wooqv-header-nav-menu a[data-id="recommended-tab"]').trigger("click"),"lite-to-pro"===hash&&$('.sp-woo-quick-view-help .wooqv-header-nav-menu a[data-id="lite-to-pro-tab"]').trigger("click"),"about-us"===hash&&$('.sp-woo-quick-view-help .wooqv-header-nav-menu a[data-id="about-us-tab"]').trigger("click"),$("body").on("click",".install-now",(function(e){var _this=$(this),_href=_this.attr("href");_this.addClass("updating-message").html("Installing..."),$.get(_href,(function(data){location.reload()})),e.preventDefault()}))}(jQuery);
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:2:#sp-woo-quick-view-review-notice {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:11:#sp-woo-quick-view-review-notice .sp-woo-quick-view-plugin-icon {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:19:#sp-woo-quick-view-review-notice .sp-woo-quick-view-plugin-icon img {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:25:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:29:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text h3 {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:36:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text p {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:41:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text p.sp-woo-quick-view-review-actions {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:45:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text .sp-woo-quick-view-review-actions a {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:53:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text .sp-woo-quick-view-review-actions a span {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:57:#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text .sp-woo-quick-view-review-actions a.button {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:61:.rtl #sp-woo-quick-view-review-notice {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.css:66:.rtl #sp-woo-quick-view-review-notice .sp-woo-quick-view-plugin-icon {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/notices.min.css:1:#sp-woo-quick-view-review-notice{padding:18px 15px 18px 0;background-color:#fff;border-radius:5px;margin:20px 20px 0 0;box-shadow:0 0 20px 0 rgba(36,39,50,.08);clear:both}#sp-woo-quick-view-review-notice .sp-woo-quick-view-plugin-icon{width:125px;float:left;line-height:90px;text-align:center;margin-left:8px}#sp-woo-quick-view-review-notice .sp-woo-quick-view-plugin-icon img{max-width:94px;vertical-align:middle;margin-right:8px}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text{overflow:hidden}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text h3{font-size:24px;margin:0 0 5px;font-weight:400;line-height:1}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text p{margin:10px 0 10px 0;font-size:13px}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text p.sp-woo-quick-view-review-actions{margin:10px 0 2px 0}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text .sp-woo-quick-view-review-actions a{text-decoration:none;margin-right:8px;color:#63a37b;display:inline-block;position:relative}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text .sp-woo-quick-view-review-actions a span{padding-right:2px}#sp-woo-quick-view-review-notice .sp-woo-quick-view-notice-text .sp-woo-quick-view-review-actions a.button{color:#fff}.rtl #sp-woo-quick-view-review-notice{margin:20px 0 0 20px;padding:18px 0 18px 15px}.rtl #sp-woo-quick-view-review-notice .sp-woo-quick-view-plugin-icon{float:right;margin:0 0 0 8px}#shapedplugin-offer-banner{padding:0;border:0;line-height:0;background:0 0}#shapedplugin-offer-banner a:focus{outline:0;box-shadow:none}#shapedplugin-offer-banner .notice-dismiss:focus{outline:0;box-shadow:none}#shapedplugin-offer-banner button.shapedplugin-offer-banner-dismiss:before{color:#fff;font-size:22px}#shapedplugin-offer-banner button.shapedplugin-offer-banner-dismiss:hover:before{color:#f30808}.wqv-rebrand-notice{position:relative;display:flex;align-items:center;justify-content:center;box-sizing:border-box;clear:both;min-height:40px;padding:10px 48px;margin:0 0 0 -20px;background-color:#148652}.wqv-rebrand-notice-content{display:flex;align-items:center;gap:4px}.wqv-rebrand-notice-icon{display:block;flex-shrink:0;width:18px;height:18px}.wqv-rebrand-notice-text{margin:0;padding:0;color:#fff;font-size:14px;font-weight:500;line-height:20px}.wqv-rebrand-notice-text strong{font-weight:700}.wqv-rebrand-notice-link{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:20px;height:20px;margin-left:0;color:#fff;text-decoration:none;opacity:.9;transition:opacity .2s linear}.wqv-rebrand-notice-link:focus,.wqv-rebrand-notice-link:hover{color:#fff;opacity:1;outline:0;box-shadow:none}.wqv-rebrand-notice-dismiss{position:absolute;top:6px;right:12px;display:flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;border:0;border-radius:3px;background:0 0;color:#fff;cursor:pointer;opacity:.85;transition:opacity .2s linear}.wqv-rebrand-notice-dismiss:focus,.wqv-rebrand-notice-dismiss:hover{opacity:1;outline:0;box-shadow:none}@media screen and (max-width:782px){.wqv-rebrand-notice{padding:10px 44px 10px 12px;margin:10px 0 15px -10px}.wqv-rebrand-notice-content{align-items:flex-start}.wqv-rebrand-notice-text{text-align:left}}
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php:32:			add_action( 'admin_notices', array( $this, 'render_offer_banner' ) );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php:33:			add_action( 'wp_ajax_shapedplugin_dismiss_offer_banner', array( $this, 'dismiss_offer_banner' ) );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php:66:					'link'  => 'https://shapedplugin.com/reno-quick-view?campaign=wooq&ref=423#pricing',
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php:73:					'link'  => 'https://shapedplugin.com/reno-quick-view?campaign=wooq&ref=423#pricing',
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php:134:						$.post(ajaxurl, {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/offer-banner.php:152:			check_ajax_referer( 'smart_tabs_offer_dismiss', 'nonce' );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:45:		const ANNOUNCEMENT_URL = 'https://shapedplugin.com/woo-quick-view-is-now-reno-quick-view/';
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:51:			add_action( 'admin_notices', array( $this, 'render_rebrand_notice' ) );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:52:			add_action( 'wp_ajax_sp_wqv_dismiss_rebrand_notice', array( $this, 'dismiss_rebrand_notice' ) );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:130:							esc_html__( '%1$s is now %2$s — Everything else remains the same. Why we rebranded', 'woo-quickview' ),
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:131:							'<strong>' . esc_html__( 'Quick View for WooCommerce', 'woo-quickview' ) . '</strong>',
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:132:							'<strong>' . esc_html__( 'Reno Quick View', 'woo-quickview' ) . '</strong>'
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:137:						<span class="screen-reader-text"><?php esc_html_e( 'Read more about the rebranding', 'woo-quickview' ); ?></span>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:146:					<span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice', 'woo-quickview' ); ?></span>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:157:						$.post(ajaxurl, {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:174:			check_ajax_referer( 'sp_wqv_rebrand_notice_dismiss', 'nonce' );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/rebrand-notice.php:177:				wp_send_json_error( array( 'error' => esc_html__( 'Authorization failed!', 'woo-quickview' ) ), 401 );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:23:		add_action( 'admin_notices', array( $this, 'display_admin_notice' ) );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:24:		add_action( 'wp_ajax_sp-woo-quick-view-never-show-review-notice', array( $this, 'dismiss_review_notice' ) );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:39:		$review = get_option( 'sp_woo_quick_view_review_notice_dismiss' );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:48:			add_option( 'sp_woo_quick_view_review_notice_dismiss', $review );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:61:		<div id="sp-woo-quick-view-review-notice" class="sp-woo-quick-view-review-notice">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:62:			<div class="sp-woo-quick-view-plugin-icon">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:63:				<img src="<?php echo esc_url( SP_WQV_URL . 'admin/views/img/woo-quick-view-notice.svg' ); ?>" alt="Reno Quick View">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:65:			<div class="sp-woo-quick-view-notice-text">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:67:				<p>We hope you had a wonderful experience using <strong>Reno Quick View</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-quickview/reviews/" target="_blank"><strong>WordPress.org</strong></a>.
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:70:				<p class="sp-woo-quick-view-review-actions">
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:71:					<a href="https://wordpress.org/support/plugin/woo-quickview/reviews/" target="_blank" class="button button-primary notice-dismissed rate-woo-quick-view">Ok, you deserve ★★★★★</a>
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:82:				$(document).on('click', '#sp-woo-quick-view-review-notice.sp-woo-quick-view-review-notice .notice-dismissed', function( event ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:83:					if ( $(this).hasClass('rate-woo-quick-view') ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:95:					$.post( ajaxurl, {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:96:						action: 'sp-woo-quick-view-never-show-review-notice',
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:98:						nonce: '<?php echo esc_attr( wp_create_nonce( 'sp_woo_quick_view_review_notice' ) ); ?>'
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:101:					$('#sp-woo-quick-view-review-notice.sp-woo-quick-view-review-notice').hide();
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:119:		if ( ! isset( $post_data['nonce'] ) || ! wp_verify_nonce( sanitize_key( $post_data['nonce'] ), 'sp_woo_quick_view_review_notice' ) ) {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:122:		$review = get_option( 'sp_woo_quick_view_review_notice_dismiss' );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/notices/review.php:143:		update_option( 'sp_woo_quick_view_review_notice_dismiss', $review );
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:87:  background-image: url(../img/reno-quickview.svg);
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:757:td.shortcode.column-shortcode input,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:763:td.shortcode.column-shortcode input {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:1899:  .sp_wqv-modal-inner {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:1904:  .sp_wqv-modal-content {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:1908:  .sp_wqv-icon-dialog .sp_wqv-modal-inner {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:1913:  .sp_wqv-icon-dialog .sp_wqv-modal-content {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:1917:  .sp_wqv-modal-icon .sp_wqv-modal-inner {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:1922:  .sp_wqv-modal-icon .sp_wqv-modal-content {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3335:.sp_wqvp-modal {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3345:.sp_wqvp-modal-icon {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3349:.sp_wqvp-modal-table {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3355:.sp_wqvp-modal-table-cell {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3361:.sp_wqvp-modal-inner {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3370:.sp_wqvp-modal-content {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3377:.sp_wqvp-modal-content .spf-shortcode-button {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3381:.sp_wqvp-modal-content .spf-fieldset {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3385:.sp_wqvp-modal-content .spf-title {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3389:.sp_wqvp-modal-content .spf-field {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3393:.sp_wqvp-modal-content a:active,
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3394:.sp_wqvp-modal-content a:focus {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3401:.sp_wqvp-modal-content h4 {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3405:.sp_wqvp-modal-content h4 small {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3411:.sp_wqvp-modal-title {
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css:3423:.sp_wqvp-modal-header {
+=== SIDECART HOOKS/AJAX/ASSETS/SETTINGS ===
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:446:				'.xoo-wsc-cart-active .xoo-wsc-basket': basketActive,
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:447:				'body.rtl.xoo-wsc-cart-active .xoo-wsc-basket': basketActiveRTL,
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:491:				'xoo-wsc-sy-options[scm-btntheme-cart]': 'a.xoo-wsc-ft-btn-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:492:				'xoo-wsc-sy-options[scm-btntheme-checkout]': 'a.xoo-wsc-ft-btn-checkout',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:588:			selectors['.xoo-wsc-cart-active .xoo-as-container'] = {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:669:					heading: 					this.gl('sct-cart-heading'),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:717:					checkoutTotal: 		this.gl('scf-chkbtntotal-en'),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:720:						cart: this.gl('sct-ft-cartbtn'),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:721:						checkout: this.gl('sct-ft-chkbtn'),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:737:				activeClass = 'xoo-wsc-cart-active';
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:762:		$.ajax({
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:1064:			$(document).ajaxComplete(Rewards.onSettingsSave);
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js:1148:			$.ajax({
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:100:.xoo-wsc-cart-active .xoo-wsc-opac {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:193:.xoo-wsc-sc-cont .xoo-wsc-cart-trigger {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:212:.xoo-wsc-sc-cont .xoo-wsc-cart-trigger > * {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:495:.xoo-wsc-empty-cart {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:502:.xoo-wsc-empty-cart > * {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:539:a.xoo-wsc-ft-btn-checkout .amount {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:594:.xoo-wsc-cart-active .xoo-wsc-container{
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css:1654:body.rtl.xoo-wsc-cart-active .xoo-wsc-container {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:23:			add_action( 'init', array( $this, 'generate_settings' ), 0 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:24:			add_action( 'admin_menu', array( $this, 'add_menu_pages' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:26:		add_action( 'xoo_as_enqueue_scripts', array( $this, 'enqueue_custom_scripts' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:27:		add_action( 'xoo_tab_page_end', array( $this, 'tab_html' ), 10, 2 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:28:		add_filter( 'plugin_action_links_' . XOO_WSC_PLUGIN_BASENAME, array( $this, 'plugin_action_links' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:35:			add_action( 'admin_footer', array( $this, 'sidecart_preview' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:37:			add_action( 'xoo_tab_page_start', array( $this, 'preview_info' ), 5 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:41:				add_action( 'xoo_tab_page_end', array( $this, 'popup_pattern_selector' ), 10, 2 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:42:				add_filter('admin_body_class', array( $this, 'admin_body_class') );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:45:			add_action( 'xoo_tab_page_start', array( $this, 'rewards_html' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:46:			add_action( 'admin_footer', array( $this, 'rewards_preview' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:51:			add_action( 'xoo_admin_settings_side-cart-woocommerce_saved', array( $this, 'popup_initialised' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:55:		add_action( 'wp_ajax_xoo_wsc_el_install', array( $this, 'install_loginpopup' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:56:		add_action( 'wp_ajax_xoo_wsc_el_request_just_to_init_save_settings',  array( $this, 'el_request_just_to_init_save_settings' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:58:		add_action( 'xoo_admin_setting_field_callback_html', array( $this, 'header_layout_setting_html' ), 10, 4 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:60:		add_action( 'wp_ajax_xoo_wsc_product_search_fill_defaults', array( $this, 'product_search_fill_defaults' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:62:		add_filter( 'xoo_wsc_admin_settings', array( $this, 'filter_settings' ), 10, 2 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:135:	public function sidecart_preview(){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:150:			'settings' 	=> '<a href="' . admin_url( 'admin.php?page=side-cart-woocommerce-settings' ) . '">Settings</a>',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:152:			'upgrade' 	=> '<a href="https://xootix.com/plugins/side-cart-for-woocommerce" target="__blank">Upgrade</a>',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:162:		if( $slug !== 'side-cart-woocommerce' ) return;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:164:		wp_enqueue_style( 'xoo-aff-fa', XOO_WSC_URL.'/library/fontawesome5/css/all.min.css' ); //Font Awesome
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:165:		wp_enqueue_style( 'xoo-aff-fa-picker', XOO_WSC_URL.'/library/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css', array(), '1.0', 'all' ); //Font Awesome Icon Picker
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:166:		wp_enqueue_script( 'xoo-aff-fa-pickers', XOO_WSC_URL.'/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js', array( 'jquery'), '1.0', false );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:167:		wp_enqueue_script('wc-enhanced-select'); // For product search
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:170:		wp_enqueue_style( 'xoo-wsc-magic', XOO_WSC_URL.'/library/magic/dist/magic.min.css', array(), '1.0' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:171:		wp_enqueue_script( 'masonry-js', 'https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array(), XOO_WSC_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:175:		wp_enqueue_style( 'xoo-wsc-admin-fonts', XOO_WSC_URL . '/assets/css/xoo-wsc-fonts.css', array(), XOO_WSC_VERSION );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:176:		wp_enqueue_style( 'xoo-wsc-admin-style', XOO_WSC_URL . '/admin/assets/xoo-wsc-admin-style.css', array(), XOO_WSC_VERSION );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:177:		wp_enqueue_script( 'xoo-wsc-admin-js', XOO_WSC_URL . '/admin/assets/xoo-wsc-admin-js.js', array( 'jquery', 'jquery-ui-sortable', 'wc-enhanced-select' ), XOO_WSC_VERSION, true );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:180:			'adminurl'  => admin_url().'admin-ajax.php',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:269:			$plugin_slug = 'easy-login-woocommerce';
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:276:			if( !$this->is_plugin_installed( 'easy-login-woocommerce' ) ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:306:				//Default setting when installed using side cart
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:337:				'notice' 				=> 'Plugin installed successfully. To test, visit your website as a guest user, add any product to cart and then click on "Checkout button" in side cart<br>If you want to customize the settings, you can access them <a href="'.admin_url( 'admin.php?page=easy-login-woocommerce-settings' ).'" target="_blank">[here]</a>',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/class-xoo-wsc-admin-settings.php:362:			'icon' 			=> 'dashicons-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-footer-preview.php:23:			<a href="#" class="xoo-wsc-ft-btn xoo-wsc-ft-btn-{{key}}">{{{data.footer.buttonsText[key]}}} <# if( key === 'checkout' && data.footer.checkoutTotal === 'yes' ){ #>  -  <?php echo $subtotal; ?> <# } #></a>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-preview.php:49:		$savings_data_in_amount 		= xoo_wsc_cart()->get_savings_data( $sale_price, $regular_price, 'amount' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-preview.php:53:			$savings_data_in_percent 		= xoo_wsc_cart()->get_savings_data( $sale_price, $regular_price, 'perc' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-preview.php:54:			$total_savings_data_in_amount 	= xoo_wsc_cart()->get_savings_data( $sale_price * $qty, $regular_price * $qty, 'amount' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-card-preview.php:3:<?php printf( '<a class="xoo-wsc-smr-link" href="#">%1$s</a>', '<i class="xoo-wsc-icon-external-link"></i>'. __( 'View', 'side-cart-woocommerce' ) ); ?>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-card-preview.php:11:		<?php echo __( 'Price: ', 'side-cart-woocommerce' ); ?>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-card-preview.php:122:				<span class="xoo-wsc-sml-qty"><?php _e( 'Qty:', 'side-cart-woocommerce' ) ?> <?php echo $product_quantity; ?></span>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-row-preview.php:113:						<span class="xoo-wsc-sml-qty"><?php _e( 'Qty:', 'side-cart-woocommerce' ) ?> <?php echo $product_quantity; ?></span>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/preview/xoo-wsc-product-row-preview.php:125:								<?php echo __( 'Price: ', 'side-cart-woocommerce' ); ?>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/checkpoint.php:16:				<i>The checkpoint amount is fetched from Free shipping method ( woocommerce shipping settings ).<br> Please make sure you have a free shipping method available for customers' location.<br><a href="https://docs.xootix.com/side-cart-for-woocommerce/#shippingbar" target="__blank">Read more</a></i><br>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/checkpoint.php:66:					<select class="wc-product-search" multiple="multiple" name="<?php echo $id ?>[gift_ids][]" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'woocommerce' ); ?>" data-action="woocommerce_json_search_products_and_variations">
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/progressbar.php:187:											'no' 					=> 'all products in cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/progressbar.php:192:									<span class="xoo-scbhk-desc">Example: Give a reward when the cart total reaches $100, but exclude a specific product. The price of this product will not be included in the $100 calculation.</span>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/progressbar.php:200:									<select class="wc-product-search" multiple="multiple" name="<?php echo $id ?>[filter_product_ids][]" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'woocommerce' ); ?>" data-action="woocommerce_json_search_products_and_variations">
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/rewards/progressbar.php:209:									<span class="xoo-scbhk-desc">The Bar Value & rewards will be calculated based on these products in the cart.</span>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-info.php:3:	<h4>[xoo_wsc_cart]</h4>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-info.php:12:	<h3>How to trigger side cart using your own icon?</h3>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-info.php:13:	<h4>You can use your icon class and add it to settings -> advanced -> open side cart class or you can add plugin's class "xoo-wsc-cart-trigger" to your icon element. <br><br>For eg: Your HTML should look like this<br><xmp><div class="xoo-wsc-cart-trigger">Trigger Side Cart</div></xmp></h4>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php:26:			<a href="https://xootix.com/plugins/side-cart-for-woocommerce">BUY NOW</a>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php:27:			<a href="https://demo.xootix.com/side-cart-for-woocommerce/">DEMO</a>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php:52:				<li><img src="<?php echo $imgPath.'/coupons.png' ?>"><span>Apply & Display Coupons</span>Let customers easily apply discount coupons and see their savings.</li>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php:53:				<li><img src="<?php echo $imgPath.'/checkmark.png' ?>"><span>Detailed Order Totals</span>Show shipping, taxes, discounts, fees, and other cart totals.</li>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/templates/xoo-wsc-tab-pro.php:54:				<li><img src="<?php echo $imgPath.'/wishlist.png' ?>"> <span>Save for Later</span>Let customers save cart items and come back to them later.</li>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php:9:			'sc-ajax-atc' 			=> 'm-ajax-atc',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php:10:			'sc-head-text' 			=> 'sct-cart-heading',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php:12:			'sc-cart-text'			=> 'sct-ft-cartbtn',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php:13:			'sc-checkout-text'		=> 'sct-ft-chkbtn',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php:15:			'bk-hide-basket-pages' 	=> 'm-hide-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/oldtonew.php:16:			'sc-atc-reset' 			=> 'm-viewcart-del'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php:39:		'desc' 	=> 'You can also use shortcode [xoo_wsc_cart] to generate basket icon anywhere.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php:73:		'desc' 	=> 'Allow users to save items in their cart for later purchase.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php:86:		'desc' 	=> 'Create and manage reusable button styles for side cart.'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php:102:		'desc' 	=> 'You can also add basket to your menu bar using shortcode [xoo_wsc_cart]. Please see info tab for more.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php:103:		'icon' 	=> 'xoo-icon-cart'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/sections.php:176:		'desc' 	=> 'Use shortcode [xoo_wsc_cart] to generate basket icon anywhere.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:8:		'id' 			=> 'm-fetch-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:13:				'cart_open' => 'On cart open',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:17:		'default' 		=> 'cart_open',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:18:		'desc' 			=> "This will send a new server request to fetch cart contents.<br>You can also set it to disabled once you are done customizing side cart.<br>Keep this option enabled if you see outdated cart items or cart items do not match with actual cart"
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:24:		'title' 		=> 'Refresh Cart on add to cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:25:		'id' 			=> 'm-refresh-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:28:		'desc' 			=> '<b>NOTE - Enable this option only if the cart is not showing correct prices.</b>'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:46:		'title' 		=> 'Open side cart class',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/advanced.php:50:		'desc' 			=> 'You can add your class here to open side cart or use class xoo-wsc-cart-trigger to open side cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:12:	$loginPopupTxt 		= '<a href="'.admin_url( 'admin.php?page=easy-login-woocommerce-settings' ).'" target="_blank">Plugin Settings</a>';
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:15:	$loginPopupAction 	= xoo_wsc_admin_settings()->is_plugin_installed('easy-login-woocommerce') ? 'Activate Plugin' : 'Install Plugin'; 
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:19:								<a href="https://wordpress.org/plugins/easy-login-woocommerce/" target="_blank">Plugin Link</a>
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:208:				'coupon' 		=> 'Coupon',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:209:				'empty_cart' 	=> 'Empty Cart Link'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:213:			'savings','subtotal', 'discount', 'tax', 'shipping', 'shipping_calc', 'fee', 'total', 'coupon', 'order_notes'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:216:			'discount', 'tax', 'shipping', 'shipping_calc', 'fee', 'total', 'coupon', 'empty_cart'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:236:		'desc' 			=> '<a href="https://docs.xootix.com/side-cart-for-woocommerce#payment_buttons" target="_blank">How to setup? Documentation</a>',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:242:		'title' 		=> 'Show total in checkout button',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:251:		'title' 		=> 'Open Login Slider/Popup on checkout click',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:255:		'desc' 			=> 'Ask users to login/register before checkout. You can smoothen the checkout process by collecting the data.<br>'.$loginPopupTxt
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:262:		'title' 		=> 'Hide footer text when cart is empty',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:303:				'addtocart' => 'Add to cart button',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:307:			'image', 'price', 'addtocart', 'title'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:395:				'addtocart' => 'Move to cart button',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:399:			'image', 'price', 'addtocart', 'title'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:413:		'desc' 			=> 'Automatically open cart when a new product is added'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:419:		'title' 		=> 'Ajax add to cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:420:		'id' 			=> 'm-ajax-atc',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:430:				'xoo-wsc-gl-options[m-ajax-atc-catid]' => array( 'yes', 'no' ),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:434:		'desc' 			=> 'Add to cart without refreshing page',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:440:		'title' 		=> 'Category IDs (Ajax add to cart)',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:441:		'id' 			=> 'm-ajax-atc-catid',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:443:		'desc' 			=> 'Add your category IDs here. ( Separated by comma ). <br> <a href="https://woocommerce.com/document/find-product-category-ids/" target="_blank">Find Category ID</a>'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:450:		'id' 			=> 'm-flycart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:453:		'desc' 			=> 'Works with ajax add to cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:460:		'title' 		=> 'Show recently added cart items',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:461:		'id' 			=> 'm-cart-order',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:465:				'asc' 	=> 'at the end of the cart.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:481:				'items' 	=> 'Number of products in the cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:517:		'title' 		=> 'Custom coupons post ID',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:521:		'desc' 			=> 'Display only these coupons. Add coupons post ID separated by comma. Leave empty to list all',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:527:		'title' 		=> 'Do not show cart on pages',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:528:		'id' 			=> 'm-hide-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:531:		'desc' 			=> 'Use post type/page id/slug separated by comma. For eg: post,contact-us,about-us .For all non woocommerce pages, use no-woocommerce. For checkout page use checkout, for cart page -> cart'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:537:		'title' 		=> 'Remove view cart link',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:538:		'id' 			=> 'm-viewcart-del',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:541:		'desc' 			=> 'Remove view cart button/link added by woocommerce on add to cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:585:		'title' 		=> 'When cart is empty, hide',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:602:		'id' 			=> 'sct-cart-heading',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:634:		'id' 			=> 'sct-ft-cartbtn',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:653:		'default' 		=> 'Your cart is empty',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:663:		'desc' 			=> 'Displays when cart is empty'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:690:		'default' 		=> 'Shipping, taxes, and discounts calculated at checkout.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:709:		'desc' 			=> 'Use # to close side cart & remain on the same page'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:716:		'id' 			=> 'scu-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:718:		'default' 		=> wc_get_cart_url(),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:724:		'id' 			=> 'scu-checkout',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:726:		'default' 		=> wc_get_checkout_url(),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/general.php:735:		'desc' 			=> 'Displays when cart is empty'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/rewards.php:21:		'desc' 			=> "Allow gift products to be removed from cart"
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/rewards.php:27:		'title' 		=> '[Free Gifts] Show added gifts in side cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/rewards.php:49:		'desc' 			=> 'Excludes gift quantities from basket count ( The count you see in shortcode and floating basket )'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:40:		'id' 			=> 'scm-btntheme-cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:49:		'id' 			=> 'scm-btntheme-checkout',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:109:		'desc' 		=> 'Slide side cart from left or right side'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:138:		'desc' 			=> 'Use custom font for side cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:151:				'hide_empty' 	=> 'Hide when cart is empty',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:171:				'xoo-wsc-icon-cart1' 		=> 'xoo-wsc-icon-cart1',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:172:				'xoo-wsc-icon-cart2' 		=> 'xoo-wsc-icon-cart2',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:258:		'desc' 			=> 'Shifts basket position horizontally ( when side cart is closed )'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:579:		'default' 		=> XOO_WSC_URL.'/assets/images/empty-cart.png',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:822:		'desc' 		=> 'This only controls back and front display. To enable/disable the detail go to tab general -> Side cart body -> Show and check/uncheck the detail from there.',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1188:				'xoo-wsc-icon-coupon' 			=> 'xoo-wsc-icon-coupon',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1189:				'xoo-wsc-icon-coupon-1' 		=> 'xoo-wsc-icon-coupon-1',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1190:				'xoo-wsc-icon-coupon-2' 		=> 'xoo-wsc-icon-coupon-2',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1191:				'xoo-wsc-icon-coupon-3' 		=> 'xoo-wsc-icon-coupon-3',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1192:				'xoo-wsc-icon-coupon-4' 		=> 'xoo-wsc-icon-coupon-4',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1193:				'xoo-wsc-icon-coupon-5' 		=> 'xoo-wsc-icon-coupon-5',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1194:				'xoo-wsc-icon-coupon-6' 		=> 'xoo-wsc-icon-coupon-6',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1195:				'xoo-wsc-icon-coupon-7' 		=> 'xoo-wsc-icon-coupon-7',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1196:				'xoo-wsc-icon-coupon-8' 		=> 'xoo-wsc-icon-coupon-8',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1202:		'default' 	=> 'xoo-wsc-icon-coupon-8',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1215:				'cart' 		=> 'View Cart',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1216:				'checkout'	=> 'Checkout'
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1220:		'default' => array( 'cart', 'continue', 'checkout' ),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1278:				'xoo-wsc-sy-options[scm-btntheme-cart]' 	=> array( 'unchecked' ),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1279:				'xoo-wsc-sy-options[scm-btntheme-checkout]' => array( 'unchecked' ),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1381:				'drawer' 	=> 'Drawer',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1386:		'default' 	=> 'drawer',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1394:		'id' 			=> 'scs-drawer-width',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1403:		'title' 		=> 'Open drawer after seconds',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php:1404:		'id' 			=> 'scs-drawer-wait',
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:31:.xoo-wsc-icon-cart-plus:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:85:.xoo-wsc-icon-shopping-cart:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:91:.xoo-wsc-icon-cart1:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:94:.xoo-wsc-icon-cart2:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:127:.xoo-wsc-icon-coupon-1:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:130:.xoo-wsc-icon-coupon-2:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:133:.xoo-wsc-icon-coupon-3:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:136:.xoo-wsc-icon-coupon-5:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:139:.xoo-wsc-icon-coupon-6:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:142:.xoo-wsc-icon-coupon:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:145:.xoo-wsc-icon-coupon-4:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:151:.xoo-wsc-icon-coupon-7:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:154:.xoo-wsc-icon-coupon-8:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:157:.xoo-wsc-icon-coupon-9:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-fonts.css:169:.xoo-wsc-icon-cart:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:46:.xoo-wsc-cart-active .xoo-wsc-opac {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:95:body.xoo-wsc-cart-active, html.xoo-wsc-cart-active{
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:137:.xoo-wsc-sc-cont .xoo-wsc-cart-trigger {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:158:.xoo-wsc-sc-cont .xoo-wsc-cart-trigger > * {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:430:.xoo-wsc-empty-cart {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:437:.xoo-wsc-empty-cart > * {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:441:.xoo-wsc-empty-cart a.xoo-wsc-btn{
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:482:a.xoo-wsc-ft-btn-checkout .amount {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/xoo-wsc-style.css:486:a.xoo-wsc-ft-btn-checkout .amount:before {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:7:		return xoo_wsc_params.wc_ajax_url.toString().replace(
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:22:		$cartNoticeCont: function(){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:33:				Notice.$cartNoticeCont().html('');
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:38:			Notice.$cartNoticeCont().html( noticeHTML );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:44:			Notice.$cartNoticeCont().add( Notice.$markupNoticeCont() ).html(noticeHTML);
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:49:			if( !cart.isOpen() ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:54:			Notice.$cartNoticeCont().slideDown();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:59:				Notice.$cartNoticeCont().slideUp('slow');
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:66:			Notice.$cartNoticeCont().hide();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:96:			this.container 	= container || 'cart';
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:104:			$(document.body).on( 'wc_fragments_loaded updated_checkout', this.onCartUpdate.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:114:			var ajaxData = {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:124:				$.extend( ajaxData, data );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:131:				$.each( ajaxData, function( key, value ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:135:				ajaxData = serializedData;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:139:			return ajaxData;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:176:			if( xoo_wsc_params.refreshCart === "yes" && typeof wc_cart_fragments_params !== 'undefined' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:177:				$( document.body ).trigger( 'wc_fragment_refresh' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:183:			$.ajax({
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:184:				url: get_wcurl( 'xoo_wsc_refresh_fragments' ),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:201:			//Refresh checkout page
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:203:				if( $( 'form.checkout' ).length === 0 ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:207:				$(document.body).trigger("update_checkout");
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:212:				$(document.body).trigger("wc_update_cart");
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:219:			if( response.fragments ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:221:				$( document.body ).trigger( 'xoo_wsc_before_loading_fragments', [ response ] );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:225:				//Set fragments
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:226:		   		$.each( response.fragments, function( key, value ) {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:230:		   		if( typeof wc_cart_fragments_params !== 'undefined' && ( 'sessionStorage' in window && window.sessionStorage !== null ) ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:232:		   			sessionStorage.setItem( wc_cart_fragments_params.fragment_name, JSON.stringify( response.fragments ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:233:					localStorage.setItem( wc_cart_fragments_params.cart_hash_key, response.cart_hash );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:234:					sessionStorage.setItem( wc_cart_fragments_params.cart_hash_key, response.cart_hash );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:236:					if ( response.cart_hash ) {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:237:						sessionStorage.setItem( 'wc_cart_created', ( new Date() ).getTime() );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:242:				$( document.body ).trigger( 'wc_fragments_loaded' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:248:			if( xoo_wsc_params.refreshCart === "yes" && typeof wc_cart_fragments_params !== 'undefined' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:250:				$( document.body ).trigger( 'wc_fragment_refresh' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:265:			super( $modal, 'cart' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:267:			this.cartLoaded 			= false;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:293:			this.$modal.on( 'click', '.xoo-wsch-close, .xoo-wsc-opac, .xoo-wsc-cart-close', this.closeCartOnClick.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:296:			$(document.body).on( 'xoo_wsc_cart_updated', this.updateCartCheckoutPage.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:297:			$(document.body).on( 'click', 'a.added_to_cart, .xoo-wsc-cart-trigger', this.openCart.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:298:			$(document.body).on( 'added_to_cart', this.addedToCart.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:300:			$(document.body).on( 'wc-blocks_added_to_cart', this.blockAddedToCart.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:302:			$(document.body).on( 'adding_to_cart', this.checkIfWCAjaxAddToCart.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:308:			if( xoo_wsc_params.ajaxAddToCart === 'yes' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:309:				$(document.body).on( 'submit', 'form.cart', this.addToCartFormSubmit.bind(this) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:312:			if( typeof wc_cart_fragments_params === 'undefined' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:395:		updateItemQty( cart_key, qty ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:397:			if( !cart_key || qty === undefined ) return;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:404:				cart_key: cart_key,
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:408:			$.ajax({
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:416:					$(document.body).trigger( 'xoo_wsc_cart_updated', [response] );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:428:			if( ( !(data instanceof FormData) || !data.has('action') || !data.get('action') === 'xoo_wsc_add_to_cart' ) && $button.hasClass('ajax_add_to_cart') ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:449:			if( !this.cartLoaded && xoo_wsc_params.fetchCart === 'cart_open' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:451:				this.cartLoaded = true;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:469:			//Check for woocommerce custom quantity code 
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:470:			//https://docs.woocommerce.com/document/override-loop-template-and-show-quantities-next-to-add-to-cart-buttons/
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:472:				if( form_item.name === 'productID' || form_item.name === 'add-to-cart' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:482:				var is_url = $form.attr('action').match(/add-to-cart=([0-9]+)/),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:492:	        	formData.append( 'add-to-cart', productID );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:495:	        formData.append( 'action', 'xoo_wsc_add_to_cart' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:510:	        	this.addToCartAjax( $button, formData );//Ajax add to cart
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:523:			$( document.body ).trigger( 'adding_to_cart', [ $button, formData ] );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:525:			$.ajax({
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:526:				url: get_wcurl( 'xoo_wsc_add_to_cart' ),
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:535:					if(response.fragments){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:537:						$( document.body ).trigger( 'added_to_cart', [ response.fragments, response.cart_hash, $button ] );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:560:			this.updateFragments( { fragments: response } );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:608:				$( document.body ).trigger( 'wc_fragment_refresh' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:616:		updateItemQty( cart_key, qty ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:618:			if( !cart_key || qty === undefined ) return;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:623:				cart_key: cart_key,
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:627:			$.ajax({
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:635:					$(document.body).trigger( 'xoo_wsc_cart_updated', [response] );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:644:			this.cartLoaded = true;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:682:			var $shortcode = $('.xoo-wsc-sc-cont');
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:684:			if( $shortcode.length && xoo_wsc_params.menuCartHideOnEmpty.length ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:686:				var shortcodeEls = xoo_wsc_params.shortcodeEls;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:690:					if( shortcodeEls[val] ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:692:							$(shortcodeEls[val]).show();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:695:							$(shortcodeEls[val]).hide();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/js/xoo-wsc-main.js:711:	var cart 	= new Cart( $('.xoo-wsc-modal') );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:14:	public $coupons = array();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:37:		add_action( 'wc_ajax_xoo_wsc_update_item_quantity', array( $this, 'update_item_quantity' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:39:		add_action( 'wc_ajax_xoo_wsc_refresh_fragments', array( $this, 'get_refreshed_fragments' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:41:		add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'set_ajax_fragments' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:43:		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'set_ajax_fragments' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:46:		add_action( 'wc_ajax_xoo_wsc_add_to_cart', array( $this, 'add_to_cart' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:48:		add_action( 'woocommerce_add_to_cart', array( $this, 'added_to_cart' ), 10, 6 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:50:		add_filter( 'pre_option_woocommerce_cart_redirect_after_add', array( $this, 'prevent_cart_redirect' ), 20 );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:54:	public function prevent_cart_redirect( $value ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:56:		$ajaxAtc = $this->glSettings['m-ajax-atc'];
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:58:		if( $ajaxAtc !== 'no' ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:65:	/* Add to cart is performed by woocommerce as 'add-to-cart' is passed */
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:66:	public function add_to_cart(){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:68:		$this->action = 'addtocart';
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:70:		if( !isset( $_POST['add-to-cart'] ) ) return;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:73:			// trigger action for added to cart in ajax
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:74:			do_action( 'woocommerce_ajax_added_to_cart', intval( $_POST['add-to-cart'] ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:75:			$this->get_refreshed_fragments();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:91:	public function added_to_cart( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:94:			$this->set_notice( __( 'Item added to cart', 'side-cart-woocommerce' ), 'success', 'addtocart' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:107:	public function print_notices_html( $wc_cart_notices = true, $clean = true ) {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:115:			if ( $wc_cart_notices ) {
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:117:				do_action( 'woocommerce_check_cart_items' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:157:		$cart_key 	= sanitize_text_field( $_POST['cart_key'] );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:160:		if( !is_numeric( $new_qty ) || $new_qty < 0 || !$cart_key ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:161:			$this->set_notice( __( 'Something went wrong', 'side-cart-woocommerce' ) );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:164:		$validated = apply_filters( 'xoo_wsc_update_quantity', true, $cart_key, $new_qty );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:166:		if( $validated && !empty( WC()->cart->get_cart_item( $cart_key ) ) ){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:168:			$updated = $new_qty == 0 ? WC()->cart->remove_cart_item( $cart_key ) : WC()->cart->set_quantity( $cart_key, $new_qty );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:173:					$notice = __( 'Item removed', 'side-cart-woocommerce' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:176:					$notice = __( 'Item updated', 'side-cart-woocommerce' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:185:		$this->get_refreshed_fragments();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:191:	public function set_ajax_fragments($fragments){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:193:		WC()->cart->calculate_totals();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:209:		xoo_wsc_helper()->get_template( 'xoo-wsc-shortcode.php' );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:210:		$shortcode = ob_get_clean();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:212:		$fragments['div.xoo-wsc-container'] 		= $container; //Cart content
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:213:		$fragments['div.xoo-wsc-slider'] 			= $slider;// Slider
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:214:		$fragments['div.xoo-wsc-sc-cont'] 			= $shortcode;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:215:		$fragments['div.xoo-wsc-markup-notices'] 	= $notice;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:217:		return $fragments;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:221:	public function get_refreshed_fragments(){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:222:		WC_AJAX::get_refreshed_fragments();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:226:	public function get_cart_count(){
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:228:			return count( WC()->cart->get_cart() );
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:231:			return WC()->cart->get_cart_contents_count();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:240:		if( WC()->cart->is_empty() ) return $totals;
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:249:			$savings = $this->get_cart_total_savings();
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/class-xoo-wsc-cart.php:264:				'value' 	=> WC()->cart->get_cart_subtotal(),
+=== LARGE ASSETS ===
+924025 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.svg
+918991 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.svg
+751644 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.svg
+747927 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.svg
+444379 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/fontawesome-webfont.svg
+203030 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.eot
+203030 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.eot
+202744 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.ttf
+202744 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.ttf
+177497 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/offer-banner/new-year-offer-banner.svg
+171955 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/js/jquery.fancybox.js
+167191 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/dist/magic.css.map
+165742 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/fontawesome-webfont.eot
+165548 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/fontawesome-webfont.ttf
+165368 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/dist/magic.min.css.map
+145515 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.svg
+144714 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.svg
+136384 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js
+134808 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/FontAwesome.otf
+134294 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.eot
+134294 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.eot
+133988 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.ttf
+133988 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.ttf
+115934 /home/ubuntu/plugin_audit/static_findings.txt
+101648 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.woff
+101648 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.woff
+98024 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/fontawesome-webfont.woff
+92991 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/shapedplugin-team.jpg
+89988 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.woff
+89988 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.woff
+86584 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/js/jquery.fancybox.min.js
+81833 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/typography/google-fonts.php
+79641 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/font-awesome.css
+78268 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-solid-900.woff2
+78268 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-solid-900.woff2
+77160 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/fontawesome-webfont.woff2
+76736 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-brands-400.woff2
+76736 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-brands-400.woff2
+74704 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.min.js
+74340 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.css
+67049 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.js
+62769 /home/ubuntu/plugin_audit/archive_inventory.txt
+62297 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/js/magnific-popup.js
+59800 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/style.min.css
+59309 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/css/all.min.css
+58892 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/css/font-awesome.min.css
+57171 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/assets/css/fonts/Woo-Side-Cart.svg
+48296 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/class-xoo-admin-settings.php
+47003 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/plugins.min.js
+46485 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/dist/magic.css
+43774 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/rebrand-notice-icon.gif
+38729 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/css/font-awesome.css
+38172 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/fonts/woosq.svg
+38166 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/views/settings/style.php
+37948 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-js.js
+37398 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/img/offer-banner/bfcm-offer-banner.svg
+36756 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/css/config.json
+36133 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/config/framework.config.php
+35320 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/js/perfect-scrollbar.js
+35303 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/help.php
+34034 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.eot
+34034 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.eot
+33955 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/magic/dist/magic.min.css
+33736 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/fontawesome5/webfonts/fa-regular-400.ttf
+33736 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/webfonts/fa-regular-400.ttf
+32981 /home/ubuntu/plugin_audit/quickview/woo-quickview/languages/woo-quickview.pot
+32383 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/admin/assets/xoo-wsc-admin-style.css
+31742 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/fonts/Xoo-Admin.svg
+30591 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/css/font-awesome.min.css
+30082 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.js
+28808 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/css/xoo-admin-style.css
+26691 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/js/magnific-popup.min.js
+26315 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/classes/admin-options.class.php
+25855 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/help-page/img/martin.png
+25130 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/js/perfect-scrollbar.min.js
+24143 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/includes/xoo-framework/admin/assets/js/xoo-admin-js.js
+24111 /home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/library/masonry/masonry.js
+23155 /home/ubuntu/plugin_audit/quickview/woo-quickview/public/assets/fonts/Flaticon.svg
+22375 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/assets/js/main.min.js
+19777 /home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/fields/typography/typography.php

@@ -1,0 +1,52 @@
+{
+  "name": "restaurant-suite/core",
+  "description": "Restaurant Suite Core — WordPress and WooCommerce plugin",
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6 || ^10.5",
+    "yoast/phpunit-polyfills": "^1.0",
+    "wp-phpunit/wp-phpunit": "^6.3",
+    "phpstan/phpstan": "^2.0",
+    "szepeviktor/phpstan-wordpress": "*",
+    "php-stubs/woocommerce-stubs": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "phpcompatibility/php-compatibility": "^9.0",
+    "wp-coding-standards/wpcs": "^3.0",
+    "php-parallel-lint/php-parallel-lint": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "RestaurantSuite\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RestaurantSuite\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "lint": "parallel-lint src tests",
+    "cs": "phpcs",
+    "cs:fix": "phpcbf",
+    "stan": "phpstan analyse --memory-limit=1G",
+    "test:unit": "phpunit --testsuite unit",
+    "test:integration": "phpunit --testsuite integration",
+    "test": [
+      "@lint",
+      "@cs",
+      "@stan",
+      "@test:unit",
+      "@test:integration"
+    ],
+    "audit": [
+      "composer validate --strict",
+      "composer audit"
+    ]
+  },
+  "extra": {
+    "phpcodesniffer-search-depth": 5
+  }
+}

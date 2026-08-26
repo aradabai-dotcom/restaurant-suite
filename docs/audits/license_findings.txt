@@ -1,0 +1,9 @@
+/home/ubuntu/plugin_audit/quickview/woo-quickview/woo-quick-view.php:14: * License:           GPL v2 or later
+/home/ubuntu/plugin_audit/quickview/woo-quickview/woo-quick-view.php:15: * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+/home/ubuntu/plugin_audit/quickview/woo-quickview/admin/views/sp-framework/classes/admin-options.class.php:853:				echo ( ! empty( $this->args['footer_text'] ) ) ? '<div class="sp_wqv-copyright">' . wp_kses_post( $this->args['footer_text'] ) . '</div>' : '';
+/home/ubuntu/plugin_audit/quickview/woo-quickview/readme.txt:8:License: GPL v2 or later
+/home/ubuntu/plugin_audit/quickview/woo-quickview/readme.txt:9:License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+/home/ubuntu/plugin_audit/quickview/woo-quickview/woo-quick-view.php:14: * License:           GPL v2 or later
+/home/ubuntu/plugin_audit/quickview/woo-quickview/woo-quick-view.php:15: * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/README.txt:9:License: GPLv2
+/home/ubuntu/plugin_audit/sidecart/side-cart-woocommerce/README.txt:10:License URI: http://www.gnu.org/licenses/gpl-2.0.html
