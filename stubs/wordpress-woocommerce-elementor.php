@@ -26,6 +26,10 @@ namespace {
 		return false === ( $GLOBALS['crs_test_nonce_valid'] ?? true ) ? false : 1;
 	}
 	function absint( mixed $value ): int { return abs( (int) $value ); }
+	function sanitize_key( string $key ): string { return strtolower( preg_replace( '/[^a-z0-9_\-]/', '', $key ) ?? '' ); }
+	function sanitize_text_field( string $text ): string { return trim( strip_tags( $text ) ); }
+	function is_wp_error( mixed $value ): bool { return $value instanceof WP_Error; }
+	function WC(): object { return $GLOBALS['crs_test_wc'] ?? (object) array(); }
 	function get_post_status( int $post_id ): string { return 'publish'; }
 	function wc_get_product( int $product_id ): mixed {
 		return $GLOBALS['crs_test_product'] ?? null;
@@ -48,7 +52,10 @@ namespace {
 	 */
 	function wp_kses( string $html, array $allowed_html ): string { return $html; }
 	function add_query_arg( string $key, int|string $value, string $url ): string { return $url; }
-	function wc_get_cart_url(): string { return ''; }
+	function wc_get_cart_url(): string { return 'https://example.test/cart/'; }
+	function wc_get_checkout_url(): string { return 'https://example.test/checkout/'; }
+	function wc_get_notices(): array { return $GLOBALS['crs_test_notices'] ?? array(); }
+	function wc_clear_notices(): void { $GLOBALS['crs_test_notices'] = array(); }
 }
 
 namespace {

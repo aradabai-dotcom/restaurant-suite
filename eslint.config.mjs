@@ -22,6 +22,7 @@ export default [
         document: 'readonly',
         fetch: 'readonly',
         CustomEvent: 'readonly',
+        FormData: 'readonly',
       },
     },
     rules: {

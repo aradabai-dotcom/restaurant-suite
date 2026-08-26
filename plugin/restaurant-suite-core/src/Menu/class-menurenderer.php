@@ -70,9 +70,39 @@ final class MenuRenderer {
 		}
 		if ( function_exists( 'wp_register_script' ) && function_exists( 'wp_enqueue_script' ) ) {
 			wp_register_script(
+				'crs-cart-drawer',
+				CRS_PLUGIN_URL . 'assets/build/cart-drawer.js',
+				array(),
+				CRS_VERSION,
+				true
+			);
+			wp_localize_script(
+				'crs-cart-drawer',
+				'CRS_CART_CONFIG',
+				array(
+					'restUrl'     => rest_url( 'crs/v1/' ),
+					'nonce'       => wp_create_nonce( 'wp_rest' ),
+					'cartUrl'     => function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : '',
+					'checkoutUrl' => function_exists( 'wc_get_checkout_url' ) ? wc_get_checkout_url() : '',
+					'labels'      => array(
+						'cart'     => esc_html__( 'Panier', 'restaurant-suite-core' ),
+						'close'    => esc_html__( 'Fermer le panier', 'restaurant-suite-core' ),
+						'continue' => esc_html__( 'Continuer mes achats', 'restaurant-suite-core' ),
+						'subtotal' => esc_html__( 'Sous-total', 'restaurant-suite-core' ),
+						'empty'    => esc_html__( 'Votre panier est vide.', 'restaurant-suite-core' ),
+						'viewCart' => esc_html__( 'Voir mon panier', 'restaurant-suite-core' ),
+						'checkout' => esc_html__( 'Valider la commande', 'restaurant-suite-core' ),
+						'loading'  => esc_html__( 'Mise à jour du panier…', 'restaurant-suite-core' ),
+						'error'    => esc_html__( 'Le panier n’a pas pu être mis à jour.', 'restaurant-suite-core' ),
+					),
+				)
+			);
+			wp_enqueue_script( 'crs-cart-drawer' );
+
+			wp_register_script(
 				'crs-quickview',
 				CRS_PLUGIN_URL . 'assets/build/quick-view.js',
-				array(),
+				array( 'crs-cart-drawer' ),
 				CRS_VERSION,
 				true
 			);
@@ -128,8 +158,7 @@ final class MenuRenderer {
 		} elseif ( $is_variable ) {
 			$html .= '<a class="crs-menu__action" href="' . esc_url( $url ) . '">' . esc_html__( 'Voir les options', 'restaurant-suite-core' ) . '</a>';
 		} else {
-			$cart_url = function_exists( 'wc_get_cart_url' ) ? add_query_arg( 'add-to-cart', $id, wc_get_cart_url() ) : $url;
-			$html    .= '<a class="crs-menu__action" href="' . esc_url( $cart_url ) . '" rel="nofollow">' . esc_html__( 'Ajouter au panier', 'restaurant-suite-core' ) . '</a>';
+				$html .= '<button class="crs-menu__action" type="button" data-crs-cart-add data-product-id="' . esc_attr( (string) $id ) . '">' . esc_html__( 'Ajouter au panier', 'restaurant-suite-core' ) . '</button>';
 		}
 
 		return $html . '</div></article>';

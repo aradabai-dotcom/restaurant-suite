@@ -11,6 +11,7 @@ namespace CRS;
 
 use CRS\Menu\MenuQuery;
 use CRS\Menu\MenuRenderer;
+use CRS\Cart\CartEndpoint;
 use CRS\QuickView\QuickViewEndpoint;
 
 /**
@@ -28,5 +29,6 @@ final class Plugin {
 		$controller = new MenuController( $renderer );
 		$controller->register();
 		( new QuickViewEndpoint() )->register();
+		( new CartEndpoint() )->register();
 	}
 }

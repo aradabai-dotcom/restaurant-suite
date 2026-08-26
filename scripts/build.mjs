@@ -6,4 +6,8 @@ await copyFile(
   'plugin/restaurant-suite-core/assets/src/quick-view.js',
   'plugin/restaurant-suite-core/assets/build/quick-view.js',
 );
-console.log('Restaurant Suite assets built: Quick View bundle copied.');
+await copyFile(
+  'plugin/restaurant-suite-core/assets/src/cart-drawer.js',
+  'plugin/restaurant-suite-core/assets/build/cart-drawer.js',
+);
+console.log('Restaurant Suite assets built: Quick View and Cart Drawer bundles copied.');
