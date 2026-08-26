@@ -11,6 +11,7 @@ namespace CRS;
 
 use CRS\Menu\MenuQuery;
 use CRS\Menu\MenuRenderer;
+use CRS\QuickView\QuickViewEndpoint;
 
 /**
  * Boots the Restaurant Suite plugin.
@@ -26,5 +27,6 @@ final class Plugin {
 		$renderer   = new MenuRenderer( new MenuQuery() );
 		$controller = new MenuController( $renderer );
 		$controller->register();
+		( new QuickViewEndpoint() )->register();
 	}
 }

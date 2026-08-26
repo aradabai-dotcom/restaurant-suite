@@ -68,6 +68,29 @@ final class MenuRenderer {
 				CRS_VERSION
 			);
 		}
+		if ( function_exists( 'wp_register_script' ) && function_exists( 'wp_enqueue_script' ) ) {
+			wp_register_script(
+				'crs-quickview',
+				CRS_PLUGIN_URL . 'assets/build/quick-view.js',
+				array(),
+				CRS_VERSION,
+				true
+			);
+			wp_localize_script(
+				'crs-quickview',
+				'CRS_QUICK_VIEW_CONFIG',
+				array(
+					'restUrl' => rest_url( 'crs/v1/quick-view/' ),
+					'nonce'   => wp_create_nonce( 'crs_quickview' ),
+					'labels'  => array(
+						'close'   => esc_html__( 'Fermer l’aperçu rapide', 'restaurant-suite-core' ),
+						'loading' => esc_html__( 'Chargement de l’aperçu…', 'restaurant-suite-core' ),
+						'error'   => esc_html__( 'L’aperçu rapide est momentanément indisponible.', 'restaurant-suite-core' ),
+					),
+				)
+			);
+			wp_enqueue_script( 'crs-quickview' );
+		}
 	}
 
 	/**
@@ -91,6 +114,7 @@ final class MenuRenderer {
 		$html .= '' !== $image ? $image : '<span class="crs-menu__placeholder" aria-hidden="true"></span>';
 		$html .= '</a><div class="crs-menu__body">';
 		$html .= '<h3 class="crs-menu__title"><a href="' . esc_url( $url ) . '">' . esc_html( $name ) . '</a></h3>';
+		$html .= '<button class="crs-menu__quickview-trigger" type="button" data-crs-quickview-trigger data-product-id="' . esc_attr( (string) $id ) . '" data-product-url="' . esc_url( $url ) . '" aria-haspopup="dialog">' . esc_html__( 'Aperçu rapide', 'restaurant-suite-core' ) . '</button>';
 
 		if ( '' !== $description ) {
 			$html .= '<div class="crs-menu__description">' . wp_kses_post( wpautop( $description ) ) . '</div>';

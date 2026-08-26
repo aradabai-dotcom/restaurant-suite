@@ -23,3 +23,19 @@ Le rapport contient uniquement des caractéristiques techniques non sensibles ; 
 Le ZIP `restaurant-suite-core-0.0.1.zip` a été téléversé via l’installateur WordPress. L’installation a été confirmée, puis le plugin a été activé depuis l’administration sans erreur fatale ni écran de récupération. Le code installé correspond au squelette de phase 0.0 : il enregistre les contrats et ne déclare encore aucun menu, panier, Quick View, commande WhatsApp ou dashboard public.
 
 La structure racine du ZIP a été acceptée par WordPress après la correction du script de packaging. Le thème n’a pas encore été téléversé ; il sera déployé après ajout des éléments minimaux nécessaires au rendu et au test Elementor.
+
+## 26 août 2026 — fixtures WooCommerce V0.1
+
+Les fixtures ont été créées via l’API d’administration WooCommerce avec des SKU préfixés `crs-test-`, sans client, adresse, paiement ni commande. La catégorie active est `crs-test-active` (ID 16) et la catégorie vide est `crs-test-empty` (ID 17). Le produit simple achetable est `[CRS TEST] Burger Simple` (ID 16, SKU `crs-test-simple-20260826`, prix 12,50, stock disponible). Le produit hors stock est `[CRS TEST] Plat Hors Stock` (ID 17, SKU `crs-test-oos-20260826`, stock indisponible). Le produit variable est `[CRS TEST] Tacos Variable` (ID 18, SKU `crs-test-variable-20260826`) avec deux variations : ID 19 à 10,00 et ID 20 à 14,00. Les identifiants servent uniquement à la vérification du staging et devront être supprimés avec les fixtures avant toute réutilisation du site.
+
+Deux pages de test ont été créées avec le shortcode propriétaire : `/crs-test-menu/` (ID 21) affiche la catégorie active et `/crs-test-menu-empty/` (ID 22) affiche la catégorie vide. Elles sont destinées exclusivement au staging, ne contiennent aucune donnée client et devront être supprimées avec les fixtures après la campagne de tests.
+
+## 26 août 2026 — vérification menu et panier
+
+La page publique `/crs-test-menu/` affiche bien les trois fixtures de la catégorie active avec leur nom, description, prix WooCommerce, lien produit et états appropriés. Le produit simple affiche « Ajouter au panier », le produit hors stock affiche « Indisponible » sans action d’achat et le produit variable affiche « Voir les options » vers sa fiche. Le produit simple a été ajouté via son lien natif `?add-to-cart=16` ; WooCommerce a confirmé l’ajout et la page Panier a affiché une seule ligne `[CRS TEST] Burger Simple`, quantité 1 et total 12,50. Aucune commande n’a été créée.
+
+La page est encore protégée par le mode « Bientôt disponible » et reste accessible uniquement à la session de test. Le rendu utilise le thème Twenty Twenty-Five ; le thème Restaurant Base Theme n’est pas encore déployé.
+
+Les assertions DOM sur `/crs-test-menu/` passent : conteneur `data-crs-menu` présent, 3 cartes, produit simple, prix, état `Indisponible`, CTA variable et lien `add-to-cart=16` présents. Aucun script Restaurant Suite/CRS n’est chargé par cette V0.1, ce qui confirme le rendu serveur sans dépendance JavaScript métier. `/crs-test-menu-empty/` affiche bien `Aucun plat disponible dans cette catégorie.` avec un conteneur d’état vide.
+
+La page `/crs-test-menu-block/` (ID 23) contenant `restaurant-suite/menu` en bloc dynamique affiche exactement les trois fixtures et les mêmes CTA/états que le shortcode. Le point d’entrée bloc partage donc bien le renderer serveur ; aucune erreur visible ni commande n’a été générée.

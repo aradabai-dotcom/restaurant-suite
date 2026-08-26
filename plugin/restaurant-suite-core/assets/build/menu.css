@@ -125,3 +125,123 @@
     grid-template-columns: 1fr;
   }
 }
+
+.crs-menu__quickview-trigger {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--crs-color-accent);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.crs-quickview[hidden] {
+  display: none;
+}
+
+.crs-quickview {
+  position: fixed;
+  z-index: 100000;
+  inset: 0;
+}
+
+.crs-quickview__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 60%);
+}
+
+.crs-quickview__dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  width: min(92vw, 760px);
+  max-height: 88vh;
+  margin: 6vh auto 0;
+  overflow: auto;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 35%);
+  padding: 1.5rem;
+}
+
+.crs-quickview__close {
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--crs-color-text);
+  cursor: pointer;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.crs-quickview__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.crs-quickview__placeholder {
+  display: block;
+  min-height: 16rem;
+  border-radius: 0.75rem;
+  background: #eee8e1;
+}
+
+.crs-quickview__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.crs-quickview__product-title {
+  margin: 0;
+  padding-right: 2rem;
+}
+
+.crs-quickview__description p {
+  margin: 0;
+}
+
+.crs-quickview__permalink {
+  color: var(--crs-color-accent);
+}
+
+.crs-quickview__error,
+.crs-quickview__status {
+  color: var(--crs-color-muted);
+}
+
+.crs-quickview-open {
+  overflow: hidden;
+}
+
+.crs-quickview__dialog :focus-visible,
+.crs-menu__quickview-trigger:focus-visible {
+  outline: 3px solid #1d70b8;
+  outline-offset: 3px;
+}
+
+@media (width <= 700px) {
+  .crs-quickview__dialog {
+    grid-template-columns: 1fr;
+    width: calc(100vw - 1.5rem);
+    margin-top: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crs-quickview,
+  .crs-quickview__dialog {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}

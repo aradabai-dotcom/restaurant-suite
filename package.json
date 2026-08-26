@@ -4,7 +4,7 @@
   "packageManager": "pnpm@11.24.0",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "lint": "eslint scripts tests --max-warnings=0 && stylelint 'plugin/**/*.css' 'theme/**/*.css'",
+    "lint": "eslint scripts tests plugin/restaurant-suite-core/assets/src --max-warnings=0 && stylelint 'plugin/**/*.css' 'theme/**/*.css'",
     "format:check": "prettier --check composer.json package.json tsconfig.json scripts tests .github/workflows docs/contracts",
     "test:js": "vitest run",
     "e2e": "playwright test",

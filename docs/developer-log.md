@@ -97,3 +97,17 @@ Aucune fonctionnalité ne doit être déclarée comme terminée uniquement parce
 **Limites et risques :** Docker/DDEV restent indisponibles. Elementor n’est pas une dépendance obligatoire, mais son widget ne peut être validé qu’avec le package installé et activé sur WordPress. Les tests E2E, mobile et JavaScript désactivé restent à exécuter.
 
 **Commit :** à associer au commit de publication de cette entrée.
+
+## Entrée — V0.2 Quick View — 26 août 2026
+
+**Objectif :** ajouter une preview rapide WooCommerce accessible, sans Reno Quick View et sans panier parallèle.
+
+**Implémentation :** endpoint REST `crs/v1/quick-view/{product_id}` protégé par nonce ; contrôles serveur du statut, de la visibilité et de l’achetablité ; fragment HTML construit depuis les getters WooCommerce ; formulaire d’achat natif et fallback fiche produit. Le menu V0.1 expose un bouton déclencheur. Le contrôleur navigateur crée une modale, place le focus, verrouille le scroll, gère le clavier et restitue le focus au déclencheur. Les événements publics sont `crs:quickview:open` et `crs:quickview:close`.
+
+**Fichiers :** `src/QuickView/class-quickviewendpoint.php`, `assets/src/quick-view.js`, `assets/build/quick-view.js`, `assets/build/menu.css`, `src/Menu/class-menurenderer.php`, `src/class-plugin.php`, `scripts/build.mjs`, `eslint.config.mjs`, `package.json`, stubs et tests Quick View.
+
+**Contrôles locaux :** `make validate`, `make package`, Parallel Lint, PHPCS, PHPStan niveau 6, PHPUnit 10 tests/26 assertions, ESLint, Stylelint, Vitest et inspection du ZIP. Tous passent ; PHPStan affiche seulement son avertissement de version 1.12 ancienne.
+
+**Limites :** l’endpoint, la modale, le focus clavier, Échap, erreur réseau et axe-core doivent encore être vérifiés sur staging après activation du package V0.2. Docker/DDEV restent indisponibles. Les fixtures staging restent synthétiques et aucune commande ou paiement ne sera effectué.
+
+**Commit :** à associer au commit de publication V0.2.
