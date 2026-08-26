@@ -81,7 +81,7 @@ final class MenuRenderer {
 				'CRS_QUICK_VIEW_CONFIG',
 				array(
 					'restUrl' => rest_url( 'crs/v1/quick-view/' ),
-					'nonce'   => wp_create_nonce( 'crs_quickview' ),
+					'nonce'   => wp_create_nonce( 'wp_rest' ),
 					'labels'  => array(
 						'close'   => esc_html__( 'Fermer l’aperçu rapide', 'restaurant-suite-core' ),
 						'loading' => esc_html__( 'Chargement de l’aperçu…', 'restaurant-suite-core' ),

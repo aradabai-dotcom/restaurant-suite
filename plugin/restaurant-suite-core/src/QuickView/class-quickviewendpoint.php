@@ -59,7 +59,7 @@ final class QuickViewEndpoint {
 			$nonce = (string) $request->get_param( '_wpnonce' );
 		}
 
-		return 1 === wp_verify_nonce( $nonce, 'crs_quickview' );
+		return 1 === wp_verify_nonce( $nonce, 'wp_rest' );
 	}
 
 	/**
