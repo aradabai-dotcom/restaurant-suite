@@ -111,3 +111,9 @@ Aucune fonctionnalité ne doit être déclarée comme terminée uniquement parce
 **Limites :** l’endpoint, la modale, le focus clavier, Échap, erreur réseau et axe-core doivent encore être vérifiés sur staging après activation du package V0.2. Docker/DDEV restent indisponibles. Les fixtures staging restent synthétiques et aucune commande ou paiement ne sera effectué.
 
 **Commit :** à associer au commit de publication V0.2.
+
+## Correctif staging — autoload V0.2 — 26 août 2026
+
+Lors de l’activation staging de `restaurant-suite-core-0.2.0`, WordPress a signalé `Class "CRS\\QuickView\\QuickViewEndpoint" not found`. L’autoloader transformait tout le namespace en minuscules et cherchait donc `src/quickview/`, alors que le package contient `src/QuickView/` ; l’erreur n’apparaissait pas en environnement local insensible à la casse attendue.
+
+Le correctif conserve la casse des segments de répertoire et ne minuscule que le nom de classe après le préfixe `class-`. La version 0.2.0 a ensuite été revalidée localement avec syntaxe PHP, Parallel Lint, PHPCS, PHPStan, PHPUnit 10 tests/26 assertions, ESLint, Stylelint, Vitest, build et packaging. Le package staging devra être remplacé par cet artefact corrigé avant toute validation fonctionnelle V0.2.

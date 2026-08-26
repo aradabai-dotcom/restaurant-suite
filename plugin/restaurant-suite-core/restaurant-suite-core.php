@@ -17,19 +17,23 @@ define('CRS_PLUGIN_FILE', __FILE__);
 define('CRS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('CRS_PLUGIN_URL', plugin_dir_url(__FILE__));
 
-spl_autoload_register(static function (string $class): void {
-    $prefix = 'CRS\\';
-    if (strncmp($class, $prefix, strlen($prefix)) !== 0) {
-        return;
-    }
+spl_autoload_register(
+    static function (string $class): void {
+        $prefix = 'CRS\\';
+        if (strncmp($class, $prefix, strlen($prefix)) !== 0) {
+            return;
+        }
 
-    $relative = strtolower(str_replace('\\', '/', substr($class, strlen($prefix))));
-    $relative = str_replace('class-', '', $relative);
-    $path = CRS_PLUGIN_DIR . 'src/' . dirname($relative) . '/class-' . basename($relative) . '.php';
-    if (is_readable($path)) {
-        require_once $path;
+        $relative   = str_replace('\\', '/', substr($class, strlen($prefix)));
+        $segments   = explode('/', $relative);
+        $class_name = strtolower((string) array_pop($segments));
+        $directory  = implode('/', $segments);
+        $path       = CRS_PLUGIN_DIR . 'src/' . $directory . '/class-' . $class_name . '.php';
+        if (is_readable($path)) {
+            require_once $path;
+        }
     }
-});
+);
 
 require_once CRS_PLUGIN_DIR . 'src/Contracts/class-contractregistry.php';
 require_once CRS_PLUGIN_DIR . 'src/Menu/class-menuarguments.php';
