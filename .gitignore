@@ -13,4 +13,5 @@ web/wp-includes/
 .ddev/.dbimage-
 reports/*/private/
 *.log
+.phpunit.result.cache
 .DS_Store

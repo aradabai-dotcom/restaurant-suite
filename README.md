@@ -4,7 +4,7 @@ Base de conception et de développement d’une suite WordPress duplicable pour 
 
 ## Statut du projet
 
-Le dépôt contient actuellement la **roadmap**, les **cahiers des charges**, l’architecture, les audits des extensions de référence, la stratégie de matérialisation du dépôt et le pack CDC v3. Le plugin et le thème métier ne sont pas encore implémentés : la prochaine étape est de matérialiser le dépôt technique, puis de valider la phase 0.0 avant de commencer la V0.1.
+Le dépôt contient la **roadmap**, les **cahiers des charges**, l’architecture, les audits des extensions de référence, la stratégie de matérialisation et le squelette technique de la phase 0.0. Les contrats machine, les scripts, les fixtures initiales, DDEV, les lockfiles, le Makefile et la CI sont maintenant présents. Le gate DDEV reste à exécuter dans un environnement Docker/DDEV-capable avant d’approuver la V0.1.
 
 ## Objectif produit
 
