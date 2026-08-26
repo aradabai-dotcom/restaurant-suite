@@ -51,3 +51,7 @@ Après renommage FTP du dossier défectueux en `restaurant-suite-core-0.2.0_disa
 Le package V0.2.0 corrigé a été réinstallé après la désactivation FTP de l’ancienne copie, puis activé avec succès. WordPress affiche « Extension activée », sans fatal error. La copie `restaurant-suite-core-0.2.0_disabled` reste hors chargement et les anciennes versions 0.1.0 sont inactives. Les tests fonctionnels Quick View peuvent reprendre sur les pages CRS existantes.
 
 Pour remplacer le code nonce sans conserver l’ancien runtime, V0.2.0 actif a été désactivé depuis l’administration. Les deux anciennes copies 0.1.0 et `0.2.0_disabled` restent inactives ; le catalogue et les pages de test sont conservés.
+
+La dernière build V0.2.0 intégrant la sanitation dédiée du formulaire variable a été téléversée, choisie en remplacement de l’ancienne extension puis activée avec succès. WordPress reste administrable ; le test fonctionnel variable peut être rejoué.
+
+Sur `https://lightpink-cat-987595.hostingersite.com/crs-test-menu/`, après la dernière mise à jour, le Quick View du produit variable `[CRS TEST] Tacos Variable` affiche correctement le prix, la sélection `Taille CRS` avec les options `Petite`/`Grande`, la quantité, le bouton « Ajouter au panier » et le lien « Voir la fiche produit ». La sanitation dédiée a donc résolu la perte du formulaire variable constatée dans l’itération précédente. Le rendu reste dans la modale accessible, sans création de commande.
