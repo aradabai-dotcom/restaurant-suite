@@ -39,3 +39,9 @@ La page est encore protégée par le mode « Bientôt disponible » et reste acc
 Les assertions DOM sur `/crs-test-menu/` passent : conteneur `data-crs-menu` présent, 3 cartes, produit simple, prix, état `Indisponible`, CTA variable et lien `add-to-cart=16` présents. Aucun script Restaurant Suite/CRS n’est chargé par cette V0.1, ce qui confirme le rendu serveur sans dépendance JavaScript métier. `/crs-test-menu-empty/` affiche bien `Aucun plat disponible dans cette catégorie.` avec un conteneur d’état vide.
 
 La page `/crs-test-menu-block/` (ID 23) contenant `restaurant-suite/menu` en bloc dynamique affiche exactement les trois fixtures et les mêmes CTA/états que le shortcode. Le point d’entrée bloc partage donc bien le renderer serveur ; aucune erreur visible ni commande n’a été générée.
+
+## 26 août 2026 — incident d’activation V0.2 et blocage de remplacement
+
+L’activation du premier package `restaurant-suite-core-0.2.0` a produit un fatal sur `CRS\\QuickView\\QuickViewEndpoint` : son autoloader minuscule par erreur le segment de répertoire `QuickView` et cherchait `src/quickview/` sous l’environnement Linux Hostinger. Le correctif a été développé, testé localement et poussé dans le commit `40481cf`.
+
+Le staging a ensuite gardé l’ancien package V0.2.0 actif et le fatal se produit avant le chargement de toutes les pages d’administration. Les tentatives de désactivation directe, d’accès à `plugins.php` et d’accès à `update.php?action=upload-plugin` restent bloquées par le même fatal, car WordPress charge les extensions actives avant ces actions. Aucun produit, panier, commande ou réglage WooCommerce n’a été supprimé. Le package corrigé n’est pas encore installé sur le staging et V0.2 ne doit pas être considérée comme validée sur staging tant que l’ancien package n’est pas désactivé ou remplacé via un accès fichier/hosting ou le mode récupération WordPress.
