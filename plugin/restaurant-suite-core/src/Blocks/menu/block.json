@@ -1,0 +1,17 @@
+{
+  "apiVersion": 3,
+  "name": "restaurant-suite/menu",
+  "title": "Restaurant Suite — Menu",
+  "category": "widgets",
+  "icon": "food",
+  "description": "Affiche le catalogue WooCommerce du restaurant côté serveur.",
+  "attributes": {
+    "category": { "type": "string", "default": "" },
+    "limit": { "type": "number", "default": 12 },
+    "page": { "type": "number", "default": 1 },
+    "columns": { "type": "number", "default": 3 },
+    "orderby": { "type": "string", "default": "menu_order" },
+    "order": { "type": "string", "default": "ASC" }
+  },
+  "supports": { "html": false }
+}

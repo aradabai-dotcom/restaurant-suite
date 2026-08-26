@@ -1,0 +1,127 @@
+.crs-menu {
+  --crs-color-text: #211c18;
+  --crs-color-muted: #6f665f;
+  --crs-color-accent: #b34a2b;
+  --crs-color-surface: #fffaf5;
+  --crs-space: 1rem;
+
+  color: var(--crs-color-text);
+}
+
+.crs-menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(var(--crs-space) * 1.5);
+}
+
+.crs-menu--columns-1 .crs-menu__grid {
+  grid-template-columns: 1fr;
+}
+
+.crs-menu--columns-2 .crs-menu__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.crs-menu--columns-4 .crs-menu__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.crs-menu__item {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--crs-color-muted) 24%, transparent);
+  border-radius: 0.75rem;
+  background: var(--crs-color-surface);
+}
+
+.crs-menu__media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #eee8e1;
+}
+
+.crs-menu__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crs-menu__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.crs-menu__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: var(--crs-space);
+}
+
+.crs-menu__title {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.crs-menu__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.crs-menu__description {
+  color: var(--crs-color-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.crs-menu__description p {
+  margin: 0;
+}
+
+.crs-menu__price {
+  font-weight: 700;
+}
+
+.crs-menu__availability {
+  margin: 0;
+  color: var(--crs-color-muted);
+  font-size: 0.9rem;
+}
+
+.crs-menu__action {
+  align-self: flex-start;
+  margin-top: auto;
+  border-radius: 999px;
+  background: var(--crs-color-accent);
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  text-decoration: none;
+}
+
+.crs-menu__action:focus-visible,
+.crs-menu__title a:focus-visible,
+.crs-menu__media:focus-visible {
+  outline: 3px solid #1d70b8;
+  outline-offset: 3px;
+}
+
+.crs-menu__empty {
+  margin: 0;
+  color: var(--crs-color-muted);
+}
+
+@media (width <= 700px) {
+  .crs-menu__grid,
+  .crs-menu--columns-2 .crs-menu__grid,
+  .crs-menu--columns-3 .crs-menu__grid,
+  .crs-menu--columns-4 .crs-menu__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -81,3 +81,19 @@ Aucune fonctionnalité ne doit être déclarée comme terminée uniquement parce
 **Limites et risques :** l’installation réelle WordPress/WooCommerce, HPOS, les fixtures, les tests E2E et la CI d’intégration ne sont pas validés dans la sandbox sans Docker/DDEV.
 
 **Commit :** à associer au commit de publication de cette entrée.
+
+## Entrée — V0.1 menu serveur — 26 août 2026
+
+**Objectif :** implémenter la fondation menu sur WooCommerce sans source catalogue parallèle, avec shortcode, bloc dynamique et widget Elementor optionnel.
+
+**Fichiers modifiés :** `plugin/restaurant-suite-core/restaurant-suite-core.php`, `src/class-plugin.php`, `src/class-menucontroller.php`, `src/Menu/class-menuarguments.php`, `src/Menu/class-menuquery.php`, `src/Menu/class-menurenderer.php`, `src/Blocks/menu/block.json`, `src/Integrations/class-elementormenuwidget.php`, `assets/build/menu.css`, `tests/unit/MenuArgumentsTest.php`, `tests/unit/MenuQueryTest.php`, `phpstan.neon.dist`, `stubs/wordpress-woocommerce-elementor.php`, `docs/reports/v0.1-menu-validation.md`.
+
+**Comportement implémenté :** le catalogue est interrogé avec `WC_Product_Query`; prix, disponibilité, images et liens utilisent les getters WooCommerce. Le renderer serveur commun est partagé par les trois points d’entrée. Les produits simples achetables proposent l’ajout au panier WooCommerce, les variables renvoient vers la fiche pour sélectionner une variation et les indisponibles restent visibles avec un état textuel. Le CSS est préfixé `crs-` et responsive.
+
+**Tests exécutés :** `make validate`, `make package`, `bash -n`, PHPCS/WPCS, PHPStan niveau 6, PHPUnit, ESLint, Stylelint, Vitest, validation des contrats, inspection `unzip -l` et `git diff --check`.
+
+**Résultats :** 7 tests PHPUnit et 17 assertions passent ; les analyseurs et le packaging passent. Le staging contient encore le package 0.0.1 ; le déploiement 0.1.0 et les fixtures WooCommerce sont la prochaine vérification réelle.
+
+**Limites et risques :** Docker/DDEV restent indisponibles. Elementor n’est pas une dépendance obligatoire, mais son widget ne peut être validé qu’avec le package installé et activé sur WordPress. Les tests E2E, mobile et JavaScript désactivé restent à exécuter.
+
+**Commit :** à associer au commit de publication de cette entrée.

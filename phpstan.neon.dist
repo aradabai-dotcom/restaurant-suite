@@ -2,5 +2,7 @@ parameters:
   level: 6
   paths:
     - plugin/restaurant-suite-core/src
+  bootstrapFiles:
+    - stubs/wordpress-woocommerce-elementor.php
   excludePaths:
     - %currentWorkingDirectory%/vendor
