@@ -58,3 +58,11 @@ Puis archiver les logs et répéter l’installation du package sur le WordPress
 **Phase 0.0 — code et contrats : partiellement validée.**
 **Gate de matérialisation DDEV : en attente d’un environnement Docker/DDEV-capable.**
 **V0.1 : interdite tant que le gate DDEV et les contrats métier ne sont pas approuvés par écrit.**
+
+## Revalidation après corrections — 26 août 2026
+
+La commande `make validate && make package` a été relancée après le durcissement du bootstrap. Les contrôles Composer, lint PHP, PHPCS, PHPStan, PHPUnit, contrats JSON/PHP/JavaScript, build Node, ESLint, Stylelint, Vitest et packaging restent verts. PHPStan affiche uniquement son avertissement informatif concernant l’ancienne série 1.12 ; aucune erreur d’analyse n’est présente.
+
+Le script `scripts/package-release.sh` a été corrigé afin que les ZIP aient directement les fichiers du plugin ou du thème à leur racine, ce qui correspond au format attendu par l’installeur WordPress. Les tests PHPUnit, `phpunit.xml.dist` et les caches de résultats sont désormais exclus des artefacts. La structure des deux ZIP a été contrôlée avec `unzip -l`.
+
+Cette revalidation ne change pas la limite principale : Docker et DDEV ne sont toujours pas disponibles dans la sandbox. La phase 0.0 est donc validée pour le code, les contrats, l’outillage et le packaging local, mais pas pour l’installation WordPress/DDEV, HPOS, les fixtures WooCommerce, l’E2E ou la CI d’intégration.

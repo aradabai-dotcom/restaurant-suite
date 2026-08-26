@@ -65,3 +65,19 @@ Aucune fonctionnalité ne doit être déclarée comme terminée uniquement parce
 **Limites et risques :** Docker/DDEV ne sont pas disponibles dans la sandbox ; les validations WordPress automatisées, HPOS, E2E et les fixtures restent à effectuer. Les outils de test ajoutés devront être retirés ou désactivés avant une mise en production.
 
 **Commit :** `1d2c0b6` — `docs: record staging test dependencies`.
+
+## Entrée — phase 0.0 — revalidation packaging — 26 août 2026
+
+**Objectif :** confirmer que les corrections du bootstrap et du packaging ne régressent pas les contrôles locaux.
+
+**Fichiers modifiés :** `scripts/bootstrap-local.sh`, `scripts/package-release.sh`, `docs/reports/phase-0.0-local-validation.md`.
+
+**Comportement implémenté :** le bootstrap n’envoie plus `--version=` lorsque `WOOCOMMERCE_VERSION` est vide. Les ZIP de release ont maintenant une racine WordPress correcte et excluent les tests, la configuration PHPUnit et les caches de résultats.
+
+**Tests exécutés :** `bash -n scripts/bootstrap-local.sh`, `bash -n scripts/package-release.sh`, `make validate`, `make package`, `unzip -l` sur les deux artefacts et `git diff --check`.
+
+**Résultats :** tous les contrôles disponibles hors Docker/DDEV restent verts ; les deux ZIP contiennent uniquement leur code installable et leurs ressources prévues.
+
+**Limites et risques :** l’installation réelle WordPress/WooCommerce, HPOS, les fixtures, les tests E2E et la CI d’intégration ne sont pas validés dans la sandbox sans Docker/DDEV.
+
+**Commit :** à associer au commit de publication de cette entrée.
