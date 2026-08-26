@@ -49,3 +49,19 @@ Aucune fonctionnalité ne doit être déclarée comme terminée uniquement parce
 **Limites et risques :** à compléter.
 
 **Commit :** à compléter.
+
+## Entrée — staging — 26 août 2026
+
+**Objectif :** préparer un staging WordPress vierge pour les validations réelles de Restaurant Suite sans ajouter de dépendance payante ni ouvrir la boutique.
+
+**Fichiers modifiés :** `docs/reports/staging-execution-log.md`.
+
+**Comportement réalisé :** WooCommerce 11.0.1 était déjà installé et activé. Elementor 4.2.3, Query Monitor 4.0.7 et User Switching 1.12.1 ont ensuite été installés depuis le répertoire officiel WordPress et activés. Le mode « Boutique bientôt disponible » a été conservé ; aucun paiement, produit, commande réelle ou service externe n’a été configuré.
+
+**Tests exécutés :** confirmation visuelle de l’installation et de l’activation depuis l’administration WordPress ; présence du panneau Query Monitor dans l’administration ; vérification de la liste des extensions actives.
+
+**Résultats :** le staging dispose désormais de WooCommerce, Elementor et des outils gratuits de diagnostic et de test de rôles requis pour la suite. La fonctionnalité Restaurant Suite n’est pas encore déployée.
+
+**Limites et risques :** Docker/DDEV ne sont pas disponibles dans la sandbox ; les validations WordPress automatisées, HPOS, E2E et les fixtures restent à effectuer. Les outils de test ajoutés devront être retirés ou désactivés avant une mise en production.
+
+**Commit :** `1d2c0b6` — `docs: record staging test dependencies`.
