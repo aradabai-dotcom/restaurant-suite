@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "roles": {
+    "administrator": {
+      "products": ["read", "write"],
+      "orders": ["read", "write"],
+      "settings": ["read", "write"]
+    },
+    "shop_manager": {
+      "products": ["read", "write"],
+      "orders": ["read", "write"],
+      "settings": ["read"]
+    },
+    "crs_cuisine": {
+      "products": [],
+      "orders": ["read", "transition:preparing", "transition:ready"],
+      "settings": []
+    },
+    "crs_livreur": {
+      "products": [],
+      "orders": ["read:assigned", "transition:out_for_delivery", "transition:completed"],
+      "settings": []
+    }
+  },
+  "endpoints_require_capability": true
+}

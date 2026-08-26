@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "statuses": [
+    {
+      "id": "crs_pending_confirmation",
+      "label": "En attente de confirmation",
+      "terminal": false
+    },
+    {
+      "id": "crs_confirmed",
+      "label": "Confirm\u00e9e",
+      "terminal": false
+    },
+    {
+      "id": "crs_preparing",
+      "label": "En pr\u00e9paration",
+      "terminal": false
+    },
+    {
+      "id": "crs_ready",
+      "label": "Pr\u00eate",
+      "terminal": false
+    },
+    {
+      "id": "crs_out_for_delivery",
+      "label": "En livraison",
+      "terminal": false
+    },
+    {
+      "id": "crs_completed",
+      "label": "Termin\u00e9e",
+      "terminal": true
+    },
+    {
+      "id": "crs_rejected",
+      "label": "Refus\u00e9e",
+      "terminal": true
+    }
+  ],
+  "transitions": [
+    ["crs_pending_confirmation", "crs_confirmed"],
+    ["crs_pending_confirmation", "crs_rejected"],
+    ["crs_confirmed", "crs_preparing"],
+    ["crs_preparing", "crs_ready"],
+    ["crs_ready", "crs_out_for_delivery"],
+    ["crs_ready", "crs_completed"],
+    ["crs_out_for_delivery", "crs_completed"]
+  ]
+}

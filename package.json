@@ -1,0 +1,29 @@
+{
+  "name": "restaurant-suite",
+  "private": true,
+  "packageManager": "pnpm@11.24.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "eslint scripts tests --max-warnings=0 && stylelint 'plugin/**/*.css' 'theme/**/*.css'",
+    "format:check": "prettier --check composer.json package.json tsconfig.json scripts tests .github/workflows docs/contracts",
+    "test:js": "vitest run",
+    "e2e": "playwright test",
+    "a11y": "playwright test tests/e2e/accessibility.spec.ts",
+    "perf": "lhci autorun",
+    "contracts": "node scripts/validate-contracts.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.55.0",
+    "@wordpress/scripts": "^30.0.0",
+    "eslint": "^9.0.0",
+    "html-validate": "^9.0.0",
+    "prettier": "^3.6.0",
+    "rtlcss": "^4.3.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^38.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

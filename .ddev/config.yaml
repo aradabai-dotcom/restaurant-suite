@@ -1,0 +1,15 @@
+name: restaurant-suite
+type: wordpress
+docroot: web
+php_version: "8.2"
+database:
+  type: mariadb
+  version: "10.11"
+webserver_type: nginx-fpm
+use_dns_when_possible: true
+web_environment:
+  - WP_ENVIRONMENT_TYPE=local
+  - WP_DEBUG=1
+  - WP_DEBUG_LOG=1
+  - WP_DEBUG_DISPLAY=0
+  - CRS_TEST_MODE=1

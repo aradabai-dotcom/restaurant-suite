@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "name": "crs:cart:add",
+      "producer": "Catalog/QuickView",
+      "consumer": "Cart",
+      "cancelable": false,
+      "price_trusted": false
+    },
+    {
+      "name": "crs:cart:update",
+      "producer": "Cart UI",
+      "consumer": "Cart",
+      "cancelable": false,
+      "price_trusted": false
+    },
+    {
+      "name": "crs:cart:remove",
+      "producer": "Cart UI",
+      "consumer": "Cart",
+      "cancelable": false,
+      "price_trusted": false
+    },
+    {
+      "name": "crs:cart:refresh",
+      "producer": "Cart",
+      "consumer": "Menu/Drawer/Counter",
+      "cancelable": false,
+      "price_trusted": false
+    },
+    {
+      "name": "crs:quickview:open",
+      "producer": "Catalog",
+      "consumer": "QuickView",
+      "cancelable": false
+    },
+    {
+      "name": "crs:quickview:close",
+      "producer": "QuickView",
+      "consumer": "Catalog",
+      "cancelable": false
+    },
+    {
+      "name": "crs:order:created",
+      "producer": "Orders",
+      "consumer": "WhatsApp/Dashboard",
+      "cancelable": false,
+      "price_trusted": false
+    }
+  ]
+}

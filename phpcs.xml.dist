@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="Restaurant Suite">
+  <description>WordPress Coding Standards for Restaurant Suite.</description>
+  <rule ref="WordPress" />
+  <file>plugin/restaurant-suite-core/src</file>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+  <arg name="colors" />
+  <arg value="sp" />
+</ruleset>

@@ -1,9 +1,8 @@
 {
-  "name": "restaurant-suite/project",
-  "description": "Restaurant Suite development tooling",
+  "name": "restaurant-suite/plugin-template",
+  "description": "Template Composer du plugin Restaurant Suite",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
   "require": {},
-  "require-dev": {},
-  "scripts": {
-    "validate": "@php -r \"echo \\"Initialize project dependencies before validation\\\n\";\""
-  }
+  "require-dev": {}
 }

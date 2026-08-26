@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "name": "product",
+      "owner": "WooCommerce",
+      "storage": "WC_Product",
+      "source_of_truth": true
+    },
+    {
+      "name": "category",
+      "owner": "WooCommerce",
+      "storage": "product_cat",
+      "source_of_truth": true
+    },
+    {
+      "name": "variation",
+      "owner": "WooCommerce",
+      "storage": "WC_Product_Variation",
+      "source_of_truth": true
+    },
+    {
+      "name": "restaurant_settings",
+      "owner": "Restaurant Suite",
+      "storage": "option:crs_settings",
+      "schema_versioned": true
+    },
+    {
+      "name": "order",
+      "owner": "WooCommerce",
+      "storage": "WC_Order CRUD",
+      "source_of_truth": true,
+      "direct_sql_forbidden": true
+    },
+    {
+      "name": "free_note",
+      "owner": "Restaurant Suite",
+      "storage": "validated_request_field",
+      "can_change_price": false
+    },
+    {
+      "name": "allergens",
+      "owner": "Restaurant Suite",
+      "storage": "validated_product_meta",
+      "server_rendered": true
+    }
+  ]
+}

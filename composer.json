@@ -1,0 +1,52 @@
+{
+  "name": "restaurant-suite/project",
+  "description": "Restaurant Suite development and validation tooling",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^10.5",
+    "phpstan/phpstan": "^1.12",
+    "php-parallel-lint/php-parallel-lint": "^1.4",
+    "squizlabs/php_codesniffer": "^3.10",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "wp-coding-standards/wpcs": "^3.1",
+    "phpcompatibility/php-compatibility": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "RestaurantSuite\\\\": "plugin/restaurant-suite-core/src/"
+    },
+    "classmap": [
+      "plugin/restaurant-suite-core/src/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RestaurantSuite\\Tests\\": "plugin/restaurant-suite-core/tests/"
+    }
+  },
+  "scripts": {
+    "validate:all": [
+      "@lint",
+      "@cs",
+      "@stan",
+      "@test:unit",
+      "@contracts"
+    ],
+    "lint": "parallel-lint plugin tests scripts",
+    "cs": "phpcs --standard=phpcs.xml.dist",
+    "stan": "phpstan analyse --configuration=phpstan.neon.dist",
+    "test:unit": "phpunit --configuration=plugin/restaurant-suite-core/phpunit.xml.dist --testsuite=unit",
+    "test:integration": "phpunit --configuration=plugin/restaurant-suite-core/phpunit.xml.dist --testsuite=integration",
+    "contracts": "php tests/contract/validate-contracts.php"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

@@ -1,0 +1,61 @@
+name: Pull Request Quality
+on:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: pr-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, curl, zip, mysqli
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.24.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: composer validate --strict
+      - run: composer lint
+      - run: composer contracts
+      - run: pnpm run contracts
+      - run: pnpm run build
+  integration:
+    runs-on: ubuntu-latest
+    needs: static
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ddev/github-action@v1
+      - run: docker version
+      - run: ddev version
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.24.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: ./scripts/bootstrap-ci.sh
+      - run: CRS_ALLOW_FIXTURE_RESET=1 ./scripts/reset-fixtures.sh
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm run e2e
+        env:
+          BASE_URL: https://restaurant-suite.ddev.site
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-artifacts
+          path: |
+            playwright-report/
+            test-results/

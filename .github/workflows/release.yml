@@ -1,0 +1,30 @@
+name: Release Validation
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, curl, zip, mysqli
+      - uses: ramsey/composer-install@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.24.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: make validate
+      - run: make package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: restaurant-suite-release
+          path: dist/

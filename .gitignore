@@ -6,6 +6,10 @@
 *.p12
 node_modules/
 vendor/
+dist/
+web/wp-*.php
+web/wp-admin/
+web/wp-includes/
 .ddev/.dbimage-
 reports/*/private/
 *.log
