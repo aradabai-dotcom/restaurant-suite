@@ -145,6 +145,66 @@ final class QuickViewEndpoint {
 		$form = (string) ob_get_clean();
 
 		$product = $previous_product;
-		return wp_kses_post( $form );
+		return wp_kses(
+			$form,
+			array(
+				'form'   => array(
+					'action'  => true,
+					'class'   => true,
+					'data-*'  => true,
+					'enctype' => true,
+					'method'  => true,
+				),
+				'div'    => array(
+					'class'  => true,
+					'data-*' => true,
+				),
+				'table'  => array( 'class' => true ),
+				'tbody'  => array(),
+				'tr'     => array(),
+				'th'     => array(
+					'class' => true,
+					'scope' => true,
+				),
+				'td'     => array( 'class' => true ),
+				'label'  => array(
+					'class' => true,
+					'for'   => true,
+				),
+				'select' => array(
+					'aria-label' => true,
+					'class'      => true,
+					'data-*'     => true,
+					'id'         => true,
+					'name'       => true,
+				),
+				'option' => array(
+					'selected' => true,
+					'value'    => true,
+				),
+				'input'  => array(
+					'autocomplete' => true,
+					'class'        => true,
+					'max'          => true,
+					'min'          => true,
+					'name'         => true,
+					'step'         => true,
+					'type'         => true,
+					'value'        => true,
+				),
+				'button' => array(
+					'class'    => true,
+					'disabled' => true,
+					'name'     => true,
+					'type'     => true,
+					'value'    => true,
+				),
+				'span'   => array(
+					'aria-hidden' => true,
+					'class'       => true,
+				),
+				'p'      => array( 'class' => true ),
+			)
+		);
 	}
 }

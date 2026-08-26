@@ -30,7 +30,7 @@ namespace {
 	function wc_get_product( int $product_id ): mixed {
 		return $GLOBALS['crs_test_product'] ?? null;
 	}
-	function woocommerce_template_single_add_to_cart(): void {}
+	function woocommerce_template_single_add_to_cart(): void { echo '<form class="variations_form" data-product_variations="[]"><select name="attribute_taille"><option value="petite">Petite</option></select></form>'; }
 	function wp_enqueue_style( string $handle, string $src = '', array $deps = array(), string|bool|null $ver = false, string $media = 'all' ): void {}
 	function wp_register_script( string $handle, string $src = '', array $deps = array(), string|bool|null $ver = false, array|bool $args = false ): bool { return true; }
 	function wp_localize_script( string $handle, string $object_name, array $l10n ): bool { return true; }
@@ -43,6 +43,10 @@ namespace {
 	function esc_url( string $url ): string { return $url; }
 	function wpautop( string $text ): string { return $text; }
 	function wp_kses_post( string $html ): string { return $html; }
+	/**
+	 * @param array<string, mixed> $allowed_html
+	 */
+	function wp_kses( string $html, array $allowed_html ): string { return $html; }
 	function add_query_arg( string $key, int|string $value, string $url ): string { return $url; }
 	function wc_get_cart_url(): string { return ''; }
 }

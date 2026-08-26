@@ -49,3 +49,5 @@ Le staging a ensuite gardé l’ancien package V0.2.0 actif et le fatal se produ
 Après renommage FTP du dossier défectueux en `restaurant-suite-core-0.2.0_disabled`, l’administration WordPress est revenue. WordPress indique que le fichier de l’extension originale n’existe plus et l’a désactivée ; aucune donnée WooCommerce n’a été modifiée. Le déploiement du package corrigé peut reprendre.
 
 Le package V0.2.0 corrigé a été réinstallé après la désactivation FTP de l’ancienne copie, puis activé avec succès. WordPress affiche « Extension activée », sans fatal error. La copie `restaurant-suite-core-0.2.0_disabled` reste hors chargement et les anciennes versions 0.1.0 sont inactives. Les tests fonctionnels Quick View peuvent reprendre sur les pages CRS existantes.
+
+Pour remplacer le code nonce sans conserver l’ancien runtime, V0.2.0 actif a été désactivé depuis l’administration. Les deux anciennes copies 0.1.0 et `0.2.0_disabled` restent inactives ; le catalogue et les pages de test sont conservés.

@@ -78,5 +78,7 @@ final class QuickViewEndpointTest extends TestCase {
 		self::assertSame( 16, $result->data['product_id'] );
 		self::assertStringContainsString( '&lt;Fixture Burger&gt;', $result->data['html'] );
 		self::assertStringContainsString( 'Voir la fiche produit', $result->data['html'] );
+		self::assertStringContainsString( 'variations_form', $result->data['html'] );
+		self::assertStringContainsString( 'attribute_taille', $result->data['html'] );
 	}
 }

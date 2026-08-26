@@ -117,3 +117,9 @@ Aucune fonctionnalité ne doit être déclarée comme terminée uniquement parce
 Lors de l’activation staging de `restaurant-suite-core-0.2.0`, WordPress a signalé `Class "CRS\\QuickView\\QuickViewEndpoint" not found`. L’autoloader transformait tout le namespace en minuscules et cherchait donc `src/quickview/`, alors que le package contient `src/QuickView/` ; l’erreur n’apparaissait pas en environnement local insensible à la casse attendue.
 
 Le correctif conserve la casse des segments de répertoire et ne minuscule que le nom de classe après le préfixe `class-`. La version 0.2.0 a ensuite été revalidée localement avec syntaxe PHP, Parallel Lint, PHPCS, PHPStan, PHPUnit 10 tests/26 assertions, ESLint, Stylelint, Vitest, build et packaging. Le package staging devra être remplacé par cet artefact corrigé avant toute validation fonctionnelle V0.2.
+
+## Correctifs staging V0.2 — 26 août 2026
+
+Le premier appel REST a exposé HTTP 403 `rest_cookie_invalid_nonce` : l’action de nonce propriétaire ne pouvait pas franchir la validation REST WordPress. Le code utilise désormais l’action standard `wp_rest` pour `X-WP-Nonce`, avec validation locale et endpoint staging HTTP 200.
+
+La modale simple a ensuite été vérifiée sur staging : fragment WooCommerce présent, rôle dialog, `aria-modal`, titre référencé, focus dans la modale, scroll verrouillé, fermeture Échap et retour du focus au déclencheur. Le produit variable a révélé que `wp_kses_post()` retirait le formulaire natif et ses variations. Une sanitation dédiée autorise maintenant form/select/input et les attributs `data-*` nécessaires à WooCommerce. Contrôles locaux après correction : PHPUnit 10 tests/28 assertions, PHPStan sans erreur, PHPCS, Parallel Lint, ESLint, Stylelint, Vitest, contrats, build et package tous verts. Le staging doit recevoir cette dernière itération avant la clôture V0.2.
