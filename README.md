@@ -24,6 +24,7 @@ WooCommerce reste la source unique de vérité pour les produits, variations, pr
 | `docs/staging/` | Checklist et règles du WordPress vierge réel |
 | `releases/` | Archives CDC et checksums validés |
 | `decisions/` | Décisions d’architecture et validations |
+| `docs/developer-log.md` | Journal de chaque implémentation, test, limite et commit |
 
 ## Environnements
 
@@ -60,6 +61,7 @@ Commencer par lire :
 3. `docs/cdc/restaurant-suite-cdc-v3/README.md`.
 4. `docs/cdc/restaurant-suite-cdc-v3/docs/REPOSITORY-MATERIALIZATION-GATE.md`.
 5. `docs/tooling/CDC-OUTILS-PAR-VERSION.md`.
+6. `docs/developer-log.md` pour connaître l’état réel de l’implémentation.
 
 ## Licence et provenance
 
