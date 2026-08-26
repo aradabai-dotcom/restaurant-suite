@@ -30,6 +30,7 @@ namespace {
 	function sanitize_text_field( string $text ): string { return trim( strip_tags( $text ) ); }
 	function is_wp_error( mixed $value ): bool { return $value instanceof WP_Error; }
 	function WC(): object { return $GLOBALS['crs_test_wc'] ?? (object) array(); }
+	function wc_load_cart(): void {}
 	function get_post_status( int $post_id ): string { return 'publish'; }
 	function wc_get_product( int $product_id ): mixed {
 		return $GLOBALS['crs_test_product'] ?? null;

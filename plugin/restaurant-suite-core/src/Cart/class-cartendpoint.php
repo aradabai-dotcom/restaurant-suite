@@ -69,7 +69,11 @@ final class CartEndpoint {
 	 * @return \WP_REST_Response|\WP_Error
 	 */
 	public function handle( \WP_REST_Request $request ): \WP_REST_Response|\WP_Error {
-		$cart = function_exists( 'WC' ) ? WC()->cart : null;
+		$woocommerce = function_exists( 'WC' ) ? WC() : null;
+		if ( is_object( $woocommerce ) && ! is_object( $woocommerce->cart ?? null ) && function_exists( 'wc_load_cart' ) ) {
+			wc_load_cart();
+		}
+		$cart = is_object( $woocommerce ) ? ( $woocommerce->cart ?? null ) : null;
 		if ( ! is_object( $cart ) ) {
 			return new \WP_Error(
 				'crs_cart_unavailable',
