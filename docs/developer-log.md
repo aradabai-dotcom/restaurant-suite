@@ -193,3 +193,15 @@ Le shortcode `[crs_order_simulation]` rend un formulaire accessible marqué « S
 Après la validation de la V0.4 simulation, le document `docs/architecture/v0.5-dashboard-gate.md` prépare les contraintes du futur dashboard restaurant : capacités WordPress dédiées, mutations server-side, UX accessible, assets chargés par écran, tests DDEV/WordPress/HPOS et maintien de WooCommerce comme source unique de vérité. Aucun écran, writer réel ou mutation V0.5 n’est implémenté dans cette itération.
 
 **Commit :** à associer au commit de publication du gate documentaire.
+
+
+## Intégration réelle des références visuelles et thème — 27 août 2026
+
+Correction d’une omission importante : les archives uploadées `Reno Quick View` et `Side Cart WooCommerce` ont été analysées statiquement comme références UX. Leur code n’a pas été copié ni exécuté. Les principes retenus sont l’aperçu rapide depuis la boucle, la modale produit structurée, le drawer à zones stables, le compteur, l’état vide et les CTA persistants.
+
+Le thème `Restaurant Base Theme` a ensuite été construit avec une identité Restaurant Suite originale : palette ivoire/encre/terracotta/herbe/doré, titres éditoriaux, header sticky, navigation, bouton panier, cartes menu responsives, templates page/index/footer et support WooCommerce. Une première erreur d’enqueue de `style.css` a été détectée sur staging, corrigée localement, revalidée, puis déployée par remplacement de la copie active.
+
+La vérification visuelle staging confirme maintenant le rendu du thème, l’ouverture de Quick View avec contenu produit et l’ouverture du Cart Drawer vide. Le thème reste une première itération visuelle sur fixtures synthétiques ; aucun contenu de marque ou de production n’a été ajouté.
+
+**Rapport :** `docs/reports/theme-v0.1-reference-integration.md`.  
+**Commit :** à associer au commit documentaire du thème.
