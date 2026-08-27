@@ -4,5 +4,6 @@ parameters:
     - plugin/restaurant-suite-core/src
   bootstrapFiles:
     - stubs/wordpress-woocommerce-elementor.php
+    - stubs/wordpress-v04.php
   excludePaths:
     - %currentWorkingDirectory%/vendor

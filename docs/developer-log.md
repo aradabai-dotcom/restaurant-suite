@@ -8,10 +8,10 @@ Ce document est la source de vérité opérationnelle pour suivre ce qui a été
 |---|---|
 | Phase 0.0 — contrats | Implémentée partiellement et testée localement |
 | Dépôt canonique | Matérialisé |
-| V0.1 — menu public | À implémenter |
-| V0.2 — Quick View/live preview | À implémenter |
-| V0.3 — Cart Drawer | À implémenter |
-| V0.4 — WhatsApp/règles restaurant | À implémenter |
+| V0.1 — menu public | Implémentée et validée localement/staging |
+| V0.2 — Quick View/live preview | Implémentée et validée localement/staging |
+| V0.3 — Cart Drawer | Implémentée et validée localement/staging |
+| V0.4 — WhatsApp/règles restaurant | Simulation validée localement/staging ; DoD réelle hors périmètre |
 | V0.5 — dashboard | À implémenter |
 | V0.6 — thème/Elementor | Squelette initial seulement |
 | DDEV/WooCommerce/HPOS | En attente d’un environnement Docker/DDEV-capable |
@@ -149,3 +149,40 @@ La campagne UI finale a validé sur un panier synthétique l’ajout menu, l’o
 Validation locale finale : 15 tests PHPUnit / 50 assertions, Parallel Lint 19 fichiers, PHPCS 9 fichiers, PHPStan sans erreur avec avertissement de version ancienne, contrats JSON, build, ESLint, Stylelint, Vitest, packaging et `git diff --check` verts. Docker/DDEV, HPOS et Playwright complet restent non revendiqués car indisponibles dans la sandbox.
 
 Le staging ne conserve qu’une seule copie V0.3.0 active (`restaurant-suite-core-0.3.0-3`) ; les copies historiques restent inactives pour rollback. Les détails et limites sont dans `docs/reports/v0.3-cart-drawer-validation.md` et `docs/reports/staging-execution-log.md`.
+
+## Cadrage V0.4 — mode simulation strict — 27 août 2026
+
+La V0.3 étant validée et publiée dans `1c75d16`, la V0.4 est cadrée sans écriture irréversible sur le staging. Le parcours futur séparera validation des règles, recalcul du panier WooCommerce, idempotence et adaptateur de sortie. Le staging utilisera un writer de simulation qui ne crée pas de commande, ne décrémente pas le stock et n’ouvre ni n’envoie WhatsApp. Un writer WooCommerce réel restera hors d’accès tant qu’une autorisation distincte ne sera pas donnée.
+
+Le formulaire prévu collectera seulement nom, téléphone, adresse conditionnelle, mode retrait/livraison et remarque. Les prix, taxes, frais, stock, variations et lignes seront recalculés depuis WooCommerce ; la remarque ne pourra pas modifier le montant. Les réglages seront versionnés dans `crs_settings`, les capacités suivront `docs/contracts/permissions.json`, et la clé d’idempotence sera validée avec une empreinte contrôlée du panier et des données nécessaires.
+
+Le cadrage complet, les options et les gates bloquants sont documentés dans `docs/architecture/v0.4-simulation-gate.md`. Aucune commande de test ni communication WhatsApp réelle n’a été créée ou exécutée pendant cette phase.
+
+## V0.4 — simulation serveur et endpoint REST — 27 août 2026
+
+**Fichiers ajoutés ou modifiés :** contrats `restaurant-settings.json` et `order-request.json`, registre des événements, cadrage `v0.4-simulation-gate.md`, classes `src/Orders/`, endpoint et renderer de simulation, `assets/src/order-simulation.js`, `assets/src/order-simulation.css`, artefacts `assets/build/`, script de build, stubs et tests unitaires dédiés.
+
+**Comportement :** la route `POST crs/v1/order/simulate` est enregistrée pendant `rest_api_init` et protégée par le nonce standard `wp_rest`. Elle transmet uniquement les paramètres effectivement présents, rejette explicitement les champs de prix client, lit le panier WooCommerce côté serveur, contrôle les produits achetables et en stock, refuse un panier vide ou invalide et calcule les montants depuis le snapshot serveur. La réponse acceptée porte `decision=accepted_simulation` et `would_create_order=false`; le code ne possède aucun writer de commande et n’ouvre aucun canal WhatsApp.
+
+Le shortcode `[crs_order_simulation]` rend un formulaire accessible marqué « Simulation uniquement ». Le navigateur génère une clé d’idempotence, verrouille le bouton pendant l’appel, n’envoie aucun montant, limite l’affichage aux messages génériques et émet uniquement `crs:order:simulated` après une simulation acceptée. Les tests couvrent nonce invalide, route, snapshot WooCommerce synthétique, rejet, prix client, panier vide, réutilisation idempotente, conflit de contexte et compteur de création de commande nul.
+
+**Tests exécutés :** `pnpm run build`, `composer dump-autoload --no-interaction`, puis `make validate` et `git diff --check`. Résultat réel : Parallel Lint 33 fichiers, PHPCS 17 fichiers, PHPStan sans erreur avec avertissement informatif de version ancienne, PHPUnit 40 tests / 127 assertions, validation des contrats, build, ESLint, Stylelint, Vitest et diff check verts.
+
+**Limites :** aucun déploiement staging V0.4 n’est encore inclus dans cette entrée. Docker/DDEV, HPOS, Playwright complet et tests WordPress intégration ne sont pas revendiqués. Le writer WooCommerce réel, le paiement, la décrémentation de stock et toute ouverture/envoi WhatsApp restent interdits par le gate de sécurité.
+
+
+## Déploiement V0.4 simulation sur staging — 27 août 2026
+
+**Objectif :** installer et vérifier la build `0.4.0` en mode simulation strict, avec une seule copie active du Core et sans effet WooCommerce irréversible.
+
+**Déploiement :** le ZIP `restaurant-suite-core-0.4.0.zip` a été installé depuis l’administration WordPress. La copie `0.4.0` a été activée puis l’ancienne copie `0.3.0` a été désactivée. La liste des extensions a confirmé une seule copie Restaurant Suite active ; les anciennes copies restent inactives pour rollback.
+
+**Tests staging exécutés :** création d’une page synthétique non commerciale utilisant `[crs_order_simulation]`, vérification du rendu serveur et des libellés accessibles, ajout temporaire du produit synthétique au panier WooCommerce via le Cart Drawer, soumission REST avec données synthétiques, contrôle de la réponse HTTP 422 `service_disabled`, contrôle de l’écran WooCommerce des commandes resté vide, suppression de la ligne synthétique et rechargement du menu confirmant un panier vide.
+
+**Résultats :** le formulaire affiche explicitement qu’aucune commande, modification de stock, paiement ou message ne sera envoyé. Le refus `service_disabled` est attendu car `crs_settings` reste désactivé par défaut et aucun numéro WhatsApp n’a été configuré. Aucun writer réel, paiement ou canal WhatsApp n’a été appelé. Le panier de staging a été laissé vide.
+
+**Limites :** la réponse acceptée n’a pas été exécutée sur staging, car son exécution nécessiterait d’activer le service et de configurer un réglage de restaurant ; cette phase l’interdit. Docker/DDEV, HPOS, Playwright complet, tests WordPress d’intégration, k6 et ZAP ne sont pas revendiqués. La page de test créée doit être retirée ou passée en brouillon avant usage public.
+
+**Rapport :** `docs/reports/v0.4-simulation-validation.md`.
+
+**Commit :** à associer au commit de publication V0.4.

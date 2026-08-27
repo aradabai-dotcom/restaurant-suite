@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "name": "crs_order_request",
+  "owner": "Restaurant Suite",
+  "fields": {
+    "idempotency_key": {"type": "string", "required": true, "min_length": 16, "max_length": 128},
+    "customer_name": {"type": "string", "required": true, "min_length": 2, "max_length": 120},
+    "phone": {"type": "string", "required": true, "min_length": 7, "max_length": 32},
+    "address": {"type": "string", "required": false, "max_length": 500},
+    "fulfillment_method": {"type": "enum", "required": true, "values": ["pickup", "delivery"]},
+    "delivery_zone": {"type": "string", "required": false, "max_length": 120},
+    "note": {"type": "string", "required": false, "max_length": 500}
+  },
+  "server_owned_fields": ["products", "quantities", "variation_ids", "prices", "taxes", "fees", "subtotal", "total", "currency"],
+  "client_price_fields_forbidden": ["price", "prices", "subtotal", "total", "tax", "taxes", "fee", "fees"],
+  "storage": "validated_request_only_until_order_writer_is_authorized"
+}

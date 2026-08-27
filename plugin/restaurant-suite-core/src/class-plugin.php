@@ -13,6 +13,8 @@ use CRS\Menu\MenuQuery;
 use CRS\Menu\MenuRenderer;
 use CRS\Cart\CartEndpoint;
 use CRS\QuickView\QuickViewEndpoint;
+use CRS\Orders\OrderSimulationEndpoint;
+use CRS\Orders\OrderSimulationRenderer;
 
 /**
  * Boots the Restaurant Suite plugin.
@@ -30,5 +32,7 @@ final class Plugin {
 		$controller->register();
 		( new QuickViewEndpoint() )->register();
 		( new CartEndpoint() )->register();
+		( new OrderSimulationEndpoint() )->register();
+		( new OrderSimulationRenderer() )->register();
 	}
 }

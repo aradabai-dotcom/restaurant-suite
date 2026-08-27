@@ -48,6 +48,7 @@ final class ContractRegistryTest extends TestCase {
 				'crs:quickview:open',
 				'crs:quickview:close',
 				'crs:order:created',
+				'crs:order:simulated',
 			),
 			ContractRegistry::event_names()
 		);

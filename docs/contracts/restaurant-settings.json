@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "crs_settings",
+  "owner": "Restaurant Suite",
+  "storage": "option",
+  "fields": {
+    "enabled": {"type": "boolean", "default": false},
+    "restaurant_open": {"type": "boolean", "default": false},
+    "minimum_order": {"type": "decimal", "minimum": 0, "default": 0},
+    "pickup_enabled": {"type": "boolean", "default": true},
+    "delivery_enabled": {"type": "boolean", "default": false},
+    "delivery_fee": {"type": "decimal", "minimum": 0, "default": 0},
+    "delivery_zones": {"type": "string_list", "max_items": 100, "default": []},
+    "whatsapp_number": {"type": "string", "sensitive": true, "public_export": false, "default": ""}
+  },
+  "price_source": "WooCommerce",
+  "direct_sql_forbidden": true
+}

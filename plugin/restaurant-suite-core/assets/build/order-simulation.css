@@ -1,0 +1,83 @@
+.crs-order-simulation {
+  max-width: 48rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #d9dee7;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #172033;
+}
+
+.crs-order-simulation__notice {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  padding: 0.875rem 1rem;
+  border-left: 0.25rem solid #1769aa;
+  background: #eef6fc;
+}
+
+.crs-order-simulation__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.crs-order-simulation p {
+  margin: 0;
+}
+
+.crs-order-simulation__field--wide {
+  grid-column: 1 / -1;
+}
+
+.crs-order-simulation label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.crs-order-simulation input,
+.crs-order-simulation select,
+.crs-order-simulation textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #aeb7c6;
+  border-radius: 0.35rem;
+  font: inherit;
+}
+
+.crs-order-simulation button {
+  margin-top: 1.25rem;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #1769aa;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.crs-order-simulation button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.crs-order-simulation__result {
+  margin-top: 1rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.35rem;
+  background: #f2f8f2;
+}
+
+@media (width <= 40rem) {
+  .crs-order-simulation__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .crs-order-simulation__field--wide {
+    grid-column: auto;
+  }
+}

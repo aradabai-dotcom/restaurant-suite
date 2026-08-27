@@ -19,7 +19,14 @@ namespace {
 	function add_action( string $hook, callable $callback, int $priority = 10, int $accepted_args = 1 ): void {}
 	function add_shortcode( string $tag, callable $callback ): void {}
 	function register_block_type( string $block_type, array $args = array() ): mixed { return null; }
-	function register_rest_route( string $namespace, string $route, array $args = array() ): bool { return true; }
+		function register_rest_route( string $namespace, string $route, array $args = array() ): bool {
+			$GLOBALS['crs_test_routes'][] = array(
+				'namespace' => $namespace,
+				'route'     => $route,
+				'args'      => $args,
+			);
+			return true;
+		}
 	function rest_url( string $path = '' ): string { return '/' . ltrim( $path, '/' ); }
 	function wp_create_nonce( string $action = '-1' ): string { return 'stub-nonce'; }
 	function wp_verify_nonce( string $nonce, string $action = '-1' ): int|false {
@@ -30,11 +37,21 @@ namespace {
 	function sanitize_text_field( string $text ): string { return trim( strip_tags( $text ) ); }
 	function is_wp_error( mixed $value ): bool { return $value instanceof WP_Error; }
 	function WC(): object { return $GLOBALS['crs_test_wc'] ?? (object) array(); }
-	function wc_load_cart(): void {
-		if ( isset( $GLOBALS['crs_test_cart_to_load'] ) ) {
-			$GLOBALS['crs_test_wc'] = (object) array( 'cart' => $GLOBALS['crs_test_cart_to_load'] );
+		function wc_load_cart(): void {
+			if ( isset( $GLOBALS['crs_test_cart_to_load'] ) ) {
+				$GLOBALS['crs_test_wc'] = (object) array( 'cart' => $GLOBALS['crs_test_cart_to_load'] );
+			}
 		}
-	}
+		/**
+		 * Record forbidden real order writes if a test accidentally triggers one.
+		 *
+		 * @param array<string, mixed> $args Order arguments.
+		 * @return object
+		 */
+		function wc_create_order( array $args = array() ): object {
+			$GLOBALS['crs_test_order_create_calls'] = (int) ( $GLOBALS['crs_test_order_create_calls'] ?? 0 ) + 1;
+			return (object) $args;
+		}
 	function get_post_status( int $post_id ): string { return 'publish'; }
 	function wc_get_product( int $product_id ): mixed {
 		return $GLOBALS['crs_test_product'] ?? null;
@@ -85,6 +102,7 @@ namespace {
 
 		public function get_header( string $key ): string { return (string) ( $this->headers[ $key ] ?? '' ); }
 		public function get_param( string $key ): mixed { return $this->params[ $key ] ?? null; }
+		public function has_param( string $key ): bool { return array_key_exists( $key, $this->params ); }
 	}
 
 	final class WP_REST_Response {

@@ -47,6 +47,13 @@
       "consumer": "WhatsApp/Dashboard",
       "cancelable": false,
       "price_trusted": false
+    },
+    {
+      "name": "crs:order:simulated",
+      "producer": "Orders/Simulation",
+      "consumer": "Order Form",
+      "cancelable": false,
+      "price_trusted": false
     }
   ]
 }
