@@ -133,3 +133,19 @@ Le drawer gère état loading/error, sérialisation par ligne, compteur, panier 
 ## Correctif V0.3 — initialisation REST du panier
 
 Le premier test staging du bouton `data-crs-cart-add` a révélé HTTP 503 `crs_cart_unavailable`. Dans le contexte REST, WooCommerce était actif mais son objet `WC()->cart` n’était pas encore initialisé. Le endpoint appelle désormais `wc_load_cart()` lorsqu’un panier n’est pas disponible, puis reprend le panier WooCommerce comme seule source de vérité. Le correctif passe localement tous les contrôles V0.3 et doit remplacer le package staging avant de conclure.
+
+## Correctif V0.3 — remove idempotent
+
+Le scénario staging add/update/remove/refresh a exposé un HTTP 409 sur `remove`, alors que WooCommerce pouvait déjà avoir supprimé la ligne avant de retourner `false`. Le endpoint relit désormais `get_cart()` et considère l’action réussie lorsque la clé n’existe plus. Validation locale : 14 tests PHPUnit / 47 assertions et tous les contrôles `make validate`/packaging verts. Nouveau retest staging requis.
+
+## Clôture V0.3 Cart Drawer — 27 août 2026
+
+Le endpoint REST a été renforcé après le 503 staging : il appelle `wc_load_cart()` si nécessaire, relit l’instance retournée par `WC()`, initialise la session/le panier lorsqu’une méthode est disponible et force `get_cart()` avant mutation. La suppression est idempotente : si WooCommerce retourne `false` mais que la clé n’existe plus dans `get_cart()`, la réponse est traitée comme réussie. Les tests de régression couvrent ces chemins ainsi que la résolution serveur de variation via `get_matching_variation()`.
+
+Le Quick View variable envoyait `variation_id=0` après sélection d’un attribut ; le endpoint résout maintenant la variation côté WooCommerce. Le parcours Grande a été validé sur staging avec la ligne Tacos Variable - Grande et le prix WooCommerce correspondant. Pour fermer la modale après succès, Quick View expose `window.CRS_QUICK_VIEW_CLOSE`, appelé par Cart Drawer après `crs:cart:add`. Le flux final a produit `crs:cart:add` puis `crs:quickview:close`, a ouvert le drawer et a restitué le focus au déclencheur.
+
+La campagne UI finale a validé sur un panier synthétique l’ajout menu, l’ouverture automatique du drawer, la quantité `1 → 2 → 1`, la suppression, l’état vide, les liens Panier/Commander, Escape et la restitution du focus via `[data-crs-cart-open]`. Une erreur de harnais intermédiaire a ciblé le lien de navigation `/panier/` au lieu du bouton flottant ; elle est conservée comme incident de test, puis corrigée par l’identification explicite du sélecteur. Le panier est laissé vide, aucune commande n’a été créée et aucune action de paiement ou WhatsApp n’a été exécutée.
+
+Validation locale finale : 15 tests PHPUnit / 50 assertions, Parallel Lint 19 fichiers, PHPCS 9 fichiers, PHPStan sans erreur avec avertissement de version ancienne, contrats JSON, build, ESLint, Stylelint, Vitest, packaging et `git diff --check` verts. Docker/DDEV, HPOS et Playwright complet restent non revendiqués car indisponibles dans la sandbox.
+
+Le staging ne conserve qu’une seule copie V0.3.0 active (`restaurant-suite-core-0.3.0-3`) ; les copies historiques restent inactives pour rollback. Les détails et limites sont dans `docs/reports/v0.3-cart-drawer-validation.md` et `docs/reports/staging-execution-log.md`.

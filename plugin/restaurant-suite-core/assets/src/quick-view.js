@@ -55,6 +55,8 @@
     if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
   };
 
+  window.CRS_QUICK_VIEW_CLOSE = close;
+
   const trapFocus = (event, root) => {
     if (event.key !== 'Tab') return;
     const focusable = getFocusable(root);
@@ -118,6 +120,8 @@
       setStatus(root, labels.error);
     }
   };
+
+  document.addEventListener('crs:quickview:close-request', close);
 
   document.addEventListener('click', (event) => {
     const trigger = event.target.closest?.('[data-crs-quickview-trigger]');

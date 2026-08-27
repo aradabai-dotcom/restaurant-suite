@@ -70,8 +70,17 @@ final class CartEndpoint {
 	 */
 	public function handle( \WP_REST_Request $request ): \WP_REST_Response|\WP_Error {
 		$woocommerce = function_exists( 'WC' ) ? WC() : null;
-		if ( is_object( $woocommerce ) && ! is_object( $woocommerce->cart ?? null ) && function_exists( 'wc_load_cart' ) ) {
-			wc_load_cart();
+		if ( is_object( $woocommerce ) && ! is_object( $woocommerce->cart ?? null ) ) {
+			if ( function_exists( 'wc_load_cart' ) ) {
+				wc_load_cart();
+				$woocommerce = function_exists( 'WC' ) ? WC() : $woocommerce;
+			}
+			if ( ! is_object( $woocommerce->cart ?? null ) && method_exists( $woocommerce, 'initialize_session' ) ) {
+				$woocommerce->initialize_session();
+			}
+			if ( ! is_object( $woocommerce->cart ?? null ) && method_exists( $woocommerce, 'initialize_cart' ) ) {
+				$woocommerce->initialize_cart();
+			}
 		}
 		$cart = is_object( $woocommerce ) ? ( $woocommerce->cart ?? null ) : null;
 		if ( ! is_object( $cart ) ) {
@@ -80,6 +89,13 @@ final class CartEndpoint {
 				__( 'Le panier WooCommerce est momentanément indisponible.', 'restaurant-suite-core' ),
 				array( 'status' => 503 )
 			);
+		}
+
+		// WC_Cart loads the session contents lazily from get_cart(). REST requests can
+		// have a cart object before its line items are hydrated, so hydrate before
+		// update/remove attempt to address a cart item key.
+		if ( method_exists( $cart, 'get_cart' ) ) {
+			$cart->get_cart();
 		}
 
 		$action = (string) $request->get_param( 'action' );
@@ -141,6 +157,13 @@ final class CartEndpoint {
 			return false;
 		}
 
+		if ( 0 === $variation_id && ! empty( $variation ) && function_exists( 'wc_get_product' ) ) {
+			$product = wc_get_product( $product_id );
+			if ( is_object( $product ) && method_exists( $product, 'get_matching_variation' ) ) {
+				$variation_id = absint( $product->get_matching_variation( $variation ) );
+			}
+		}
+
 		return $cart->add_to_cart( $product_id, $quantity, $variation_id, $variation );
 	}
 
@@ -174,7 +197,13 @@ final class CartEndpoint {
 			return false;
 		}
 
-		return $cart->remove_cart_item( $key );
+		$result = $cart->remove_cart_item( $key );
+		if ( false === $result && method_exists( $cart, 'get_cart' ) ) {
+			$items = $cart->get_cart();
+			return ! is_array( $items ) || ! isset( $items[ $key ] );
+		}
+
+		return $result;
 	}
 
 	/**

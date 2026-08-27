@@ -240,6 +240,7 @@
     event.preventDefault();
     const item = formDataToCartItem(event.target);
     void store.add(item).then(() => {
+      if (typeof window.CRS_QUICK_VIEW_CLOSE === 'function') window.CRS_QUICK_VIEW_CLOSE();
       close();
       open(document.querySelector('[data-crs-quickview-trigger][data-product-id="' + item.product_id + '"]'));
     }).catch(() => undefined);

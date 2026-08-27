@@ -24,7 +24,7 @@ final class CartEndpointTest extends TestCase {
 	 * @return void
 	 */
 	protected function tearDown(): void {
-		unset( $GLOBALS['crs_test_wc'], $GLOBALS['crs_test_nonce_valid'], $GLOBALS['crs_test_notices'] );
+		unset( $GLOBALS['crs_test_wc'], $GLOBALS['crs_test_cart_to_load'], $GLOBALS['crs_test_nonce_valid'], $GLOBALS['crs_test_notices'], $GLOBALS['crs_test_product'] );
 		parent::tearDown();
 	}
 
@@ -76,6 +76,30 @@ final class CartEndpointTest extends TestCase {
 	}
 
 	/**
+	 * REST context can hydrate the WooCommerce cart on demand.
+	 *
+	 * @return void
+	 */
+	public function testLoadsCartWhenRestContextHasNoCart(): void {
+		$cart = new class() {
+			/** @return array<string, mixed> */
+			public function get_cart(): array { return array(); }
+			public function get_cart_contents_count(): int { return 0; }
+			public function get_cart_subtotal(): string { return ''; }
+			public function calculate_totals(): void {}
+		};
+		$GLOBALS['crs_test_wc'] = (object) array();
+		$GLOBALS['crs_test_cart_to_load'] = $cart;
+
+		$result = ( new CartEndpoint() )->handle( new WP_REST_Request( array(), array( 'action' => 'refresh' ) ) );
+
+		self::assertInstanceOf( WP_REST_Response::class, $result );
+		self::assertSame( 200, $result->status );
+		self::assertSame( 0, $result->data['count'] );
+		self::assertStringContainsString( 'Votre panier est vide', $result->data['lines'] );
+	}
+
+	/**
 	 * Add, update and remove delegate to WooCommerce's cart API.
 	 *
 	 * @return void
@@ -119,5 +143,45 @@ final class CartEndpointTest extends TestCase {
 		self::assertInstanceOf( WP_REST_Response::class, $remove );
 		self::assertSame( 0, $remove->data['count'] );
 		self::assertStringContainsString( 'Votre panier est vide', $remove->data['lines'] );
+	}
+
+	/**
+	 * Variable Quick View attributes resolve to a WooCommerce variation ID.
+	 *
+	 * @return void
+	 */
+	public function testResolvesVariableVariationBeforeAdd(): void {
+		$product = new class() {
+			public function get_name(): string { return 'Fixture Variable'; }
+			/** @param array<string, string> $variation */
+			public function get_matching_variation( array $variation ): int {
+				return 'Grande' === ( $variation['attribute_taille-crs'] ?? '' ) ? 20 : 0;
+			}
+		};
+		$cart = new class( $product ) {
+			/** @var array<string, array<string, mixed>> */
+			public array $items = array();
+			public int $variation_id = 0;
+			private object $product;
+			public function __construct( object $product ) { $this->product = $product; }
+			public function add_to_cart( int $product_id, int $quantity, int $variation_id, array $variation ): string {
+				$this->variation_id = $variation_id;
+				$this->items['variable-line'] = array( 'data' => $this->product, 'quantity' => $quantity, 'line_total' => '$14.00' );
+				return 'variable-line';
+			}
+			/** @return array<string, array<string, mixed>> */
+			public function get_cart(): array { return $this->items; }
+			public function get_cart_contents_count(): int { return array_sum( array_map( static fn ( array $item ): int => (int) $item['quantity'], $this->items ) ); }
+			public function get_cart_subtotal(): string { return '$14.00'; }
+			public function calculate_totals(): void {}
+		};
+		$GLOBALS['crs_test_product'] = $product;
+		$GLOBALS['crs_test_wc'] = (object) array( 'cart' => $cart );
+
+		$result = ( new CartEndpoint() )->handle( new WP_REST_Request( array(), array( 'action' => 'add', 'product_id' => 18, 'variation_id' => 0, 'variation' => array( 'attribute_taille-crs' => 'Grande' ) ) ) );
+
+		self::assertInstanceOf( WP_REST_Response::class, $result );
+		self::assertSame( 200, $result->status );
+		self::assertSame( 20, $cart->variation_id );
 	}
 }
