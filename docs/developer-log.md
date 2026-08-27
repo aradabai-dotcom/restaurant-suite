@@ -186,3 +186,10 @@ Le shortcode `[crs_order_simulation]` rend un formulaire accessible marqué « S
 **Rapport :** `docs/reports/v0.4-simulation-validation.md`.
 
 **Commit :** à associer au commit de publication V0.4.
+
+
+## Préparation du gate V0.5 — 27 août 2026
+
+Après la validation de la V0.4 simulation, le document `docs/architecture/v0.5-dashboard-gate.md` prépare les contraintes du futur dashboard restaurant : capacités WordPress dédiées, mutations server-side, UX accessible, assets chargés par écran, tests DDEV/WordPress/HPOS et maintien de WooCommerce comme source unique de vérité. Aucun écran, writer réel ou mutation V0.5 n’est implémenté dans cette itération.
+
+**Commit :** à associer au commit de publication du gate documentaire.
